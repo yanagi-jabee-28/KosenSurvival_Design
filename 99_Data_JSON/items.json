@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "placeholder_item_1",
+      "name": "Placeholder Item",
+      "description": "This is a placeholder item entry",
+      "type": "example",
+      "properties": {}
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-12-24",
+    "description": "Items data for KOSEN Survival"
+  }
+}
