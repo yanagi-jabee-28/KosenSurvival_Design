@@ -21,7 +21,7 @@
 | 学年 | テーマ | ジャンル | 時間単位 | 主な敵 |
 |:---|:---|:---|:---|:---|
 | **1年** | Survival | リソース管理RPG | 1週間 | 授業スピード、生活習慣、赤点 |
-| **2年** | Specialization | スキル育成SLG | 1週間 | 中だるみ、専門コース選択 |
+| **2年** | Specialization | スキル育成SLG | 1週間 | 中だるみ、専門系統選択 |
 | **3年** | Leadership | チーム運営RTS | 1週間 | 部活運営、後輩指導 |
 | **4年** | Society | オープンワールドADV | 1週間 | インターン、TOEIC、研究室見学、GPA戦争 |
 | **5年** | Legacy | ボスバトル（卒研） | イベント | 研究室配属、卒研、進路、ラスボス教授 |
@@ -111,11 +111,11 @@ KosenSurvival_Design/
 ## 5. Core Characters
 - 主人公: 高専 太郎（凡人スタート、5年間で成長）。
 - パートナー: 一ノ瀬 アイ (B), 赤坂 ミナ (A), 剛田 タケシ (C), 諏訪野 レン (C, 資産継承), 神楽 マイ (D), 室井 禅 (E)。
-- ボス例: 鬼瓦 厳（数学科教員, Year1 テストボス）。
+- ボス例: 鬼瓦 厳（一般科目数学教員, Year1 テストボス）。
 
 ## 6. Scenario Structure
-- **Year1: The Filter** — 授業適応、Week15 タケシ分岐、学年末試験がボス。
-- **Year2: Specialization** — コース選択とレポート地獄。Report Queue管理と高専病デバフが核。
+- **Year1: The Filter** — 授業適応、Week15 タケシ分岐、学年末試験がボス。工学科統一。
+- **Year2: Specialization** — 系統選択とレポート地獄。Report Queue管理と高専病デバフが核。
 - **Year3: Leadership** — 後輩指導と役職によるリソース配分。諏訪野卒業とRoot継承でルートロック。
 - **Year4: Society** — インターン、就活準備、研究室見学。5年次配属に向けたGPA戦争。
 - **Year5: Legacy** — 研究室配属、卒研3フェーズ（テーマ決定/実験/執筆）。ラスボス教授戦で5年の蓄積を総動員。
@@ -125,7 +125,7 @@ KosenSurvival_Design/
 - **Missing**: GameLoop.md の詳細、JSON データ拡充。
 - **Latest Update (2025-12-25)**:
   - 学校設定 (School.md) を追加。長野高専をモデルに「神城工業高等専門学校」を設定。
-  - 5学科体制（機械/電気電子/電子制御/電子情報/環境都市）を定義。
+  - 3系統制（機械ロボティクス系/情報エレクトロニクス系/都市デザイン系）を定義。Year 1は工学科として統一入学、Year 2から系統選択。
   - 寮生活、施設配置、年間行事、教職員の詳細を記述。
   - 後輩キャラクター「春日井 ユズ」を追加 (02_Characters/Kohai.md)。
 - **Next**:
@@ -134,7 +134,7 @@ KosenSurvival_Design/
   3. UI/UX: Student Handbook 風の画面設計。
   4. items.json / subjects.json / events_random.json を拡充しバランス調整。
   5. Time/Memory システムのシミュレーション検証。
-  6. 学科別の専門科目データを subjects.json に追加。
+  6. 系統別の専門科目データを subjects.json に追加。
 
 ## 8. Critical Constraints
 - 難易度を下げないこと。赤点・留年・Sanity 枯渇が体験の核。
