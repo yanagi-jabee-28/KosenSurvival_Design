@@ -58,7 +58,8 @@ KosenSurvival_Design/
 │   └── Ren.md              # 諏訪野 レン
 ├── 03_Scenario/            # 年次シナリオ
 │   ├── Year1.md            # 「淘汰」
-│   ├── Year2_3.md          # 「分岐と覚醒」
+│   ├── Year2.md            # 「中だるみと専攻決定」
+│   ├── Year3.md            # 「リーダーシップと継承」
 │   ├── Year4.md            # 「社会」
 │   └── Year5.md            # 「結実」
 └── 99_Data_JSON/           # データ
@@ -112,7 +113,8 @@ KosenSurvival_Design/
 
 ## 6. Scenario Structure
 - **Year1: The Filter** — 授業適応、Week15 タケシ分岐、学年末試験がボス。
-- **Year2-3: Specialization/Leadership** — コース選択、部活本格化、Year3 Q1 でルート確定、諏訪野卒業イベント。
+- **Year2: Specialization** — コース選択とレポート地獄。Report Queue管理と高専病デバフが核。
+- **Year3: Leadership** — 後輩指導と役職によるリソース配分。諏訪野卒業とRoot継承でルートロック。
 - **Year4: Society** — 研究室配属、インターン、就活。月次ペースで濃縮進行。
 - **Year5: Legacy** — 卒研3フェーズ（テーマ決定/実験/執筆）。ラスボス教授戦で5年の蓄積を総動員。
 
