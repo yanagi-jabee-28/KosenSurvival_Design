@@ -48,14 +48,16 @@ KosenSurvival_Design/
 │   ├── Time.md             # 週間サイクルとZoom-in
 │   ├── Memory.md           # 流動層/定着層の記憶モデル
 │   ├── Params.md           # パラメータ定義
-│   └── Routes.md           # 5ルート分岐の詳細
+│   ├── Routes.md           # 5ルート分岐の詳細
+│   └── School.md           # 学校設定（神城高専の詳細）
 ├── 02_Characters/          # キャラクター設定
 │   ├── Cast.md             # 一覧
 │   ├── Player.md           # 主人公: 高専 太郎
 │   ├── Ai.md               # 一ノ瀬 アイ
 │   ├── Mina.md             # 赤坂 ミナ
 │   ├── Takeshi.md          # 剛田 タケシ
-│   └── Ren.md              # 諏訪野 レン
+│   ├── Ren.md              # 諏訪野 レン
+│   └── Kohai.md            # 春日井 ユズ（後輩）
 ├── 03_Scenario/            # 年次シナリオ
 │   ├── Year1.md            # 「淘汰」
 │   ├── Year2.md            # 「中だるみと専攻決定」
@@ -121,12 +123,18 @@ KosenSurvival_Design/
 ## 7. Implementation Status & Next Steps
 - **Design**: コア仕様は Markdown で確定。
 - **Missing**: GameLoop.md の詳細、JSON データ拡充。
+- **Latest Update (2025-12-25)**:
+  - 学校設定 (School.md) を追加。長野高専をモデルに「神城工業高等専門学校」を設定。
+  - 5学科体制（機械/電気電子/電子制御/電子情報/環境都市）を定義。
+  - 寮生活、施設配置、年間行事、教職員の詳細を記述。
+  - 後輩キャラクター「春日井 ユズ」を追加 (02_Characters/Kohai.md)。
 - **Next**:
   1. GameLoop.md にメインループの疑似コードと状態遷移を追記。
   2. React/TypeScript (Vite) でプロジェクト初期化。
   3. UI/UX: Student Handbook 風の画面設計。
   4. items.json / subjects.json / events_random.json を拡充しバランス調整。
   5. Time/Memory システムのシミュレーション検証。
+  6. 学科別の専門科目データを subjects.json に追加。
 
 ## 8. Critical Constraints
 - 難易度を下げないこと。赤点・留年・Sanity 枯渇が体験の核。

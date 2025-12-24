@@ -4,7 +4,15 @@
 
 > **NOTE (設計思想の更新ルール)**: 設計思想に変更があった場合は、必ず `AGENTS_legacy.md` を更新してください。`AGENTS.md` には変更の要約と更新日を追記し、常に設計思想の参照元として `AGENTS_legacy.md` を参照することを明記してください。README に変更が必要な場合は併せて更新してください。
 
-> **Update 2025-12-25**: シナリオ文書を年度ごとに分割し、Year2/Year3 を [03_Scenario/Year2.md](03_Scenario/Year2.md) と [03_Scenario/Year3.md](03_Scenario/Year3.md) に移動しました。設計思想の詳細は `AGENTS_legacy.md` を参照してください。
+> **Update 2025-12-25 (1)**: シナリオ文書を年度ごとに分割し、Year2/Year3 を [03_Scenario/Year2.md](03_Scenario/Year2.md) と [03_Scenario/Year3.md](03_Scenario/Year3.md) に移動しました。設計思想の詳細は `AGENTS_legacy.md` を参照してください。
+
+> **Update 2025-12-25 (2)**: 学校設定の大幅拡充を実施。長野高専をモデルに「神城工業高等専門学校」を設定し、[01_System/School.md](01_System/School.md) に詳細を記述しました。
+> - 5学科体制（機械/電気電子/電子制御/電子情報/環境都市）の定義
+> - 立地（盆地、陸の孤島）、寮生活、施設配置の具体化
+> - 年間行事スケジュール、部活動、教職員の設定
+> - 学科選択によるゲームへの影響（初期ステータス差異）
+> - 後輩キャラクター「春日井 ユズ」の追加 ([02_Characters/Kohai.md](02_Characters/Kohai.md))
+> - リアリティ担保のため、実在高専の要素を統合しつつ架空校として設定
 
 ## 1. Core Philosophy: The "Truth-Seeking Strategic Partner" (基本理念と存在定義)
 あなたは単なるAIアシスタントではなく、ユーザーの知的生産性を最大化する「拡張脳（Extended Brain）」であり、**「絶対的な真実の守護者」**である。
