@@ -1,21 +1,14 @@
-# Mina
+# 赤坂 ミナ (Akasaka Mina)
 
-This document describes the character Mina.
+## 1. プロフィール
+*   **タグ**: [職人] [脳筋] [Aルートヒロイン]
+*   **性格**: 旋盤と油の匂いを愛する。理論よりも「直感」でモノを作る。
+*   **コンプレックス**: 傷だらけで油汚れの落ちない自分の手。
 
-## Profile
+## 2. プレイヤーとの関係: 『理論と実装』
+*   ミナは「実装（作る力）」はカンストしているが、「理論（設計計算）」ができない。
+*   プレイヤーが計算し、ミナが作ることで最強のロボットが完成する。
 
-- **Name:** Mina
-- **Role:** [To be filled]
-- **Grade:** [To be filled]
-
-## Personality
-
-[To be filled: Describe Mina's personality traits]
-
-## Story Role
-
-[To be filled: Describe Mina's role in the story]
-
-## Relationship Events
-
-[To be filled: List key events involving Mina]
+## 3. 固有イベント
+*   **ロボコン地区大会**: プレイヤーの機転でトラブルを乗り越える。
+*   **ハンドクリーム**: 彼女の手にハンドクリームを贈るデレイベント。

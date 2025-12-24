@@ -1,21 +1,14 @@
-# Ren
+# 諏訪野 レン (Suwano Ren)
 
-This document describes the character Ren.
+## 1. プロフィール
+*   **タグ**: [支配者] [先輩] [Cルート師匠]
+*   **性格**: 常に目の下にクマがある3年生。寮のネットワーク管理者。
+*   **信条**: 「金と情報があれば、単位以外はなんでも買える」
 
-## Profile
+## 2. 固有システム: 『管理者権限 (Root Access)』
+*   プレイヤーに「裏クエスト」を発注する。
+*   報酬として、テストの過去問データや、教員用Wi-Fiのパスワードを与える。
 
-- **Name:** Ren
-- **Role:** [To be filled]
-- **Grade:** [To be filled]
-
-## Personality
-
-[To be filled: Describe Ren's personality traits]
-
-## Story Role
-
-[To be filled: Describe Ren's role in the story]
-
-## Relationship Events
-
-[To be filled: List key events involving Ren]
+## 3. 継承イベント
+*   彼が卒業する際、後継者として認められれば「管理パスワード」を託される。
+*   これがCルート（ハッカー編）の真のスタートとなる。

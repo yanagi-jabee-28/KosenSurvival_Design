@@ -1,21 +1,16 @@
-# Ai
+# 一ノ瀬 アイ (Ichinose Ai)
 
-This document describes the character Ai.
+## 1. プロフィール
+*   **タグ**: [天才] [孤独] [Bルートヒロイン]
+*   **性格**: 冷徹な合理主義者。「感情で解ける問題はない」と断じる。
+*   **弱点**: 実は「魔法少女アニメ」の隠れファン（論理からの逃避）。
 
-## Profile
+## 2. 固有システム: 『完全定着 (Diamond Mind)』
+*   彼女のスコアは9割が「Diamond（完全定着層）」で構成されている。
+*   そのため、一夜漬けをせずとも常に満点を取る。
+*   プレイヤーがLogicを上げない限り、会話コマンドが成功しない。
 
-- **Name:** Ai
-- **Role:** [To be filled]
-- **Grade:** [To be filled]
-
-## Personality
-
-[To be filled: Describe Ai's personality traits]
-
-## Story Role
-
-[To be filled: Describe Ai's role in the story]
-
-## Relationship Events
-
-[To be filled: List key events involving Ai]
+## 3. 親密度イベント
+*   **Lv 1**: 図書館で隣に座ることを許される（会話なし）。
+*   **Lv 3**: 深夜の通話。数式の美しさについて語り合う。
+*   **Lv MAX**: 学会発表の夜。「貴方は私の唯一の理解者（証明終了）」

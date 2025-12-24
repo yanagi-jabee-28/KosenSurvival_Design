@@ -1,15 +1,34 @@
-# Overview
+# KOSEN Survival: The Five Years Odyssey
 
-This document provides an overview of the KOSEN Survival game design.
+## 1. プロジェクト概要
+*   **タイトル**: KOSEN Survival (仮)
+*   **ジャンル**: 高専生活サバイバル・育成シミュレーション
+*   **プラットフォーム**: PC / スマホ (Webベース)
+*   **コアコンセプト**:
+    *   **「単位はHP、時間は通貨」**: リソース管理の厳格化。
+    *   **「忘却の恐怖」**: 放置した科目は勝手に点数が下がる。
+    *   **「5年間の大河ドラマ」**: 1年生のサバイバルから、5年生の卒業研究までを描く。
 
-## Purpose
+## 2. 5年間のタイムライン
+学年ごとにゲームのルールとテーマが変化する「可変スケール制」を採用。
 
-[To be filled: Describe the overall purpose and vision of the game]
+| 学年 | テーマ | ジャンル | 時間単位 | 主な敵 |
+|:---|:---|:---|:---|:---|
+| **1年** | **Survival (生存)** | リソース管理RPG | **1日** | 授業スピード、生活習慣、赤点 |
+| **2年** | **Specialization (分岐)** | スキル育成SLG | **1週間** | 中だるみ、専門コース選択 |
+| **3年** | **Leadership (覚醒)** | チーム運営RTS | **1週間** | 部活運営、後輩指導、諏訪野の卒業 |
+| **4年** | **Society (社会)** | オープンワールドADV | **1ヶ月** | 研究室配属、インターン、就活 |
+| **5年** | **Legacy (結実)** | ボスバトル (卒研) | **イベント** | 卒業研究、進路、ラスボス教授 |
 
-## Key Features
+## 3. 主要ルート分岐
+*   **Route A: 【鉄と回路の熱血篇】** (ロボコン / モノづくり)
+    *   パートナー: 赤坂 ミナ
+*   **Route B: 【象牙の塔の探求篇】** (アカデミック / 研究)
+    *   パートナー: 一ノ瀬 アイ
+*   **Route C: 【電脳の反逆者篇】** (ハッカー / ビジネス)
+    *   パートナー: 諏訪野 レン & 剛田 タケシ
+*   **Route D: 【碧き正道の統率者篇】** (生徒会 / マネジメント)
+    *   パートナー: 神楽 マイ
+*   **Route E: 【灰色の漂流者篇】** (モラトリアム / 留年)
+    *   パートナー: 室井 禅 (仙人)
 
-[To be filled: List the main features and gameplay elements]
-
-## Target Audience
-
-[To be filled: Define the target audience for the game]

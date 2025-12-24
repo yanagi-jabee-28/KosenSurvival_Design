@@ -1,15 +1,32 @@
-# Time System
+# 時間進行システム: The 4Q Calendar
 
-This document describes the time management system in KOSEN Survival.
+## 1. 年間スケジュール (Macro Loop)
+1年間を4つのクォーター(Q)に分割し、それぞれ「8週間」のサイクルで進行する。
 
-## Time Units
+| 期間 | 名称 | 特徴 | 第8週のボスイベント |
+|:---|:---|:---|:---|
+| **1Q** | **前期・前半** | 環境適応・基礎構築 | 前期中間試験 |
+| **2Q** | **前期・後半** | レポート地獄・夏バテ | 前期期末試験 |
+| **3Q** | **後期・前半** | 高専祭・行事ラッシュ | 後期中間試験 |
+| **4Q** | **後期・後半** | 総力戦・進級判定 | 学年末試験 |
 
-[To be filled: Define time units (days, weeks, terms, years)]
+## 2. 8週間サイクル (Weekly Flow)
+各クォーターは以下のリズムで進行する。
+*   **Week 1-2 (導入)**: 新単元開始。「Liquidスコア(未定着)」が急増する。
+*   **Week 3-5 (日常)**: 部活やイベントが多発。計画が崩れやすい。
+*   **Week 6-7 (修羅場)**: テスト前期間。部活停止。
+*   **Week 8 (決戦)**: **試験バトル**発生。
 
-## Time Progression
+## 3. 1日の行動 (Daily Micro Loop)
+1日を7つのスロットに分割してリソースを配分する。
 
-[To be filled: Describe how time advances in the game]
+| No | 時間帯 | 平日 (Weekday) | 休日 (Weekend) |
+|:---:|:---|:---|:---|
+| 1 | **Morning** | 登校 / 遅刻判定 | (自由) 寝溜め / 遠征 |
+| 2 | **AM Class** | **授業** (真面目/内職/睡眠) | (自由) 自習 / バイト |
+| 3 | **Lunch** | 回復 / 交流 | (自由) 昼寝 / 趣味 |
+| 4 | **PM Class** | **授業** (魔の時間帯) | (自由) 自習 / バイト |
+| 5 | **After School** | 部活 / 補習 / 街へ | (自由) イベント回収 |
+| 6 | **Night** | 自習 / 趣味 / 闇工作 | (自由) 夜遊び |
+| 7 | **Sleep** | **忘却判定** (-Score) | **忘却判定** (-Score) |
 
-## Time-based Events
-
-[To be filled: List events that trigger based on time]

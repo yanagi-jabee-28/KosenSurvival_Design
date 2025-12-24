@@ -1,21 +1,17 @@
-# Takeshi
+# 剛田 タケシ (Goda Takeshi)
 
-This document describes the character Takeshi.
+## 1. プロフィール
+*   **タグ**: [悪友] [トリックスター] [Cルート相棒]
+*   **性格**: ゲーマー。授業中は寝ている。「ワンチャンいけるっしょ」が口癖。
+*   **能力**: 『自転車操業 (Liquid Rush)』。テスト前日のエナドリ過剰摂取で奇跡を起こす。
 
-## Profile
+## 2. 運命の分岐 (The Divergence)
+1年生の夏、プレイヤーの行動で運命が決まる。
 
-- **Name:** Takeshi
-- **Role:** [To be filled]
-- **Grade:** [To be filled]
+| 状態 | 条件 | 役割 | メリット |
+|:---|:---|:---|:---|
+| **残留 (Stay)** | 勉強を教える | **精神安定剤** | Sanity回復効率が最大。過去問調達。 |
+| **退学 (Leave)** | 見捨てる | **外部協力者** | 闇市アイテム供給。Cルート必須要員。 |
 
-## Personality
-
-[To be filled: Describe Takeshi's personality traits]
-
-## Story Role
-
-[To be filled: Describe Takeshi's role in the story]
-
-## Relationship Events
-
-[To be filled: List key events involving Takeshi]
+## 3. 重要セリフ
+*   退学時: 「外の世界で待ってるぜ。……ここは俺には狭すぎた」

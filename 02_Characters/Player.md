@@ -1,15 +1,14 @@
-# Player
+# 主人公: 高専 太郎 (Player)
 
-This document describes the player character in KOSEN Survival.
+## 1. 基本設定
+*   **学年**: 1年 機械工学科（仮）
+*   **初期ステータス**: 全てにおいて平均以下。Logic Lv.1。
+*   **特性**: プレイヤーの行動により「ガリ勉」「技術屋」「フィクサー」へ分岐する。
 
-## Background
-
-[To be filled: Define player character background]
-
-## Customization
-
-[To be filled: Describe available player customization options]
-
-## Starting Stats
-
-[To be filled: Define initial player stats and abilities]
+## 2. 成長タイプ (Growth Types)
+| タイプ | 重視パラ | 適正ルート | 特徴 |
+|:---|:---|:---|:---|
+| **エンジニア** | Proficiency | **Route A** | モノづくり特化。計算は苦手。 |
+| **リサーチャー** | Logic | **Route B** | 理論特化。対人関係が苦手。 |
+| **ハッカー** | Karma / Money | **Route C** | 裏工作特化。倫理観が欠如。 |
+| **マネージャー** | Charisma | **Route D** | 調整特化。個人の技術は低い。 |

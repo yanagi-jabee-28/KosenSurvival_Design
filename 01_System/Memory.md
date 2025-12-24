@@ -1,15 +1,37 @@
-# Memory System
+# 記憶と忘却システム: The Sediment System
 
-This document describes the memory and save system in KOSEN Survival.
+## 1. スコアの二層構造
+各科目の点数は、性質の異なる2つのスコアの合計で決定される。
 
-## Save Data Structure
+$$ \text{Total Score} = \text{Liquid (流動層)} + \text{Solid (定着層)} $$
 
-[To be filled: Define what data is saved]
+### A. Liquid Score (流動層)
+*   **イメージ**: 「泥水」。授業を聞いた直後の不安定な記憶。
+*   **獲得手段**: 授業 (Class)、一夜漬け (Cramming)。
+*   **忘却率**: **-25% / day** (猛烈な勢いで減る)。
+*   **特徴**: テストが終わるとイベントで強制的に0になることがある。
 
-## Save/Load Mechanics
+### B. Solid Score (定着層)
+*   **イメージ**: 「石垣」。復習して脳に定着した記憶。
+*   **獲得手段**: 自習 (Self-study)。**LiquidをSolidに変換する**行動。
+*   **忘却率**: **-0.5% / day** (ほぼ減らない)。
+*   **特徴**: 学年が上がっても持ち越せる「基礎学力」。
 
-[To be filled: Describe how saving and loading works]
+## 2. 4段階の定着レベル
+科目の熟練度により、スコアの質が変化する。
 
-## Persistent Data
+| レベル | 状態名 | 忘却率 | 説明 |
+|:---|:---|:---:|:---|
+| **Lv 0** | **Liquid (液状)** | -25% | 一夜漬け状態。数日で消える。 |
+| **Lv 1** | **Soft (軟弱)** | -10% | 軽い復習済み。油断すると消える。 |
+| **Lv 2** | **Firm (硬化)** | -3% | 安定している。 |
+| **Lv 3** | **Diamond (金剛)** | **0%** | **完全定着**。卒業まで忘れない。 |
 
-[To be filled: Define data that persists across playthroughs]
+## 3. テストの判定式 (The Trap)
+単純な点数だけでなく、「実力」が問われる。
+
+$$ \text{Test Result} = (\text{理解度} \times 0.3) + (\text{実力} \times 0.7) $$
+
+*   授業だけ受けていると「理解度」は高いが「実力」が低いため、赤点を取る（**「分かったつもり」の罠**）。
+*   自習で演習を行わない限り、「実力」は伸びない。
+

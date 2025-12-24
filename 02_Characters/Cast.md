@@ -1,15 +1,27 @@
-# Cast
+# 登場人物一覧 (Cast List)
 
-This document provides an overview of all characters in KOSEN Survival.
+## 1. 主要キャラクター (Main Cast)
+| 名前 | 役割 | 関連ルート | 特性 |
+|:---|:---|:---|:---|
+| **高専 太郎** | 主人公 | 全ルート | プレイヤーの分身。初期能力は凡人。 |
+| **一ノ瀬 アイ** | ライバル | **Route B** | [天才] 論理的で孤独。数学が得意。 |
+| **赤坂 ミナ** | ロボコン部 | **Route A** | [職人] 直感型エンジニア。理論が苦手。 |
+| **剛田 タケシ** | 悪友 | **Route C** | [逸脱] 退学か残留かで運命が変わる。 |
+| **諏訪野 レン** | 寮の主 | **Route C** | [支配] 寮内インフラの管理者。3年生。 |
 
-## Main Characters
+## 2. サブキャラクター (Sub Cast)
 
-[To be filled: List and describe main characters]
+### 鬼瓦 厳 (Onigawara Gen)
+*   **役割**: 数学科教員 / 1年生ラスボス
+*   **設定**: 「数学は言語だ」が口癖。スパルタ教育で赤点を量産する。
+*   **攻略**: 彼のテストは「実力(Proficiency)」が高くないと解けない。
 
-## Supporting Characters
+### 室井 禅 (Muroi Zen)
+*   **役割**: 伝説の留年王 (仙人) / Route E パートナー
+*   **設定**: 寮の開かずの間に住む。年齢不詳。
+*   **機能**: 彼と過ごすとSanityが全回復するが、勉強時間が消滅する（堕落の罠）。
 
-[To be filled: List and describe supporting characters]
-
-## Character Relationships
-
-[To be filled: Describe relationships between characters]
+### 神楽 マイ (Kagura Mai)
+*   **役割**: 学生会長 / Route D パートナー
+*   **設定**: 鉄の女と呼ばれるが、胃薬が手放せない苦労人。
+*   **機能**: 3年生以降、プレイヤーを生徒会へスカウトに来る。
