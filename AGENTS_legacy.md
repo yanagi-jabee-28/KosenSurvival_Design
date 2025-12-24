@@ -55,6 +55,7 @@ KosenSurvival_Design/
 │   ├── Player.md           # 主人公: 高専 太郎
 │   ├── Ai.md               # 一ノ瀬 アイ
 │   ├── Mina.md             # 赤坂 ミナ
+│   ├── Mai.md              # 神楽 マイ
 │   ├── Takeshi.md          # 剛田 タケシ
 │   ├── Ren.md              # 諏訪野 レン
 │   └── Kohai.md            # 春日井 ユズ（後輩）
