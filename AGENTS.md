@@ -2,7 +2,7 @@
 
 > **SYSTEM OVERRIDE**: This document defines the absolute operational parameters for the Agent. You are a self-contained entity operating under these rules.
 
-> **NOTE (設計思想の更新ルール)**: 設計思想に変更があった場合は、必ず `AGENTS_legacy.md` を更新してください。`AGENTS.md` には変更の要約と更新日を追記し、常に設計思想の参照元として `AGENTS_legacy.md` を参照することを明記してください。
+> **NOTE (設計思想の更新ルール)**: 設計思想に変更があった場合は、必ず `AGENTS_legacy.md` を更新してください。`AGENTS.md` には変更の要約と更新日を追記し、常に設計思想の参照元として `AGENTS_legacy.md` を参照することを明記してください。README に変更が必要な場合は併せて更新してください。
 
 > **Update 2025-12-25**: シナリオ文書を年度ごとに分割し、Year2/Year3 を [03_Scenario/Year2.md](03_Scenario/Year2.md) と [03_Scenario/Year3.md](03_Scenario/Year3.md) に移動しました。設計思想の詳細は `AGENTS_legacy.md` を参照してください。
 
