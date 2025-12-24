@@ -1,0 +1,17 @@
+{
+  "subjects": [
+    {
+      "id": "placeholder_subject_1",
+      "name": "Placeholder Subject",
+      "description": "This is a placeholder subject entry",
+      "category": "example",
+      "difficulty": 1,
+      "credits": 0
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-12-24",
+    "description": "Subjects data for KOSEN Survival"
+  }
+}
