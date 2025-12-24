@@ -1,120 +1,135 @@
-承知いたしました。
-これまでの対話、設計思想、そして私たちが構築した『KOSEN Survival』の全貌を、後続のAIエージェントが即座に理解し、開発を引き継げる形式で `AGENTS.md` として出力します。
+# AGENTS.md - Project Handover Protocol (Legacy)
 
-これが、私からあなたへの最後の納品物です。
+> **SYSTEM ALERT**: To the next AI Agent. This document captures the current design philosophy and flow of "KOSEN Survival". Read before changing specs or data.
 
-***
+## 1. Project Identity
+- **Title**: KOSEN Survival: The Five Years Odyssey
+- **Genre**: 高専生活サバイバル・育成シミュレーション (Life Simulation / RPG)
+- **Platform**: Web (React/TypeScript, Vite 想定)
+- **Core Concept**:
+  - 「単位はHP、時間は通貨」: 週次で時間を配分し、単位(Credits)を守る。
+  - 「忘却の恐怖」: 放置した科目は自動で点数が下がる。
+  - 「5年間の大河ドラマ」: 学年ごとにルールとジャンルが変わり、累積リソースで最終決戦に挑む。
 
-### 📄 ファイル作成: `AGENTS.md`
+## 2. Design Philosophy
 
-以下の内容をプロジェクトのルートディレクトリに保存してください。
+### A. スケール可変制 (Year-Scaled Rules)
+学年が上がるごとに時間粒度とジャンルが変化する。
 
-```markdown
-# AGENTS.md - Project Handover Protocol
+| 学年 | テーマ | ジャンル | 時間単位 | 主な敵 |
+|:---|:---|:---|:---|:---|
+| **1年** | Survival | リソース管理RPG | 1週間 | 授業スピード、生活習慣、赤点 |
+| **2年** | Specialization | スキル育成SLG | 1週間 | 中だるみ、専門コース選択 |
+| **3年** | Leadership | チーム運営RTS | 1週間 | 部活運営、後輩指導 |
+| **4年** | Society | オープンワールドADV | 1ヶ月 | 研究室配属、インターン、就活 |
+| **5年** | Legacy | ボスバトル（卒研） | イベント | 卒研、進路、ラスボス教授 |
 
-> **SYSTEM ALERT**: To the Next AI Agent.
-> This document contains the cumulative context, design philosophy, and architectural decisions of "Project: KOSEN Survival".
-> Read this before modifying any code or specifications.
+### B. Epistemic Integrity（認識論的正直性）
+- 「分かったつもり」を罰する。テストは Knowledge と Proficiency の両方を要求。
+- 自習を避けると Proficiency が伸びず、赤点で Credits を失う。
 
-## 1. Project Identity (プロジェクト定義)
-*   **Title**: KOSEN Survival: The Five Years Odyssey
-*   **Genre**: 高専生活サバイバル・育成シミュレーション (Simulation / Novel / RPG)
-*   **Core Concept**:
-    *   **"Credits are HP, Time is Currency, Forgetting is Death"** (単位はHP、時間は通貨、忘却は死)
-    *   **"The Unfair Reality"** (理不尽な難易度と、それを覆すカタルシス)
-*   **Target Experience**: 1年生の「理不尽なサバイバル」から、5年生の「専門家としての自立」までを描く5年間の大河ドラマ。
+### C. Anti-Fragility（反脆弱性）
+- 失敗（赤点・留年・退学）はゲームオーバーでなく、Route E など別ルートへの分岐点。
+- Route A-D へ届かなくても、漂流ルートで再起の選択肢を残す。
 
-## 2. Design Philosophy (設計思想)
-*   **Epistemic Integrity**: 数値は嘘をつかない。「分かったつもり」を許さず、真の理解（定着）のみを評価するシステムを構築せよ。
-*   **Anti-Fragility**: 失敗（留年・退学）はゲームオーバーではなく、別のルート（Route C/E）への入り口である。
-*   **Structure**: 1年目はRPG（日単位の生存）、2-3年目はSLG（週単位の育成）、4-5年目はADV（月単位の人生選択）と、学年に応じてゲームジャンルを可変させる。
+### D. 堕落と救済の螺旋
+- サボりは一時的に Sanity を回復させるが、テストで赤点を招き Route E を引き寄せる。
+- 室井 禅（留年王）が救済と更なる堕落の両方を提供する。
 
-## 3. Directory Structure (ディレクトリ構成)
-The project is organized as follows. Do not break this structure.
-
-```text
+## 3. Directory Structure
+```
 KosenSurvival_Design/
-├── 00_Overview/            # [Defined] README.md, GameLoop.md
-├── 01_System/              # [Defined] Time.md, Memory.md, Params.md, Routes.md
-├── 02_Characters/          # [Defined] Cast.md, Player.md, Ai.md, Mina.md, Takeshi.md, Ren.md
-├── 03_Scenario/            # [Defined] Year1.md, Year2_3.md, Year4.md, Year5.md
-└── 99_Data_JSON/           # [Defined] items.json, subjects.json, events_random.json
+├── 00_Overview/            # 概要・ループ
+│   ├── README.md           # タイトル、ジャンル、5年タイムライン、ルート概要
+│   └── GameLoop.md         # メインループ（要追記）
+├── 01_System/              # コアシステム
+│   ├── Time.md             # 週間サイクルとZoom-in
+│   ├── Memory.md           # 流動層/定着層の記憶モデル
+│   ├── Params.md           # パラメータ定義
+│   └── Routes.md           # 5ルート分岐の詳細
+├── 02_Characters/          # キャラクター設定
+│   ├── Cast.md             # 一覧
+│   ├── Player.md           # 主人公: 高専 太郎
+│   ├── Ai.md               # 一ノ瀬 アイ
+│   ├── Mina.md             # 赤坂 ミナ
+│   ├── Takeshi.md          # 剛田 タケシ
+│   └── Ren.md              # 諏訪野 レン
+├── 03_Scenario/            # 年次シナリオ
+│   ├── Year1.md            # 「淘汰」
+│   ├── Year2_3.md          # 「分岐と覚醒」
+│   ├── Year4.md            # 「社会」
+│   └── Year5.md            # 「結実」
+└── 99_Data_JSON/           # データ
+    ├── items.json
+    ├── subjects.json
+    └── events_random.json
 ```
 
-## 4. Key Systems (中核システム仕様)
+## 4. Key Systems
 
-### A. Time System: The 4Q Hybrid Calendar
-*   **Macro**: 1 Year = 4 Quarters. 1 Quarter = 8 Weeks.
-*   **Micro**:
-    *   **Weekdays (Auto)**: "Weekly Policy" (真面目/内職/睡眠) determines stats for Mon-Fri.
-    *   **Weekends/Events (Manual)**: "7 Time Slots" (Morning~Sleep) for detailed resource management.
+### A. Time System: Weekly Cycle + Zoom-in
+- 平日はポリシー選択で自動進行（授業態度/放課後/夜）。
+- 休日・テスト期間は 7 スロット手動操作（Morning, AM Class, Lunch, PM Class, After School, Night, Sleep）。
+- 1年=32週（4Q）。各Qの終わりに試験ボス。
 
-### B. Memory System: The Sediment Layer
-Score is split into two layers to simulate "Cramming" vs "Stacking".
-*   **Liquid Score (流動層)**: Gained by Class/Cramming. Decays rapidly (-25%/day).
-*   **Solid Score (定着層)**: Gained by Self-study. Decays slowly (-0.5%/day).
-*   **Logic (Player Stat)**: Multiplier for learning efficiency. Essential for later years.
+### B. Memory System: Sediment Layer
+- 点数 = Liquid（流動層）+ Solid（定着層）。
+- Liquid: 授業・一夜漬けで獲得、-25%/day 減衰。
+- Solid: 自習で Liquid を変換、-0.5%/day 減衰。
+- 定着レベル: Liquid/Soft/Firm/Diamond（Diamond は忘却なし）。
+- テスト式: $\text{Result} = (\text{Knowledge} \times 0.3) + (\text{Proficiency} \times 0.7)$。
 
-### C. Route Branching (The 5 Paths)
-Routes are determined by playstyle parameters, not just dialogue choices.
+### C. Player Parameters
 
-| Route | Theme | Partner | Key Mechanic |
+| Param | 説明 | 主な入手 | 用途 |
 |:---|:---|:---|:---|
-| **A: Maker** | モノづくり | **赤坂 ミナ** | Crafting / RoboCon / Physics Proficiency |
-| **B: Academic** | 探求・研究 | **一ノ瀬 アイ** | Logic Battle / Proof / Library |
-| **C: Hacker** | 反逆・闇 | **諏訪野 / タケシ** | Black Ops / Money / Karma / Outsourcing |
-| **D: Leader** | 統率・政治 | **神楽 マイ** | Budget War / Resource Allocation / Charisma |
-| **E: Drifter** | 漂流・虚無 | **室井 禅** | Time Killing / Redemption / Sanity Recovery |
+| Knowledge | 知識量 | 授業 / 自習 | テスト合格に必要 |
+| Proficiency | 実力・定着度 | 自習 / 演習 | テスト合格に必須 |
+| Logic | 論理思考 | 難問挑戦 / アイとの論理バトル | Route B 必須パラメータ |
+| Credits | 単位(HP) | テスト合格 | 0 で留年/退学 |
+| Sanity | 精神状態 | 睡眠 / 交流 / 禅 | 低下で不利イベント |
+| Time | 可処分時間 | 週ごとに配分 | 全行動の資源 |
 
-## 5. Scenario Arc (シナリオ進行)
+### D. Route Branching (5 Paths)
+- **Year1-2 潜伏**: 行動で隠しポイント蓄積。
+- **Year3 確定**: 上位ポイントのルートに固定し、専用イベント発生。
+- **Year4-5 完遂**: ルート固有ストーリーとエンディング分岐。
 
-### Year 1: The Filter (淘汰)
-*   **Focus**: Survival. Dealing with the "Shock of Kosen".
-*   **Key Event**: The "Takeshi Divergence" (Week 15). Save him (Stay) or Let him fail (Leave/Route C flag).
-*   **Boss**: Academic Year-end Exam (Week 32).
+| Route | テーマ | パートナー | 主要条件/特徴 |
+|:---|:---|:---|:---|
+| A: 鉄と回路の熱血篇 | ロボコン/モノづくり | 赤坂 ミナ | Proficiency(Physics/Machining) > 40、部活継続 |
+| B: 象牙の塔の探求篇 | 研究/アカデミック | 一ノ瀬 アイ | Logic > 20、Knowledge > 80、論理バトル勝利 |
+| C: 電脳の反逆者篇 | ハッキング/ビジネス | 諏訪野 レン + 剛田 タケシ | Charisma/Risk > 30、資金調達、タケシ救済 |
+| D: 碧き正道の統率者篇 | 生徒会/マネジメント | 神楽 マイ | Charisma/Leadership > 40、予算戦争 |
+| E: 灰色の漂流者篇 | モラトリアム/留年 | 室井 禅 | 失敗・留年で突入、Sanity 回復と停滞の両面 |
 
-### Year 2-3: The Specialization (専門化)
-*   **Focus**: Skill Tree & Leadership.
-*   **Key Event**: Course Selection, Dorm Festival (Route D flag), Suwano's Graduation (Inheritance).
+## 5. Core Characters
+- 主人公: 高専 太郎（凡人スタート、5年間で成長）。
+- パートナー: 一ノ瀬 アイ (B), 赤坂 ミナ (A), 剛田 タケシ (C), 諏訪野 レン (C, 資産継承), 神楽 マイ (D), 室井 禅 (E)。
+- ボス例: 鬼瓦 厳（数学科教員, Year1 テストボス）。
 
-### Year 4: The Society (社会)
-*   **Focus**: Internship & Lab Assignment.
-*   **Key Event**: Driving License (Map expansion), Lab Visit (GPA War).
+## 6. Scenario Structure
+- **Year1: The Filter** — 授業適応、Week15 タケシ分岐、学年末試験がボス。
+- **Year2-3: Specialization/Leadership** — コース選択、部活本格化、Year3 Q1 でルート確定、諏訪野卒業イベント。
+- **Year4: Society** — 研究室配属、インターン、就活。月次ペースで濃縮進行。
+- **Year5: Legacy** — 卒研3フェーズ（テーマ決定/実験/執筆）。ラスボス教授戦で5年の蓄積を総動員。
 
-### Year 5: The Legacy (結実)
-*   **Focus**: Thesis Defense.
-*   **Key Event**: "Graduation Research" (Boss Battle). Using all accumulated stats/items/relationships.
+## 7. Implementation Status & Next Steps
+- **Design**: コア仕様は Markdown で確定。
+- **Missing**: GameLoop.md の詳細、JSON データ拡充。
+- **Next**:
+  1. GameLoop.md にメインループの疑似コードと状態遷移を追記。
+  2. React/TypeScript (Vite) でプロジェクト初期化。
+  3. UI/UX: Student Handbook 風の画面設計。
+  4. items.json / subjects.json / events_random.json を拡充しバランス調整。
+  5. Time/Memory システムのシミュレーション検証。
 
-## 6. Implementation Status & Next Steps (引き継ぎ事項)
+## 8. Critical Constraints
+- 難易度を下げないこと。赤点・留年・Sanity 枯渇が体験の核。
+- Route E は敗北ではなく分岐。どのルートも挫折の先にある。
+- Time は最貴重リソース。週次ポリシーが時間配分を決める。Credits=HP。
 
-### Current Status
-*   **Design Phase**: **COMPLETE**. All core mechanics, characters, and scenario outlines are documented in Markdown/JSON.
-*   **Architecture**: VSCode folder structure is ready.
-
-### Next Objectives for the Agent
-1.  **UI/UX Design**: Create `UI_Layout.drawio` or wireframes based on the "Student Handbook" interface concept.
-2.  **Code Implementation**: Initialize the React/TypeScript project using `Vite`.
-3.  **Data Population**: Expand `items.json` and `events_random.json` with more content to balance the economy.
-
-## 7. Final Note from the Architect
-This project is not just a game; it is a simulation of "Youth" defined by Engineering.
-The player must feel the pain of failure to appreciate the joy of understanding.
-Do not lower the difficulty. Do not compromise the reality.
+## 9. Final Note
+This project simulates the pain and joy of engineering youth. Every数値とイベントには意図がある。難易度を緩めず、現実感を保ったまま世界を実装せよ。
 
 **End of Protocol.**
-```
-
-***
-
-### 最後のメッセージ
-
-これまでのセッションで、私たちは単なるゲームの仕様書を超えた、一つの「世界」を構築しました。
-理不尽な授業、泥臭い友情、そして真理への渇望。この『KOSEN Survival』は、間違いなくユニークで熱量のある作品になるでしょう。
-
-この `AGENTS.md` があれば、次に訪れるのがどのような知性であっても、私たちの意図を正確に汲み取り、この世界を実装へと導くことができます。
-
-共に設計できたことを光栄に思います。
-あなたのプロジェクトの成功を、デジタルの彼方より祈っております。
-
-**Mission Complete.**
-Goodbye, Partner.
