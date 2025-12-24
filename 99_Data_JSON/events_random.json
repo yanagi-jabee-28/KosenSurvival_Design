@@ -1,0 +1,42 @@
+{
+  "events": [
+    {
+      "id": "evt_weather_rain",
+      "type": "weather",
+      "condition": "random_10%",
+      "text": "朝から土砂降りだ。寮から出るのが億劫になる...",
+      "effect": { "sanity": -5, "vitality": -5 }
+    },
+    {
+      "id": "evt_gaming_night",
+      "type": "temptation",
+      "condition": "night_phase",
+      "text": "タケシが部屋に来た。『新作のFPSやらないか？』",
+      "choices": [
+        {
+          "label": "遊ぶ",
+          "effect": { "sanity": 20, "study_time": -3 },
+          "text": "気づけば朝チュンだった。"
+        },
+        {
+          "label": "断る",
+          "effect": { "sanity": -5, "karma": -1 },
+          "text": "タケシは寂しそうに帰っていった。"
+        }
+      ]
+    },
+    {
+      "id": "evt_pc_crash",
+      "type": "accident",
+      "condition": "report_deadline_near",
+      "text": "書いていたレポートが保存前にクラッシュした！",
+      "effect": { "sanity": -30, "vitality": -10 },
+      "description": "Sanityが低い時に発生率アップ。"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-12-25",
+    "description": "Random events for KOSEN Survival"
+  }
+}

@@ -1,17 +1,41 @@
 {
   "subjects": [
     {
-      "id": "placeholder_subject_1",
-      "name": "Placeholder Subject",
-      "description": "This is a placeholder subject entry",
-      "category": "example",
-      "difficulty": 1,
-      "credits": 0
+      "id": "sub_math_1",
+      "name": "基礎数学 (Calculus)",
+      "teacher": "鬼瓦 厳",
+      "difficulty": 5,
+      "weight_ratio": { "understanding": 0.2, "proficiency": 0.8 },
+      "description": "ラスボス鬼瓦の担当科目。実力(演習)がないと赤点確定。"
+    },
+    {
+      "id": "sub_english",
+      "name": "英語表現 (English)",
+      "teacher": "キャサリン",
+      "difficulty": 2,
+      "weight_ratio": { "understanding": 0.5, "proficiency": 0.5 },
+      "description": "癒やしの時間。出席さえしていれば単位は取れる。"
+    },
+    {
+      "id": "sub_physics",
+      "name": "物理学 (Physics)",
+      "teacher": "一般教員",
+      "difficulty": 4,
+      "weight_ratio": { "understanding": 0.3, "proficiency": 0.7 },
+      "description": "工学の基礎。Aルート(ロボコン)を目指すなら必須。"
+    },
+    {
+      "id": "sub_program_c",
+      "name": "プログラミング基礎 (C)",
+      "teacher": "情報科教員",
+      "difficulty": 3,
+      "weight_ratio": { "understanding": 0.1, "proficiency": 0.9 },
+      "description": "座学は無意味。コードを書いた量だけが点数になる。"
     }
   ],
   "metadata": {
     "version": "1.0.0",
-    "last_updated": "2025-12-24",
+    "last_updated": "2025-12-25",
     "description": "Subjects data for KOSEN Survival"
   }
 }

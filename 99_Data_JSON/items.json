@@ -1,16 +1,51 @@
 {
   "items": [
     {
-      "id": "placeholder_item_1",
-      "name": "Placeholder Item",
-      "description": "This is a placeholder item entry",
-      "type": "example",
-      "properties": {}
+      "id": "conbini_bento",
+      "name": "コンビニ弁当",
+      "type": "consumable",
+      "price": 500,
+      "effect": { "vitality": 30 },
+      "description": "高専生の主食。カロリーだけは高い。"
+    },
+    {
+      "id": "energy_drink_z",
+      "name": "魔剤Z (Energy Drink)",
+      "type": "consumable",
+      "price": 250,
+      "effect": { "vitality": 50, "sanity": 5 },
+      "penalty": { "max_vitality": -2 },
+      "description": "寿命の前借り。飲みすぎると最大体力が減る。"
+    },
+    {
+      "id": "ref_book_math",
+      "name": "チャート式数学",
+      "type": "equipment",
+      "price": 2000,
+      "effect": { "study_efficiency_math": 1.2 },
+      "description": "自習時のSolidスコア変換効率がアップする。"
+    },
+    {
+      "id": "kako_mon_data",
+      "name": "先輩の過去問データ",
+      "type": "illegal",
+      "price": 5000,
+      "effect": { "liquid_score_boost": 40 },
+      "risk": { "karma": 10 },
+      "description": "闇市アイテム。一夜漬けの効果が劇的に上がるが、先生にバレるリスクがある。"
+    },
+    {
+      "id": "gaming_pc_parts",
+      "name": "高性能GPU",
+      "type": "material",
+      "price": 30000,
+      "effect": { "proficiency_info": 10 },
+      "description": "A/Cルート用素材。モノづくりやマイニングに使用する。"
     }
   ],
   "metadata": {
     "version": "1.0.0",
-    "last_updated": "2025-12-24",
+    "last_updated": "2025-12-25",
     "description": "Items data for KOSEN Survival"
   }
 }
