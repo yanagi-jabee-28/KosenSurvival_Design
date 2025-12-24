@@ -1,23 +1,41 @@
-# Year 5
+# Year 5: The Legacy (結実の年)
 
-This document describes the Year 5 scenario in KOSEN Survival.
+## 1. 概要
+*   **テーマ**: 「師弟の絆と、最後の戦い」
+*   **システム**: **研究室ライフ**。
+    *   クラス単位の授業は減り、1日の大半を「研究室」で過ごす。
+    *   「週間スケジュール」の方針が [実験 / 執筆 / ゼミ / サボり] に変化する。
 
-## Overview
+## 2. タイムライン詳細
 
-[To be filled: Describe the overall theme and focus of Year 5]
+### 1Q: テーマ設定 (Apr - June)
+*   **W1 (顔合わせ)**:
+    *   教授、同級生との飲み会（成人済みイベント）。
+    *   ここで**「教授の信頼度」**を稼いでおくと、後で楽になる。
+*   **W6 (テーマ決定)**:
+    *   Logicが高ければ「自分で提案」できる。低ければ「教授の雑用テーマ」を押し付けられる。
 
-## Key Events
+### 2Q: 実験と闇 (June - Sept)
+*   **W12 (中間発表)**:
+    *   他研究室の先生たちからの集中砲火（質問攻め）を耐えるイベント。
+    *   Sanityダメージ大。パートナー（アイやミナ）の助けが必要。
+*   **Summer (大学院入試 / 就活)**:
+    *   卒研と並行して、自分の進路を決める試験がある。ダブルブッキングの極み。
 
-[To be filled: List major events that occur in Year 5]
+### 3Q: 執筆 (Oct - Dec)
+*   **システム変化**:
+    *   「実験」コマンドが減り、**「論文執筆」**コマンドが増える。
+    *   蓄積した知識(Solid Score)を消費して、論文の完成度(%)を上げる。
+*   **W24 (予稿集締切)**:
+    *   最初のデスマーチ。徹夜でWordと格闘する。
 
-## Objectives
-
-[To be filled: Define objectives the player should achieve in Year 5]
-
-## Challenges
-
-[To be filled: Describe challenges specific to Year 5]
-
-## Endings
-
-[To be filled: Describe possible endings in Year 5]
+### 4Q: 最終決戦 (Jan - Mar)
+*   **W28 (論文提出)**:
+    *   教授の赤ペン修正（ダメ出し）と戦う。信頼度が高いと修正が少ない。
+*   **W31 (発表練習)**:
+    *   研究室メンバー総出のリハーサル。
+*   **W32 (卒業研究発表会)**:
+    *   **Last Boss Battle**:
+        *   敵: 外部審査員 & 敵対教授。
+        *   武器: 完成した論文（攻撃力）、Logic（防御力）、教授の援護射撃（スキル）。
+    *   勝てば**「可 (Pass)」**。エンディングへ。
