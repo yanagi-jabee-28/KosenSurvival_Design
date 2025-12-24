@@ -23,8 +23,8 @@
 | **1年** | Survival | リソース管理RPG | 1週間 | 授業スピード、生活習慣、赤点 |
 | **2年** | Specialization | スキル育成SLG | 1週間 | 中だるみ、専門コース選択 |
 | **3年** | Leadership | チーム運営RTS | 1週間 | 部活運営、後輩指導 |
-| **4年** | Society | オープンワールドADV | 1ヶ月 | 研究室配属、インターン、就活 |
-| **5年** | Legacy | ボスバトル（卒研） | イベント | 卒研、進路、ラスボス教授 |
+| **4年** | Society | オープンワールドADV | 1週間 | インターン、TOEIC、研究室見学、GPA戦争 |
+| **5年** | Legacy | ボスバトル（卒研） | イベント | 研究室配属、卒研、進路、ラスボス教授 |
 
 ### B. Epistemic Integrity（認識論的正直性）
 - 「分かったつもり」を罰する。テストは Knowledge と Proficiency の両方を要求。
@@ -117,8 +117,8 @@ KosenSurvival_Design/
 - **Year1: The Filter** — 授業適応、Week15 タケシ分岐、学年末試験がボス。
 - **Year2: Specialization** — コース選択とレポート地獄。Report Queue管理と高専病デバフが核。
 - **Year3: Leadership** — 後輩指導と役職によるリソース配分。諏訪野卒業とRoot継承でルートロック。
-- **Year4: Society** — 研究室配属、インターン、就活。月次ペースで濃縮進行。
-- **Year5: Legacy** — 卒研3フェーズ（テーマ決定/実験/執筆）。ラスボス教授戦で5年の蓄積を総動員。
+- **Year4: Society** — インターン、就活準備、研究室見学。5年次配属に向けたGPA戦争。
+- **Year5: Legacy** — 研究室配属、卒研3フェーズ（テーマ決定/実験/執筆）。ラスボス教授戦で5年の蓄積を総動員。
 
 ## 7. Implementation Status & Next Steps
 - **Design**: コア仕様は Markdown で確定。
