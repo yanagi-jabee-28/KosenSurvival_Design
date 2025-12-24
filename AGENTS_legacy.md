@@ -2,6 +2,8 @@
 
 > **SYSTEM ALERT**: To the next AI Agent. This document captures the current design philosophy and flow of "KOSEN Survival". Read before changing specs or data.
 
+> **SOURCE OF TRUTH (設計思想の参照元)**: このファイルは設計思想の公式な参照元（Source of Truth）です。設計思想に変更がある場合は必ずこのファイルを更新し、関連ドキュメント（例：`AGENTS.md`）に変更の要約と更新日を記録してください。
+
 ## 1. Project Identity
 - **Title**: KOSEN Survival: The Five Years Odyssey
 - **Genre**: 高専生活サバイバル・育成シミュレーション (Life Simulation / RPG)
