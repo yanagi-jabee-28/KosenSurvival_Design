@@ -28,7 +28,7 @@ KosenSurvival_Design/
 │   ├── Mai.md              # 神楽 マイ (Route D)
 │   ├── Takeshi.md          # 剛田 タケシ (Route C)
 │   ├── Ren.md              # 諏訪野 レン (Route C)
-│   └── Yuzu.md             # 春日井 ユズ（後輩）
+│   └── Yuzu.md             # 若葉 ユズ（後輩）
 ├── 03_Scenario/            # 年次シナリオ
 │   ├── Year1.md            # 1年:「淘汰」
 │   ├── Year2.md            # 2年:「中だるみと専攻決定」

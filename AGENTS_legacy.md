@@ -124,11 +124,15 @@ KosenSurvival_Design/
 ## 7. Implementation Status & Next Steps
 - **Design**: コア仕様は Markdown で確定。
 - **Missing**: GameLoop.md の詳細、JSON データ拡充。
-- **Latest Update (2025-12-25)**:
-  - 学校設定 (School.md) を追加。長野高専をモデルに「神城工業高等専門学校」を設定。
-  - 3系統制（機械ロボティクス系/情報エレクトロニクス系/都市デザイン系）を定義。Year 1は工学科として統一入学、Year 2から系統選択。
-  - 寮生活、施設配置、年間行事、教職員の詳細を記述。
-  - 後輩キャラクター「春日井 ユズ」を追加 (02_Characters/Yuzu.md)。
+- **Latest Updates (2025-12-25)**:
+  - **(1)** シナリオ文書を年度ごとに分割し、Year2/Year3 を [03_Scenario/Year2.md](03_Scenario/Year2.md) と [03_Scenario/Year3.md](03_Scenario/Year3.md) に移動。
+  - **(2)** 学校設定の大幅拡充を実施。長野高専をモデルに「神城工業高等専門学校」を設定し、[01_System/School.md](01_System/School.md) に詳細を記述。
+    - 3系統制（機械ロボティクス系/情報エレクトロニクス系/都市デザイン系）の定義
+    - 立地（盆地、陸の孤島）、寮生活、施設配置の具体化
+    - 年間行事スケジュール、部活動、教職員の設定
+    - 系選択によるゲームへの影響（初期ステータス差異）
+    - キャラクター追加: [02_Characters/Mai.md](02_Characters/Mai.md) (神楽 マイ), [02_Characters/Yuzu.md](02_Characters/Yuzu.md) (若葉 ユズ)
+    - リアリティ担保のため、実在高専の要素を統合しつつ架空校として設定
 - **Next**:
   1. GameLoop.md にメインループの疑似コードと状態遷移を追記。
   2. React/TypeScript (Vite) でプロジェクト初期化。
