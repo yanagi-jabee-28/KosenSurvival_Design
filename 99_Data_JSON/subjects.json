@@ -1,41 +1,233 @@
 {
   "subjects": [
     {
-      "id": "sub_math_1",
-      "name": "基礎数学 (Calculus)",
+      "id": "sub_mathematics",
+      "name": "基礎数学",
       "teacher": "鬼瓦 厳",
+      "teacher_id": "onigawara_gen",
       "difficulty": 5,
       "weight_ratio": { "understanding": 0.2, "proficiency": 0.8 },
-      "description": "ラスボス鬼瓦の担当科目。実力(演習)がないと赤点確定。"
+      "required_year": [1, 2, 3],
+      "category": "general",
+      "description": "ラスボス鬼瓦の担当科目。実力(演習)がないと赤点確定。年1進級の最大の鬼門。Logic値が低いと進級不可。スパルタ教育で有名。"
     },
     {
       "id": "sub_english",
-      "name": "英語表現 (English)",
+      "name": "英語表現",
       "teacher": "キャサリン",
+      "teacher_id": "catherine_smith",
       "difficulty": 2,
       "weight_ratio": { "understanding": 0.5, "proficiency": 0.5 },
-      "description": "癒やしの時間。出席さえしていれば単位は取れる。"
+      "required_year": [1, 2, 3, 4],
+      "category": "general",
+      "description": "アメリカ出身のキャサリン先生による、ネイティブスピーカーの授業。『Have fun!』が口癖で、雰囲気は癒やし系。高専の中では圧倒的に簡単で、出席さえしていれば単位取得可能。"
     },
     {
       "id": "sub_physics",
-      "name": "物理学 (Physics)",
-      "teacher": "一般教員",
+      "name": "物理学 (基礎)",
+      "teacher": "星野 辰巳",
+      "teacher_id": "hoshino_tatsumi",
       "difficulty": 4,
-      "weight_ratio": { "understanding": 0.3, "proficiency": 0.7 },
-      "description": "工学の基礎。Aルート(ロボコン)を目指すなら必須。"
+      "weight_ratio": { "understanding": 0.4, "proficiency": 0.6 },
+      "required_year": [1, 2],
+      "affiliated_route": ["A"],
+      "category": "general",
+      "description": "工学の基礎中の基礎。機械系・ロボティクス系には必須。実験で具体的な理解が進む。星野先生の脱線にご注意。"
     },
     {
       "id": "sub_program_c",
-      "name": "プログラミング基礎 (C)",
-      "teacher": "情報科教員",
+      "name": "プログラミング基礎 (C言語)",
+      "teacher": "南雲 直人",
+      "teacher_id": "nagumo_naoto",
       "difficulty": 3,
       "weight_ratio": { "understanding": 0.1, "proficiency": 0.9 },
-      "description": "座学は無意味。コードを書いた量だけが点数になる。"
+      "required_year": [1, 2],
+      "affiliated_route": ["B", "C"],
+      "category": "specialist",
+      "description": "座学は無意味。コードを書いた量だけが点数になる。南雲先生は面倒見が良く、『動くものを作れ』が口癖。Route B・C分岐の分かれ目。"
+    },
+    {
+      "id": "sub_drawing",
+      "name": "工学図面基礎",
+      "teacher": "赤城 剛三",
+      "teacher_id": "akagi_gouzou",
+      "difficulty": 3,
+      "weight_ratio": { "understanding": 0.6, "proficiency": 0.4 },
+      "required_year": [1, 2],
+      "affiliated_route": ["A"],
+      "category": "specialist",
+      "department": "機械ロボティクス系",
+      "description": "CADソフトを使った図面製作。赤城先生の『手を動かせ』が口癖。機械系・設計に必須スキル。実習工場での基礎知識。"
+    },
+    {
+      "id": "sub_chemistry",
+      "name": "化学",
+      "teacher": "未定",
+      "teacher_id": "tbd_chemistry",
+      "difficulty": 3,
+      "weight_ratio": { "understanding": 0.7, "proficiency": 0.3 },
+      "required_year": [1, 2],
+      "category": "general",
+      "description": "工学の基礎科学。試験対策は理解度に依存。暗記よりも原理理解が重要。"
+    },
+    {
+      "id": "sub_electronics",
+      "name": "電子工学基礎",
+      "teacher": "南雲 直人",
+      "teacher_id": "nagumo_naoto",
+      "difficulty": 4,
+      "weight_ratio": { "understanding": 0.5, "proficiency": 0.5 },
+      "required_year": [2, 3],
+      "affiliated_route": ["B"],
+      "category": "specialist",
+      "department": "情報エレクトロニクス系",
+      "description": "情報系の必修科目。回路設計とはんだ付けの実践が重要。実験で手を動かさないと単位取得困難。南雲先生の『動くものを作れ』の真価が問われる。"
+    },
+    {
+      "id": "sub_mechanics",
+      "name": "機械工学",
+      "teacher": "赤城 剛三",
+      "teacher_id": "akagi_gouzou",
+      "difficulty": 4,
+      "weight_ratio": { "understanding": 0.4, "proficiency": 0.6 },
+      "required_year": [2, 3, 4],
+      "affiliated_route": ["A"],
+      "category": "specialist",
+      "department": "機械ロボティクス系",
+      "description": "機械系の主専攻科目。赤城先生は実習工場の顧問。実習工場でのモノづくり経験が点数に直結。ミナから指導を受けると効率UP。"
+    },
+    {
+      "id": "sub_robotics",
+      "name": "ロボット制御",
+      "teacher": "赤城 剛三",
+      "teacher_id": "akagi_gouzou",
+      "difficulty": 5,
+      "weight_ratio": { "understanding": 0.3, "proficiency": 0.7 },
+      "required_year": [3, 4, 5],
+      "affiliated_route": ["A"],
+      "category": "specialist",
+      "department": "機械ロボティクス系",
+      "description": "Route A(モノづくり)のピークコース。赤城先生はロボコン部の顧問。ロボコン参加者は実践的な加点がある。難度は最高級だが、実装型学生には天国。"
+    },
+    {
+      "id": "sub_network",
+      "name": "ネットワーク基礎",
+      "teacher": "白川 雪乃",
+      "teacher_id": "shirakawa_yukino",
+      "difficulty": 3,
+      "weight_ratio": { "understanding": 0.6, "proficiency": 0.4 },
+      "required_year": [3, 4],
+      "affiliated_route": ["B", "C"],
+      "category": "specialist",
+      "department": "情報エレクトロニクス系",
+      "description": "インターネットの仕組みを論理的に理解する科目。白川先生は『証明できないことは語るな』が口癖。Route C志望者はここから分岐検討を開始。"
+    },
+    {
+      "id": "sub_database",
+      "name": "データベース設計",
+      "teacher": "白川 雪乃",
+      "teacher_id": "shirakawa_yukino",
+      "difficulty": 4,
+      "weight_ratio": { "understanding": 0.7, "proficiency": 0.3 },
+      "required_year": [3, 4],
+      "affiliated_route": ["B"],
+      "category": "specialist",
+      "department": "情報エレクトロニクス系",
+      "description": "SQLとDB設計。白川先生の厳格な論理が徹底される。講義内容は実践的で、Web開発に直結。年3での高難度科目。"
+    },
+    {
+      "id": "sub_security",
+      "name": "ネットワークセキュリティ",
+      "teacher": "鷹野 健司",
+      "teacher_id": "takano_kenji",
+      "difficulty": 4,
+      "weight_ratio": { "understanding": 0.4, "proficiency": 0.6 },
+      "required_year": [3, 4, 5],
+      "affiliated_route": ["B", "C"],
+      "category": "specialist",
+      "department": "情報エレクトロニクス系",
+      "description": "攻撃と防御を学術的に理解する科目。鷹野先生は『攻撃を知らずして防御は語れない』が信条。Route C進行中、Year 5で配属されると『裏の授業』が始まる。"
+    },
+    {
+      "id": "sub_english_technical",
+      "name": "技術英語",
+      "teacher": "キャサリン",
+      "teacher_id": "catherine_smith",
+      "difficulty": 2,
+      "weight_ratio": { "understanding": 0.8, "proficiency": 0.2 },
+      "required_year": [4, 5],
+      "category": "general",
+      "description": "専門書や論文の英文読解。キャサリン先生は親しみやすく、学生を褒めるのが上手。実用的な内容で、『完璧を目指すな、伝わることを目指そう』がモットー。年4以上は必須。"
+    },
+    {
+      "id": "sub_research_seminar",
+      "name": "研究セミナー（年5）",
+      "teacher": "配属研究室教員",
+      "teacher_id": "lab_professor",
+      "difficulty": 5,
+      "weight_ratio": { "understanding": 0.5, "proficiency": 0.5 },
+      "required_year": [5],
+      "category": "research",
+      "description": "年5での卒業研究。配属研究室で教員との1対1指導。ルート分岐の最終段階。教授によって難度が大きく異なる。"
+    },
+    {
+      "id": "sub_structural_design",
+      "name": "構造力学 / 耐震設計",
+      "teacher": "御堂 彩花",
+      "teacher_id": "midou_ayaka",
+      "difficulty": 4,
+      "weight_ratio": { "understanding": 0.6, "proficiency": 0.4 },
+      "required_year": [3, 4],
+      "affiliated_route": ["D"],
+      "category": "specialist",
+      "department": "都市デザイン系",
+      "description": "建築構造の設計と耐震性。御堂先生は『現場が全て』が信条で、実務重視。『設計ミスは人命を奪う』が哲学。就職に強い知識。"
+    },
+    {
+      "id": "sub_urban_design",
+      "name": "都市デザイン基礎",
+      "teacher": "黒須 竜也",
+      "teacher_id": "kurosu_tatsuya",
+      "difficulty": 2,
+      "weight_ratio": { "understanding": 0.8, "proficiency": 0.2 },
+      "required_year": [2, 3],
+      "affiliated_route": ["D"],
+      "category": "specialist",
+      "department": "都市デザイン系",
+      "description": "都市系独自科目。人文科学的視点。黒須先生は温厚で人望が厚く、『未来を設計しよう』が口癖。Route Dはこの科目の成績が進路を左右する。"
+    },
+    {
+      "id": "sub_infrastructure",
+      "name": "インフラストラクチャ設計",
+      "teacher": "黒須 竜也",
+      "teacher_id": "kurosu_tatsuya",
+      "difficulty": 3,
+      "weight_ratio": { "understanding": 0.7, "proficiency": 0.3 },
+      "required_year": [3, 4],
+      "affiliated_route": ["D"],
+      "category": "specialist",
+      "department": "都市デザイン系",
+      "description": "公共インフラの設計。黒須先生の社会貢献重視の哲学が色濃く出ている。Year 3でRoute D確定に向けて重要。"
+    },
+    {
+      "id": "sub_thermal_dynamics",
+      "name": "熱力学 / CAE解析",
+      "teacher": "桐生 聡美",
+      "teacher_id": "kiryu_satomi",
+      "difficulty": 5,
+      "weight_ratio": { "understanding": 0.8, "proficiency": 0.2 },
+      "required_year": [3, 4],
+      "affiliated_route": ["A"],
+      "category": "specialist",
+      "department": "機械ロボティクス系",
+      "description": "熱力学と数値解析。桐生先生は論理派で几帳面。『設計が全て』が信条。最高難度の理論系科目。アイ型学生に最適だが、ミナ型には鬼門。"
     }
   ],
   "metadata": {
-    "version": "1.0.0",
+    "version": "3.0.0",
     "last_updated": "2025-12-25",
-    "description": "Subjects data for KOSEN Survival"
+    "description": "Subjects data for KOSEN Survival - Cast aligned with actual teachers and departments",
+    "notes": "年1は共通科目（鬼瓦・星野）。年2以降は系統別選択科目。各科目に実在の教員を対応させ、Route A~Eの分岐ポイントを明示。",
+    "departments": ["機械ロボティクス系", "情報エレクトロニクス系", "都市デザイン系"]
   }
 }
