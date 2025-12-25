@@ -1,0 +1,118 @@
+{
+  "character": "Player (Protagonist)",
+  "reference_image": "02_Characters/images/Player/Player_Neutral.png",
+  "model_hint": "Use face reference with strength ~0.80 to maintain consistent plain average appearance, young 15-year-old features, short black hair, and expressive eyes that change with emotion. Avoid distinctive features.",
+  "design_notes": "The protagonist's face is intentionally plain and forgettable, allowing player identification and projection. The eyes are the primary vehicle for emotional and psychological expression. Initial Year 1 expressions capture the anxiety, confusion, and emerging determination of a new technical college student.",
+  "expressions": [
+    {
+      "expression_id": "Player_Neutral",
+      "expression_label": "無意識の顔（無関心・思考中）",
+      "context": "Year 1 default state during normal school activities, classroom listening, wandering thoughts",
+      "reference_image": "02_Characters/images/Player/Player_Neutral.png",
+      "positive_prompt": "Close-up portrait, 15-year-old Japanese technical college student protagonist male, same character as reference, face/headshot, short black straight hair NEAT and organized (no bedhead, no messy hair - contrasts with Takeshi's bedhead), round youthful face with soft underdeveloped cheekbones, dark eyes slightly unfocused looking downward in contemplation, relaxed neutral eyebrows, NO UNDER-EYE DARK CIRCLES OR BAGS (very clean clear under-eyes - contrasts with Takeshi's dark circles), slightly open mouth suggesting absent-minded thinking expression, pale clean skin WITHOUT dark circles, suggesting healthy sleep and adaptation stress to dormitory life, white school uniform collar visible and CLEAN, natural soft diffuse classroom or dormitory lighting, expression shows uncertainty and mind wandering, completely average plain appearance with no distinctive features (no distinctive marks), anime/cel-shaded illustration style, high detail on facial features, subtle emotion conveying mild anxiety mixed with curiosity, vulnerable young adolescent appearance who appears clean and put-together",
+      "negative_prompt": "smile, grin, cheerful expression, confident, bright eyes, focused gaze, sharp defined features, distinctive appearance, headphones (no headphones), gaming hoodie, messy bedhead hair, dark circles under eyes, eye bags, tired sleepy expression, colorful outfit, gaming accessories, full body, text, watermark, mutation, bad anatomy, extra fingers, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.80,
+        "denoising_strength": 0.32,
+        "steps": 45,
+        "cfg_scale": 10.5,
+        "model_suggestion": "Gemini Imagen 3 or SDXL"
+      }
+    },
+    {
+      "expression_id": "Player_Confused",
+      "expression_label": "混乱・不安（理解できない状態）",
+      "context": "Year 1 crisis moments: class assignment announcement, first failing grade notification, overwhelming rules, system shock",
+      "reference_image": "02_Characters/images/Player/Player_Neutral.png",
+      "positive_prompt": "Close-up portrait, 15-year-old Japanese technical college student protagonist, same character as reference, face/headshot, short black hair NEAT (no bedhead), round youthful face with soft features, dark eyes slightly widened in confusion and uncertainty with unfocused pupils, eyebrows raised inward showing worry and concern, mouth slightly agape in shock or dismay, NO under-eye dark circles despite stress (different from Takeshi), pale skin showing first visible signs of stress and worry, white school uniform CLEAN and neat, trembling subtle tension visible around jaw, soft neutral diffuse lighting from classroom window, expression conveys complete bewilderment and inability to comprehend the situation, anime/cel-shaded, moment of adolescent vulnerability struggling with unexpected adult-like challenges, lost look in eyes",
+      "negative_prompt": "confident, determined, smiling, calm, understanding expression, bright alert eyes, sharp features, focused gaze, messy bedhead, dark circles, eye bags, headphones, gaming attire, casual clothes, full body, exaggerated shock, crying, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.80,
+        "denoising_strength": 0.38,
+        "steps": 45,
+        "cfg_scale": 10.8
+      }
+    },
+    {
+      "expression_id": "Player_Determined",
+      "expression_label": "決意・覚悟（挑戦する覚悟）",
+      "context": "Year 1 turning points: decision to try hard, starting first major challenge, making promise with classmate/heroine, moment of commitment",
+      "reference_image": "02_Characters/images/Player/Player_Neutral.png",
+      "positive_prompt": "Close-up portrait, 15-year-old Japanese technical college student protagonist, same character as reference, face/headshot, short black hair neatly set from combing (CLEAN appearance), young round face with emerging maturity in expression, dark eyes sharp and clearly focused directly forward with concentrated gaze (CLEAR bright eyes, NO dark circles), eyebrows slightly drawn downward and inward showing determination and concentration, mouth set in firm line or thin pressed smile showing resolve, clean pale skin with NO dark circles under eyes, white school uniform neat and tidy, strong unwavering direct gaze, lighting emphasizing intensity and seriousness of the moment, anime/cel-shaded illustration style, expression of adolescent courage and willpower emerging for first time, moment of commitment and decision to take action, youthful determination mixed with remaining traces of insecurity but overall clean appearance suggests good self-care",
+      "negative_prompt": "confused, uncertain, weak eyes, relaxed expression, smiling widely, distracted gaze, messy bedhead, dark circles, eye bags, tired sleepy appearance, casual gaming attire, headphones, sad, doubting, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.80,
+        "denoising_strength": 0.40,
+        "steps": 45,
+        "cfg_scale": 11.0
+      }
+    },
+    {
+      "expression_id": "Player_Smiling",
+      "expression_label": "笑顔・希望（喜びと安堵）",
+      "context": "Year 1 positive moments: good conversation with heroine, time with friends, small achievement, moment of human connection, fleeting happiness",
+      "reference_image": "02_Characters/images/Player/Player_Neutral.png",
+      "positive_prompt": "Close-up portrait, 15-year-old Japanese technical college student protagonist, same character as reference, face/headshot, short black hair neat and tidy, young round face with softness, dark eyes naturally narrowed and warmed with genuine smile (NO dark circles, CLEAR bright eyes), eyebrows relaxed slightly raised showing warmth and comfort, mouth showing natural gentle smile with slight visibility of teeth (not wide grin, natural honest smile), pale healthy skin with NO dark circles and slight flush from happiness and social comfort, white school uniform CLEAN and neat, soft warm golden lighting creating gentle shadows on face, expression of authentic youthful joy and innocent happiness, anime/cel-shaded illustration, moment of vulnerability and warmth, rare smile showing this young man can be happy and human while remaining clean and put-together, hopeful and light atmosphere, connection with another person visible in expression",
+      "negative_prompt": "wide grin, exaggerated smile, laughing, confused, uncertain, sad, tears, excessive blush, tired sleepy expression, dark circles, eye bags, messy bedhead, gaming attire, headphones, formal, cold expression, distant, full body, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.80,
+        "denoising_strength": 0.42,
+        "steps": 45,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Player_Exhausted",
+      "expression_label": "疲労・限界（心身の崩壊寸前）",
+      "context": "Year 1 critical moments: multiple consecutive all-nighters, simultaneous multiple failing grades, mental breakdown warning, Sanity critical threshold",
+      "reference_image": "02_Characters/images/Player/Player_Neutral.png",
+      "positive_prompt": "Close-up portrait, 15-year-old Japanese technical college student protagonist, same character as reference, face/headshot, short black hair slightly disheveled (but still cleaner than Takeshi), young face appearing hollow drawn and deeply fatigued, dark eyes with SOME dark circles and bags under eyes suggesting severe sleep deprivation (darker than normal but not as extreme as Takeshi's permanent under-eye bags), dull unfocused gaze looking downward avoiding eye contact, eyebrows drooping downward showing complete mental exhaustion, mouth slightly open with no energy or force, pale sickly unhealthy skin suggesting weeks of sleep deprivation and intense stress, white school uniform slightly disheveled but not filthy, dim melancholic lighting emphasizing the darkness of despair, expression of complete breakdown and hopelessness, anime/cel-shaded illustration, vulnerable moment of adolescent collapse at limit, atmosphere of burnout and mental crisis, light completely absent from eyes suggesting loss of will",
+      "negative_prompt": "confident, determined, smiling, energetic, alert, bright clear eyes, focused, healthy appearance, clean bright appearance, warm lighting, happy expression, gaming attire, headphones, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.80,
+        "denoising_strength": 0.50,
+        "steps": 45,
+        "cfg_scale": 11.0
+      }
+    }
+  ],
+  "year_progression": {
+    "Year_1": {
+      "primary_expressions": ["Player_Neutral", "Player_Confused", "Player_Determined", "Player_Smiling", "Player_Exhausted"],
+      "visual_characteristics": {
+        "hair": "short black, slightly messy, clearly marks of inattention to grooming",
+        "eyes": "unfocused, anxious, variable with experience",
+        "face": "round youthful features, soft underdeveloped cheekbones, 15-year-old innocent appearance",
+        "skin": "pale, showing stress signs",
+        "overall_impression": "unaware newcomer in over his head"
+      }
+    },
+    "Year_2_3_preview": {
+      "visual_changes": "Hair becomes more styled and intentional; eyes sharper and more focused; face begins to show maturity; skin color normalizes",
+      "note": "Detailed Year 2-3 face variations will be designed as separate JSON files once Year 1 is complete"
+    },
+    "year_4_5_preview": {
+      "visual_changes": "Jawline becomes more defined and adult; eyes show deep experience and intensity; overall maturity and professionalism evident; potential ware and tear depending on route chosen",
+      "note": "Route-specific variations (A-E) will be generated once year progression is established"
+    }
+  },
+  "design_philosophy": {
+    "plainness_rationale": "The protagonist's intentional plainness serves three purposes: (1) Player projection - plain features allow players to see themselves; (2) Contrast enhancement - when compared to distinctive heroines (Mai, Ai, Mina, Yuzu), the protagonist's ordinariness highlights their flexibility and adaptability; (3) Growth visibility - transformation from Year 1 to Year 5 becomes most dramatic when starting from unadorned baseline",
+    "eyes_as_primary_vehicle": "Eyes carry 80% of emotional communication. Initial unfocused/anxious eyes evolve to sharp/determined/compassionate eyes depending on player choices and route taken",
+    "face_aging_importance": "The 5-year journey from 15 to 20 years old must be visually evident. Year 1 should show clear adolescent softness; Year 5 should show young adult maturity. This aging progression is crucial for time passage realism.",
+    "consistency_strategy": "All Year 1 expressions use single reference image (Player_Neutral.png) with varying denoising strengths to maintain continuity while allowing emotion variation"
+  },
+  "next_steps": [
+    "Generate Player_Neutral.png as primary reference image",
+    "Generate remaining 4 Year 1 expressions",
+    "Integrate into CharacterStand.tsx component",
+    "Create Year 2-3 variants once Year 1 is confirmed",
+    "Design Route-specific appearance variations for Year 4-5",
+    "Add aging/wear indicators based on route choice"
+  ]
+}
