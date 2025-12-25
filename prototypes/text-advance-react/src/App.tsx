@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CharacterStand from './components/CharacterStand'
+import StatusPanel from './components/StatusPanel'
+import { loadGameState, apply } from './state/game'
 
 const lines = [
   '春、新しい学期が始まる——',
@@ -15,6 +16,7 @@ export default function App() {
   })
   const [auto, setAuto] = useState(false)
   const [speed, setSpeed] = useState(1500) // ms
+  const [state, setState] = useState(() => loadGameState())
 
   useEffect(() => {
     localStorage.setItem('textAdvanceIndex', String(index))
@@ -82,12 +84,16 @@ export default function App() {
           Space/Enter: 送る ・ A: 自動切替
         </div>
 
-        <section className="stands">
-          <CharacterStand name="Ai" />
-          <CharacterStand name="Mai" />
-          <CharacterStand name="Mina" />
-          <CharacterStand name="Takeshi" />
-          <CharacterStand name="Yuzu" />
+        <StatusPanel stats={state.stats} />
+
+        <section style={{ marginTop: 16 }}> 
+          <h2 style={{ fontSize: '1rem', margin: 0, color: '#333' }}>行動</h2>
+          <div className="controls" style={{ marginTop: 8 }}>
+            <button onClick={() => setState(s => apply(s, { vitality: s.stats.vitality + 15, sanity: s.stats.sanity + 10 }))}>休む</button>
+            <button onClick={() => setState(s => apply(s, { vitality: s.stats.vitality - 10, sanity: s.stats.sanity - 5, logic: s.stats.logic + 1 }))}>勉強</button>
+            <button onClick={() => setState(s => apply(s, { vitality: s.stats.vitality - 10, sanity: s.stats.sanity - 5, money: s.stats.money + 3000 }))}>アルバイト</button>
+            <button onClick={() => setState(s => apply(s, { vitality: s.stats.vitality - 5, sanity: s.stats.sanity + 10, charisma: s.stats.charisma + 1 }))}>交流する</button>
+          </div>
         </section>
       </main>
       <footer className="footer">

@@ -20,7 +20,8 @@ npm run dev
 - チェックで自動送りON/OFF、速度を選択
 - キー操作: Space/Enterで送る、Aで自動送り切替
 - 進行位置は `localStorage` に保存（リロード後も継続）
- - 立ち絵表示: 5キャラ（Ai/Mai/Mina/Takeshi/Yuzu）の `*1.png` を表示
+ - ステータス表示: 体力/メンタル/資金/地頭/人望/業 を表示
+ - 行動ボタン: 「休む」「勉強」「アルバイト」「交流する」でステータスを増減
 
 ## 今後の拡張
 - 行テキストを JSON/Markdown から読み込み
@@ -38,17 +39,5 @@ npm install
 npm run dev
 ```
 
-## 画像連携について
-プロトタイプでは既存画像を再利用するため、`public/characters` 配下に各キャラのフォルダへのリンク（ジャンクション）を作成しています。
-
-リンクは自動作成済みです（Ai/Mai/Mina/Takeshi/Yuzu）。手動で作成する場合の例:
-
-```powershell
-$root = "C:\\Users\\kaito\\Documents\\GitHub\\KosenSurvival_Design"
-$pub = Join-Path $root "prototypes\\text-advance-react\\public\\characters"
-New-Item -ItemType Junction -Path (Join-Path $pub "Yuzu") -Target (Join-Path $root "doc\\02_Characters\\images\\Yuzu")
-```
-
-画像参照パスの例:
-- `/characters/Yuzu/Yuzu1.png`
-- `/characters/Takeshi/Takeshi1.png`
+## （後で戻す）画像連携について
+現在は立ち絵表示を一時停止中。再度有効化する際は、`public/characters` 配下に各キャラのフォルダへのリンク（ジャンクション）を作成して `/characters/<Name>/<Name>1.png` を参照してください。
