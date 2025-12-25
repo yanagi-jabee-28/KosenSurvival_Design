@@ -1,0 +1,31 @@
+{
+  "character": "赤坂 ミナ (Akasaka Mina)",
+  "meta": {
+    "intent_analysis": "直感型の職人。短髪・手の傷・油汚れ・工具と工房環境を強調し、『手の記憶』を視覚中心に表現。",
+    "task_type": "Text2Image",
+    "target_aesthetic": "Anime/Cel-Shaded"
+  },
+  "prompt_payload": {
+    "positive_prompt": "Japanese technical college girl, Akasaka Mina, age 15-16, petite with toned arms, short slightly messy black hair (ear-length), big round curious brown eyes, healthy tanned skin. Casual hoodie and jeans with work boots; tools tucked in hoodie pocket; leather wrist band. Hands show small scratches, band-aids, oil stains and calluses (hands as focal point). Standing in mechanical workshop at Kamishiro Kosen with robot arm and tools, warm industrial daylight, energetic open posture, cheerful focused smile. Gentle anime illustration emphasizing craftsmanship, hands, and making things; consistent identity tokens: short messy black hair, tanned skin, hands with bandages",
+    "negative_prompt": "clean soft hands, long elegant hair, delicate dainty look, frilly dress, sterile lab only, bookish theoretical setting, cold blue lighting, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres"
+  },
+  "technical_parameters": {
+    "aspect_ratio": "1:1",
+    "model_suggestion": "SDXL",
+    "resolution_target": "4K_Upscale",
+    "steps": 40,
+    "cfg_scale": 10.5
+  },
+  "advanced_config": {
+    "reference_logic": {
+      "use_face_reference": true,
+      "use_pose_reference": false,
+      "use_style_reference": true
+    },
+    "edit_strength": {
+      "denoising_strength": 0.7,
+      "ai_reconstruction": false
+    },
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Make hands the focal point with realistic minor scars/oil stains/bandages. Use warm industrial workshop lighting and include a robot arm or tools."
+  }
+}

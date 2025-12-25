@@ -1,0 +1,31 @@
+{
+  "character": "神楽 マイ (Kagura Mai)",
+  "meta": {
+    "intent_analysis": "統率力と完璧主義の『会長像』。ショートの濃茶髪、腕時計、パンツスーツ、学生会室の環境でリーダーの凛とした佇まいを表現。",
+    "task_type": "Text2Image",
+    "target_aesthetic": "Anime/Cel-Shaded"
+  },
+  "prompt_payload": {
+    "positive_prompt": "Japanese technical college student, Kagura Mai, age 15-16 (Year 1-2), short dark brown hair (business-like bob with black roots), determined eyes, composed confident expression. Wearing fitted navy pants suit with black wristwatch (prefers suits over skirts), clean monochrome palette. Standing in student council room at Kamishiro Kosen, bright neutral daylight, upright leadership posture (arms lightly crossed or hands on desk), professional composed demeanor, approachable yet firm. Gentle anime illustration emphasizing leadership, precision, and self-control; consistent identity tokens: short dark brown hair, pants suit, wristwatch",
+    "negative_prompt": "casual playful outfit, colorful fashion, frilly skirt, overly warm smile, timid posture, messy background, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres, oversaturated"
+  },
+  "technical_parameters": {
+    "aspect_ratio": "1:1",
+    "model_suggestion": "SDXL",
+    "resolution_target": "4K_Upscale",
+    "steps": 40,
+    "cfg_scale": 10.5
+  },
+  "advanced_config": {
+    "reference_logic": {
+      "use_face_reference": true,
+      "use_pose_reference": true,
+      "use_style_reference": true
+    },
+    "edit_strength": {
+      "denoising_strength": 0.7,
+      "ai_reconstruction": false
+    },
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Lock identity with short dark brown hair and pants suit + wristwatch. Student council room background; bright neutral daylight. Posture should convey leadership without harshness."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "character": "春日井 ユズ (Kasugai Yuzu)",
+  "meta": {
+    "intent_analysis": "純粋で成長する後輩像。小柄・大きな丸い瞳・リボン/ヘアピン・可愛い私服/セーラー風で『憧れと成長意志』を柔らかく可視化。",
+    "task_type": "Text2Image",
+    "target_aesthetic": "Anime/Cel-Shaded"
+  },
+  "prompt_payload": {
+    "positive_prompt": "Japanese technical college girl, Kasugai Yuzu, age 15-16 (younger appearance), small stature, shoulder‑length black hair with brown highlights and slight curl at ends, ribbon hairpin. Big round bright brown eyes sparkling with admiration; cheerful friendly smile with slight shyness. Cute casual uniform‑like outfit (sailor‑inspired blouse and small skirt in pastel pink/purple/light blue). Standing in corridor near classroom at Kamishiro Kosen, natural soft daylight, open approachable posture, looking up at senpai with admiring gaze. Gentle anime illustration emphasizing youth, innocence, and growth potential; consistent identity tokens: ribbon hairpin, big round eyes, pastel sailor‑inspired outfit",
+    "negative_prompt": "mature adult look, cold stern expression, dark desaturated colors, isolated empty void, sad serious mood, arrogant confidence, heavy dramatic lighting, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres"
+  },
+  "technical_parameters": {
+    "aspect_ratio": "1:1",
+    "model_suggestion": "SDXL",
+    "resolution_target": "4K_Upscale",
+    "steps": 40,
+    "cfg_scale": 10.5
+  },
+  "advanced_config": {
+    "reference_logic": {
+      "use_face_reference": true,
+      "use_pose_reference": false,
+      "use_style_reference": true
+    },
+    "edit_strength": {
+      "denoising_strength": 0.7,
+      "ai_reconstruction": false
+    },
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Keep face identity consistent (big round eyes, ribbon hairpin). Use corridor near classroom with soft daylight. Convey admiring upward gaze toward senpai; warmth and approachability."
+  }
+}

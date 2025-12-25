@@ -1,0 +1,31 @@
+{
+  "character": "一ノ瀬 アイ (Ichinose Ai)",
+  "meta": {
+    "intent_analysis": "冷徹・合理的な知性を強調。無彩色の私服、鋭い一重、長い黒髪、図書館の静けさで『孤高の天才』を一貫化。",
+    "task_type": "Text2Image",
+    "target_aesthetic": "Anime/Cel-Shaded"
+  },
+  "prompt_payload": {
+    "positive_prompt": "Japanese technical college student, Ichinose Ai, age 15-16 (Year 1 baseline), tall slender, long straight black hair reaching waist, sharp monolid black eyes, pale skin, minimal expression, analytical gaze. Wearing monochrome hoodie and jeans (no skirt), clean minimalist style, no accessories. Standing quietly in library stacks at Kamishiro Kosen (fictional Japanese technical college), soft cool indoor daylight, reserved posture, rational aura, calm minimalist atmosphere. Gentle anime illustration emphasizing intellect and emotional restraint; consistent identity tokens: long straight black hair, sharp monolid eyes, minimalist outfit",
+    "negative_prompt": "warm cheerful smile, colorful fashion, frilly dress, cute accessories, crowded festival, messy cluttered background, magical girl merch visible, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres, oversaturated, harsh contrast"
+  },
+  "technical_parameters": {
+    "aspect_ratio": "1:1",
+    "model_suggestion": "SDXL",
+    "resolution_target": "4K_Upscale",
+    "steps": 40,
+    "cfg_scale": 10.5
+  },
+  "advanced_config": {
+    "reference_logic": {
+      "use_face_reference": true,
+      "use_pose_reference": false,
+      "use_style_reference": true
+    },
+    "edit_strength": {
+      "denoising_strength": 0.65,
+      "ai_reconstruction": false
+    },
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Lock identity via hair length/texture and sharp monolid eyes. Keep expression minimal; posture reserved. Use library stacks background with soft cool light. Avoid colorful items or accessories and any magical‑girl hints."
+  }
+}

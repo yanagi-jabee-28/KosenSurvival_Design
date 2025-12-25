@@ -1,0 +1,31 @@
+{
+  "character": "剛田 タケシ (Goda Takeshi)",
+  "meta": {
+    "intent_analysis": "ゲーマー気質の悪友。寝癖・クマ・Tシャツ・イヤホン・寮部屋の生活感で『ズボラだけど憎めない相棒』を軽やかに描く。",
+    "task_type": "Text2Image",
+    "target_aesthetic": "Anime/Cel-Shaded"
+  },
+  "prompt_payload": {
+    "positive_prompt": "Japanese technical college boy, Goda Takeshi, age 15-16, average height, messy short black hair (bedhead), noticeable eye bags, friendly playful smile. Casual gamer T‑shirt with graphic and jeans, earphones dangling from ears, hands holding smartphone or game controller. Slightly slouched relaxed posture. Inside dorm room at Kamishiro Kosen: desk with laptop, snacks, scattered items; warm indoor lighting, cozy lived‑in vibe. Gentle anime illustration emphasizing laid‑back humor and approachable bad‑buddy energy; consistent identity tokens: messy short hair, eye bags, gamer tee, earphones",
+    "negative_prompt": "formal school uniform pristine, athletic outfit, leather jacket delinquent style, dramatic rooftop scene, intense rebellion pose, clean minimal room, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres"
+  },
+  "technical_parameters": {
+    "aspect_ratio": "1:1",
+    "model_suggestion": "SDXL",
+    "resolution_target": "4K_Upscale",
+    "steps": 40,
+    "cfg_scale": 10.5
+  },
+  "advanced_config": {
+    "reference_logic": {
+      "use_face_reference": true,
+      "use_pose_reference": false,
+      "use_style_reference": true
+    },
+    "edit_strength": {
+      "denoising_strength": 0.7,
+      "ai_reconstruction": false
+    },
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Use cozy dorm background with warm light; add subtle desk clutter, laptop and snacks. Keep gamer identity: tee graphic and earphones. Avoid delinquent aesthetics."
+  }
+}
