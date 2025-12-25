@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import CharacterStand from './components/CharacterStand'
 
 const lines = [
   '春、新しい学期が始まる——',
@@ -80,6 +81,14 @@ export default function App() {
         <div className="hint">
           Space/Enter: 送る ・ A: 自動切替
         </div>
+
+        <section className="stands">
+          <CharacterStand name="Ai" />
+          <CharacterStand name="Mai" />
+          <CharacterStand name="Mina" />
+          <CharacterStand name="Takeshi" />
+          <CharacterStand name="Yuzu" />
+        </section>
       </main>
       <footer className="footer">
         <small>神城工業高専プロトタイプ - ローカルのみ</small>
