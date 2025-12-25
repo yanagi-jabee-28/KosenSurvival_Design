@@ -1,0 +1,37 @@
+{
+  "character": "神楽 マイ (Kagura Mai) - Dance Performance",
+  "meta": {
+    "intent_analysis": "ダンサーとしてのマイを表現。情熱的な身体表現、鍛え抜かれた体型、躍動感。普段の冷静さとは対照的な感情の解放を視覚化。",
+    "task_type": "Text2Image",
+    "target_aesthetic": "Anime/Cel-Shaded"
+  },
+  "prompt_payload": {
+    "positive_prompt": "1girl, full body standing portrait, Japanese technical college dancer Kagura Mai, age 15-16, dynamic dance pose with confident stance, short dark brown bob haircut with black roots (slightly tousled from movement), sharp determined brown eyes alive with passion and focus, intense concentrated expression showing emotion through dance, athletic dancer physique with visible muscle definition, toned shoulders and arms, defined abs showing through crop top, height 162cm, wearing professional dance outfit: black sports bra crop top showing midriff and toned abs, black high-waisted dance leggings with mesh side panels, black and white dance sneakers, black athletic headband keeping hair in place, light sheen of sweat on skin showing effort, confident powerful stance with one hip cocked, arms in expressive dance position (one raised, one extended), stage performance lighting with dramatic shadows, studio background with mirrors and practice bars slightly blurred, high-detail anime illustration with motion energy, consistent identity: short brown hair + black roots + athletic dancer build + confident powerful presence, dynamic composition emphasizing strength and grace",
+    "negative_prompt": "suit, formal clothes, school uniform, skirt, dress, casual outfit, weak posture, timid expression, shy, smiling sweetly, frilly decoration, long hair, wavy hair, curly hair, bright hair colors, overweight, underweight, no muscle definition, flat stomach without abs, sitting pose, static standing, relaxed pose, messy background, cluttered room, multiple girls, 2girls, text, caption, subtitles, overlay, words, letters, typography, logo, watermark, signature, bad anatomy, extra fingers, extra limbs, poorly drawn hands, mutation, deformed limbs, blurry face, lowres, jpeg artifacts, oversaturated colors"
+  },
+  "technical_parameters": {
+    "aspect_ratio": "1:1",
+    "model_suggestion": "SDXL",
+    "resolution_target": "4K_Upscale",
+    "steps": 50,
+    "cfg_scale": 11.5
+  },
+  "advanced_config": {
+    "reference_logic": {
+      "use_face_reference": true,
+      "use_pose_reference": false,
+      "use_style_reference": true
+    },
+    "edit_strength": {
+      "denoising_strength": 0.6,
+      "ai_reconstruction": false
+    },
+    "instructions_for_tool": "CRITICAL: Show athletic dancer physique with visible muscle definition, especially defined abs showing through crop top. Body type must be toned and fit, NOT soft or curvy. Pose should be dynamic and powerful, conveying strength and grace simultaneously. Expression shows intensity and passion - completely different from her usual composed demeanor. This is the moment she releases all emotions through dance. Background: dance studio with mirrors. Lighting: dramatic stage/studio lighting with strong shadows to emphasize muscle definition. Do NOT render any text, captions, labels, overlays, frames or borders. Age appearance: 15-16 years old."
+  },
+  "variation_poses": {
+    "pose_1_power": "Standing with legs shoulder-width apart, one arm raised high above head, other arm extended to side, chin lifted confidently, embodying strength",
+    "pose_2_grace": "Mid-turn position with one leg extended, arms flowing in circular motion, hair caught in movement, showing fluid grace",
+    "pose_3_intensity": "Low dynamic stance with one knee bent, torso twisted, both arms in sharp angular positions, eyes piercing, showing controlled power",
+    "pose_4_balance": "Standing on one leg with other leg extended behind (arabesque-like), arms in balanced position, demonstrating flexibility and control"
+  }
+}
