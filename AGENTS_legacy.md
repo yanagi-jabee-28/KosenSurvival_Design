@@ -58,7 +58,7 @@ KosenSurvival_Design/
 │   ├── Mai.md              # 神楽 マイ
 │   ├── Takeshi.md          # 剛田 タケシ
 │   ├── Ren.md              # 諏訪野 レン
-│   └── Kohai.md            # 春日井 ユズ（後輩）
+│   └── Yuzu.md             # 春日井 ユズ（後輩）
 ├── 03_Scenario/            # 年次シナリオ
 │   ├── Year1.md            # 「淘汰」
 │   ├── Year2.md            # 「中だるみと専攻決定」
@@ -128,7 +128,7 @@ KosenSurvival_Design/
   - 学校設定 (School.md) を追加。長野高専をモデルに「神城工業高等専門学校」を設定。
   - 3系統制（機械ロボティクス系/情報エレクトロニクス系/都市デザイン系）を定義。Year 1は工学科として統一入学、Year 2から系統選択。
   - 寮生活、施設配置、年間行事、教職員の詳細を記述。
-  - 後輩キャラクター「春日井 ユズ」を追加 (02_Characters/Kohai.md)。
+  - 後輩キャラクター「春日井 ユズ」を追加 (02_Characters/Yuzu.md)。
 - **Next**:
   1. GameLoop.md にメインループの疑似コードと状態遷移を追記。
   2. React/TypeScript (Vite) でプロジェクト初期化。

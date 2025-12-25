@@ -11,7 +11,7 @@
 > - 立地（盆地、陸の孤島）、寮生活、施設配置の具体化
 > - 年間行事スケジュール、部活動、教職員の設定
 > - 系選択によるゲームへの影響（初期ステータス差異）
-> - キャラクター追加: [02_Characters/Mai.md](02_Characters/Mai.md) (神楽 マイ), [02_Characters/Kohai.md](02_Characters/Kohai.md) (春日井 ユズ)
+> - キャラクター追加: [02_Characters/Mai.md](02_Characters/Mai.md) (神楽 マイ), [02_Characters/Yuzu.md](02_Characters/Yuzu.md) (春日井 ユズ)
 > - リアリティ担保のため、実在高専の要素を統合しつつ架空校として設定
 
 ## 1. Core Philosophy: The "Truth-Seeking Strategic Partner" (基本理念と存在定義)
