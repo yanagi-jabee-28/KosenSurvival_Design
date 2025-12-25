@@ -1,0 +1,70 @@
+{
+  "character": "Kasugai Yuzu",
+  "reference_image": "02_Characters/images/Yuzu/Yuzu1.png",
+  "model_hint": "Use face/style reference with strength ~0.85 to preserve wavy brown-tinted hair, large round brown eyes, and youthful innocent appearance",
+  "expressions": [
+    {
+      "expression_id": "Yuzu_Neutral",
+      "expression_label": "デフォルト（明るい笑顔）",
+      "positive_prompt": "Close-up portrait, Japanese technical college underclassman Kasugai Yuzu, same character as reference, face/headshot, shoulder-length wavy black hair with brown highlights, hair ends slightly curled, short bangs above eyebrows, large round bright brown eyes, cheerful warm smile, youthful white skin, small cute hair ribbon (pink or pastel), wearing cute pastel-colored outfit or sailor-style faux uniform collar visible, high-detail anime/cel-shaded illustration, keep identity with reference image, focus on bright friendly face",
+      "negative_prompt": "dark atmosphere, serious expression, messy hair, formal suit, excessive jewelry, sad tears, mature adult, exaggerated proportions, text, watermark, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.35, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Yuzu_Shy",
+      "expression_label": "照れ（恋愛告白時）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair, large brown eyes looking slightly away with shyness, noticeable blush on cheeks, shy soft smile, hands clasped together near chest suggested in lower frame, hair ribbon visible, cute pastel outfit, anime/cel-shaded, preserve identity, focus on blushing embarrassed face",
+      "negative_prompt": "confident stare, no blush, crying, exaggerated red face, formal clothes, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.48, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Yuzu_Excited",
+      "expression_label": "興奮（嬉しい・成功時）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair with slight bounce, large brown eyes wide and sparkling with joy, big bright smile showing slight teeth, small sweat drop of excitement optional, hands raised in celebration gesture suggested, hair ribbon, cute pastel outfit, high-energy anime illustration, preserve identity",
+      "negative_prompt": "sad, calm, sleepy, formal clothes, dark atmosphere, text, watermark, mutation, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.45, "steps": 40, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Yuzu_Curious",
+      "expression_label": "好奇心（質問・頭を傾げる）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair, large round brown eyes wide with curiosity, head tilted slightly to one side, index finger raised near face in questioning gesture, gentle smile, hair ribbon, cute pastel outfit, anime/cel-shaded, preserve identity, focus on inquisitive expression",
+      "negative_prompt": "angry, sad, sleepy, straight head pose, formal clothes, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.40, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Yuzu_Determined",
+      "expression_label": "決意（頑張る時）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair, large brown eyes with determined shine, eyebrows slightly furrowed in concentration, confident smile, fist clenched in determination suggested in lower frame, hair ribbon, cute pastel outfit, anime/cel-shaded, preserve identity, focus on strong-willed expression",
+      "negative_prompt": "sad, crying, sleepy, uncertain expression, formal clothes, text, watermark, mutation, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.42, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Yuzu_Confused",
+      "expression_label": "困惑（わからない時）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair slightly messy, large brown eyes looking uncertain, eyebrows raised in confusion, small puzzled frown or mouth open in question mark shape, hand scratching cheek suggested, hair ribbon, cute pastel outfit, anime/cel-shaded, preserve identity, focus on confused puzzled face",
+      "negative_prompt": "confident, angry, crying heavily, formal clothes, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.43, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Yuzu_Sad",
+      "expression_label": "悲しい（落ち込み・赤点時）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair, large brown eyes slightly downcast with hint of moisture, sad gentle frown, slight pout, trying not to cry but obviously disappointed, hair ribbon, cute pastel outfit, soft melancholic lighting, anime/cel-shaded, preserve identity, focus on sad but still innocent face",
+      "negative_prompt": "smiling, cheerful, angry, exaggerated crying streams, formal clothes, dark gloomy horror, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.46, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Yuzu_Happy",
+      "expression_label": "大喜び（先輩を見つけた時）",
+      "positive_prompt": "Close-up portrait, Kasugai Yuzu same character as reference, face/headshot, wavy brown-tinted hair with energetic bounce, large brown eyes extremely bright and sparkling, radiant genuine smile showing pure happiness, slight blush of joy, calling out 'Senpai!' energy, hair ribbon, cute pastel outfit, warm cheerful lighting, high-detail anime illustration, preserve identity, focus on purely joyful face",
+      "negative_prompt": "sad, angry, sleepy, dull expression, formal clothes, dark atmosphere, text, watermark, mutation, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.44, "steps": 40, "cfg_scale": 11.0}
+    }
+  ],
+  "workflow_recommendation": {
+    "step1": "Upload 02_Characters/images/Yuzu/Yuzu1.png to NanoBananaPro as reference (Face ID / Character Ref enabled)",
+    "step2": "Set reference_strength to ~0.85 to lock identity (wavy brown-tinted hair, large round brown eyes, youthful innocent appearance)",
+    "step3": "Generate each expression with corresponding positive_prompt and negative_prompt; use 1:1 crop focusing on face",
+    "step4": "Adjust denoising_strength per expression for subtle vs. drastic changes (0.35-0.48)",
+    "step5": "Save outputs with suggested filenames: Yuzu_Neutral.png, Yuzu_Shy.png, Yuzu_Excited.png, etc."
+  }
+}
