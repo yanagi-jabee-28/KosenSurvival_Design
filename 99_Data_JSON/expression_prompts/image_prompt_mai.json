@@ -1,20 +1,20 @@
 {
   "character": "神楽 マイ (Kagura Mai)",
   "meta": {
-    "intent_analysis": "統率力と完璧主義の『会長像』。ショートの濃茶髪、腕時計、パンツスーツ、学生会室の環境でリーダーの凛とした佇まいを表現。",
+    "intent_analysis": "完璧主義のリーダー、学生会長。冷静で芯の強い表情、ダンサー体型、ショートカット、パンツスーツで統率力を体現。腕時計は時間管理と責任の象徴。",
     "task_type": "Text2Image",
     "target_aesthetic": "Anime/Cel-Shaded"
   },
   "prompt_payload": {
-    "positive_prompt": "Japanese technical college student, Kagura Mai, age 15-16 (Year 1-2), short dark brown hair (business-like bob with black roots), determined eyes, composed confident expression. Wearing fitted navy pants suit with black wristwatch (prefers suits over skirts), clean monochrome palette. Standing in student council room at Kamishiro Kosen, bright neutral daylight, upright leadership posture (arms lightly crossed or hands on desk), professional composed demeanor, approachable yet firm. Gentle anime illustration emphasizing leadership, precision, and self-control; consistent identity tokens: short dark brown hair, pants suit, wristwatch",
-    "negative_prompt": "casual playful outfit, colorful fashion, frilly skirt, overly warm smile, timid posture, messy background, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres, oversaturated"
+    "positive_prompt": "1girl, Japanese technical college student council president, Kagura Mai, age 15-16, professional leadership stance, short dark brown bob haircut with black roots (neat businesslike cut), sharp determined brown eyes with strong will, calm composed neutral expression (rarely smiles, serious by default), athletic dancer physique with visible shoulder definition, height 162cm, wearing fitted navy blue business pants suit (jacket and pants, prefers pants over skirts), black wristwatch on left wrist (symbol of time management), standing confidently in student council room at Kamishiro Kosen, arms lightly crossed or hands on desk, upright perfect posture, bright neutral office lighting from large windows, clean professional atmosphere, bookshelves and meeting table in background, refined leadership aura without harshness, anime illustration style, high quality digital art, consistent identity: short brown hair + black roots + pants suit + black watch + composed expression",
+    "negative_prompt": "skirt, dress, casual outfit, playful clothing, colorful fashion accessories, long hair, wavy hair, curly hair, bright hair colors, warm friendly smile, shy expression, timid posture, slouching, weak stance, revealing clothes, frilly decoration, messy background, cluttered room, text, caption, subtitles, overlay, words, letters, typography, logo, watermark, signature, bad anatomy, extra fingers, extra limbs, poorly drawn hands, mutation, deformed limbs, blurry face, lowres, jpeg artifacts, oversaturated colors, multiple girls, 2girls"
   },
   "technical_parameters": {
     "aspect_ratio": "1:1",
     "model_suggestion": "SDXL",
     "resolution_target": "4K_Upscale",
-    "steps": 40,
-    "cfg_scale": 10.5
+    "steps": 45,
+    "cfg_scale": 11.0
   },
   "advanced_config": {
     "reference_logic": {
@@ -23,9 +23,9 @@
       "use_style_reference": true
     },
     "edit_strength": {
-      "denoising_strength": 0.7,
+      "denoising_strength": 0.65,
       "ai_reconstruction": false
     },
-    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Lock identity with short dark brown hair and pants suit + wristwatch. Student council room background; bright neutral daylight. Posture should convey leadership without harshness."
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. CRITICAL: Lock character identity with short dark brown hair (black roots), navy pants suit, black wristwatch, and composed serious expression. She rarely smiles—maintain neutral professional face. Background: student council room with bright daylight from windows, bookshelves, meeting table. Posture must convey leadership and confidence without aggression. Body type: athletic dancer build (NOT curvy, NOT petite—toned and fit). Age appearance: 15-16 years old high school equivalent."
   }
 }
