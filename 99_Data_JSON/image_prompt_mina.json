@@ -6,8 +6,8 @@
     "target_aesthetic": "Anime/Cel-Shaded"
   },
   "prompt_payload": {
-    "positive_prompt": "Japanese technical college girl, Akasaka Mina, age 15-16, petite with toned arms, short slightly messy black hair (ear-length), big round curious brown eyes, healthy tanned skin. Casual hoodie and jeans with work boots; tools tucked in hoodie pocket; leather wrist band. Hands show small scratches, band-aids, oil stains and calluses (hands as focal point). Standing in mechanical workshop at Kamishiro Kosen with robot arm and tools, warm industrial daylight, energetic open posture, cheerful focused smile. Gentle anime illustration emphasizing craftsmanship, hands, and making things; consistent identity tokens: short messy black hair, tanned skin, hands with bandages",
-    "negative_prompt": "clean soft hands, long elegant hair, delicate dainty look, frilly dress, sterile lab only, bookish theoretical setting, cold blue lighting, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres"
+    "positive_prompt": "Japanese technical college girl, Akasaka Mina, age 15-16, petite with toned arms, short slightly messy black hair (ear-length) tied back for safety, big round curious brown eyes, healthy tanned skin. Wearing proper Japanese workwear coveralls (sagyougi/tsunagi) in grey with work boots, safety goggles, sleeves rolled, leather wrist band; no gloves to show hands. Hands display small scratches, band-aids, oil stains and calluses (hands as focal point). Operating a bench drill press correctly: right hand on feed lever, workpiece securely clamped in a drill vise on the table, left hand on the vise handle or near the stop, safe distance from the rotating bit; metal chips visible on table. Warm industrial daylight in mechanical workshop at Kamishiro Kosen, realistic tooling and fixtures, focused expression and proper posture. Gentle anime illustration emphasizing craftsmanship, safety, and hands; consistent identity tokens: short messy black hair, tanned skin, coveralls, safety goggles",
+    "negative_prompt": "hoodie casual wear, fashion outfit, clean soft hands, long loose hair near machine, delicate dainty look, frilly dress, sterile lab only, bookish theoretical setting, cold blue lighting, incorrect tool use, holding workpiece by hand, using wrench on spindle/chuck, freehand drilling, hands near spinning tool, unsafe posture, missing safety goggles, text, caption, subtitles, overlay, words, letters, typography, UI, sidebar, frame, border, watermark, logo, signature, bad anatomy, extra fingers, extra limbs, mutation, deformed, blurry, lowres"
   },
   "technical_parameters": {
     "aspect_ratio": "1:1",
@@ -19,13 +19,13 @@
   "advanced_config": {
     "reference_logic": {
       "use_face_reference": true,
-      "use_pose_reference": false,
+      "use_pose_reference": true,
       "use_style_reference": true
     },
     "edit_strength": {
       "denoising_strength": 0.7,
       "ai_reconstruction": false
     },
-    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Make hands the focal point with realistic minor scars/oil stains/bandages. Use warm industrial workshop lighting and include a robot arm or tools."
+    "instructions_for_tool": "Do NOT render any text, captions, labels, overlays, frames or borders. Use proper workwear coveralls and safety goggles. Pose: bench drill press operation with right hand on feed lever; workpiece clamped in drill vise; left hand on vise handle/stop; hands away from spinning bit. Show realistic metal chips and fixtures. No wrench on spindle/chuck; no freehand drilling; no gloves (keep hands visible)."
   }
 }
