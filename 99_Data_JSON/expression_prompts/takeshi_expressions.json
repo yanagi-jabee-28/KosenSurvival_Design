@@ -1,0 +1,70 @@
+{
+  "character": "Goda Takeshi",
+  "reference_image": "02_Characters/images/Takeshi/Takeshi1.png",
+  "model_hint": "Use face/style reference with strength ~0.85 to preserve messy hair, headphones, and eye-bags",
+  "expressions": [
+    {
+      "expression_id": "Takeshi_Neutral",
+      "expression_label": "デフォルト（眠そう）",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Goda Takeshi, same character as reference, face/headshot, short messy black hair with clear bedhead, half-open sleepy brown eyes, noticeable dark under-eye circles, casual gaming T-shirt visible at frame edge, over-ear gaming headphones worn, slightly slouched sleepy expression, dusky complexion from late-night gaming, high-detail anime/cel-shaded illustration, keep identity with reference image, focus on face",
+      "negative_prompt": "neat hair, formal clothing, exaggerated smile, glowing magical effects, colorful accessories, no headphones, text, watermark, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.35, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Takeshi_Smirk",
+      "expression_label": "ニヤリ（ふざけ/小悪魔）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, short messy hair, half-lidded brown eyes with playful light, small confident smirk, slight tilt of head, headphones visible, casual gaming tee, faint cheek lines to emphasize smirk, anime/cel-shaded, preserve identity via hair and headphones",
+      "negative_prompt": "wide grin, manic expression, neat hair, formal attire, exaggerated blush, tears, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.40, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Takeshi_Excited",
+      "expression_label": "興奮（ゲームで盛り上がり）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, messy black hair, eyes wide and bright, energetic grin showing teeth slightly, small sweat drop of excitement optional, headphones on, warm highlight in eyes, casual gamer vibe, high-detail anime style, keep identity consistent",
+      "negative_prompt": "overly cute, sparkles excessive, formal clothes, tear streaming, text, watermark, mutation, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.45, "steps": 40, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Takeshi_Focused",
+      "expression_label": "集中（真剣プレイ）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, messy hair, narrow intense eyes, furrowed brow, pursed lips, headphones snug, faint shadow on brow to show concentration, pencil of light on face from screen, casual shirt visible, anime/cel-shaded, preserve identity",
+      "negative_prompt": "sleepy eyes, smiling, cheerful, bright cheerful background, formal clothes, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.38, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Takeshi_Embarrassed",
+      "expression_label": "照れ（バツの悪さ）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, messy hair slightly covering forehead, averted gaze, slight blush on cheeks, awkward half-smile or sheepish mouth, hand near back of neck suggested in lower frame, headphones still worn, anime illustration with subtle emotional shift, keep identity",
+      "negative_prompt": "exaggerated blush, wide eyes panic, tears, cute pose, formal clothes, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.50, "steps": 40, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Takeshi_Surprised",
+      "expression_label": "驚き（唐突な出来事）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, messy hair, eyes wide open, mouth slightly open in surprise, eyebrows raised, headphones slightly askew, dynamic lighting hit from side, anime/cel-shaded, preserve identity via hair and accessories",
+      "negative_prompt": "calm, sleepy, grin, formal clothes, text, watermark, mutation, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.45, "steps": 40, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Takeshi_Angry",
+      "expression_label": "苛立ち（負けた時の怒り）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, messy hair, furrowed brow, scowl, gritted teeth or tight mouth, slight flush of anger on cheeks, headphones visible, intense anime expression, keep identity consistent",
+      "negative_prompt": "laughing, smiling, cute blush, formal clothes, exaggerated cartoonish steam, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.46, "steps": 40, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Takeshi_Asleep",
+      "expression_label": "居眠り（リラックス/寝落ち）",
+      "positive_prompt": "Close-up portrait, Goda Takeshi same character as reference, face/headshot, messy hair slightly more relaxed, eyes closed peacefully, mouth relaxed, headphones slightly crooked, gentle soft lighting indicating rest, subtle droop of head, anime/cel-shaded, preserve identity and avoid exaggerated drooling",
+      "negative_prompt": "open eyes, bright active expression, wide smile, formal clothes, text, watermark, cartoon snoring bubbles, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.85, "denoising_strength": 0.30, "steps": 40, "cfg_scale": 10.0}
+    }
+  ],
+  "workflow_recommendation": {
+    "step1": "Upload 02_Characters/images/Takeshi/Takeshi1.png to NanoBananaPro as reference (Face ID / Character Ref enabled)",
+    "step2": "Set reference_strength to ~0.85 to lock identity (bedhead, headphones, under-eye bags)",
+    "step3": "Generate each expression with corresponding positive_prompt and negative_prompt; use 1:1 crop focusing on face",
+    "step4": "Adjust denoising_strength per expression for subtle vs. drastic changes (0.30-0.50)",
+    "step5": "Save outputs with suggested filenames: Takeshi_Neutral.png, Takeshi_Smirk.png, Takeshi_Excited.png, etc."
+  }
+}
