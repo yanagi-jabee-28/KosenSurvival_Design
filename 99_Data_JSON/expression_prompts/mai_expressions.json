@@ -1,0 +1,72 @@
+{
+  "character": "Kagura Mai",
+  "reference_image": "02_Characters/images/Mai/Mai_Default.png",
+  "model_hint": "Use face/style reference with strength ~0.88 to preserve short dark brown hair with black roots, sharp determined eyes, serious composed expression, and athletic facial structure",
+  "expressions": [
+    {
+      "expression_id": "Mai_Neutral",
+      "expression_label": "デフォルト（真顔・冷静）",
+      "positive_prompt": "Close-up portrait, Japanese technical college student council president Kagura Mai, same character as reference, face/headshot, short dark brown bob haircut with black roots (neat businesslike cut), sharp determined brown eyes with strong will, completely neutral serious expression (rarely smiles, composed by default), athletic facial structure with defined cheekbones, age 15-16, black wristwatch visible at frame edge, navy suit collar visible, professional lighting, anime/cel-shaded illustration, preserve identity with reference image, focus on calm composed face",
+      "negative_prompt": "smile, grin, cheerful, playful, long hair, wavy hair, colorful outfit, casual clothes, bright accessories, blush, shy expression, weak eyes, text, watermark, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.30, "steps": 45, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Mai_Focused",
+      "expression_label": "集中（会議・判断時）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots, sharp brown eyes narrowed in intense concentration, eyebrows slightly furrowed, lips pressed together in determination, hand touching chin in thinking gesture suggested in lower frame, black wristwatch visible, navy suit, professional serious atmosphere, anime/cel-shaded, preserve identity, focus on analytical thinking expression",
+      "negative_prompt": "smiling, relaxed, sleepy, uncertain eyes, casual clothes, playful, blush, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.38, "steps": 45, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Mai_Confident",
+      "expression_label": "自信（成功・達成時）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots, sharp brown eyes with confident gleam, very subtle slight upturn at corner of mouth (not full smile, just hint of satisfaction), chin slightly raised, strong gaze directly forward, black wristwatch visible, navy suit, leadership aura, anime/cel-shaded, preserve identity, focus on composed confidence",
+      "negative_prompt": "wide smile, cheerful grin, blushing, shy, playful, casual clothes, exaggerated expression, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.42, "steps": 45, "cfg_scale": 11.0}
+    },
+    {
+      "expression_id": "Mai_Gentle_Smile",
+      "expression_label": "微笑（信頼・温かさ）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots, sharp brown eyes softened with warmth and trust, gentle natural smile showing warmth (not wide grin, calm peaceful expression), relaxed facial muscles, approachable yet composed, slight gentleness in gaze, black wristwatch visible, navy suit, soft warm lighting, high-detail anime illustration, preserve identity, focus on natural warm smile that shows humanity and trust",
+      "negative_prompt": "wide grin, exaggerated smile, playful expression, shy blush, casual clothes, overly cute, cold expression, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.45, "steps": 45, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Mai_Frustrated",
+      "expression_label": "苛立ち（失敗・二番手への焦り）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots slightly disheveled, sharp brown eyes with frustration and self-directed anger, tightly pressed lips, jaw clenched, eyebrows drawn together, slight shadow on face, hand gripping something tightly suggested, black wristwatch visible, navy suit, tense atmosphere, anime/cel-shaded, preserve identity, focus on internal conflict and frustration",
+      "negative_prompt": "smiling, calm, relaxed, crying streams, exaggerated anger, casual clothes, playful, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.48, "steps": 45, "cfg_scale": 11.5}
+    },
+    {
+      "expression_id": "Mai_Vulnerable",
+      "expression_label": "弱さ（限界・心が折れそう）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots slightly messy, sharp brown eyes with moisture gathering (trying not to cry), lips trembling slightly, eyebrows raised in emotional strain, trying to maintain composure but failing, hand covering mouth suggested, black wristwatch visible, navy suit, soft melancholic lighting, anime/cel-shaded, preserve identity, focus on rare moment of vulnerability and weakness",
+      "negative_prompt": "smiling, confident, casual clothes, exaggerated crying streams, theatrical sobbing, playful, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.52, "steps": 45, "cfg_scale": 10.5}
+    },
+    {
+      "expression_id": "Mai_Determined",
+      "expression_label": "決意（新たな挑戦・覚悟）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots neatly set, sharp brown eyes burning with fierce determination and resolve, eyebrows slightly furrowed, lips set in firm line, intense gaze with iron will visible, fist clenched in determination suggested in lower frame, black wristwatch visible, navy suit, strong backlighting creating halo effect, anime/cel-shaded, preserve identity, focus on unwavering resolve and leadership determination",
+      "negative_prompt": "smiling, uncertain, weak eyes, casual clothes, playful, shy, tears, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.44, "steps": 45, "cfg_scale": 11.5}
+    },
+    {
+      "expression_id": "Mai_Dance_Passion",
+      "expression_label": "情熱（ダンス時・感情解放）",
+      "positive_prompt": "Close-up portrait, Kagura Mai same character as reference, face/headshot, short dark brown hair with black roots slightly tousled with movement, sharp brown eyes wide and alive with passion and emotion, mouth slightly open with breath of performance, light sweat glistening on skin, flushed cheeks from exertion, completely different energy from usual composure (emotions fully released through dance), sports headband visible, athletic wear suggested, dynamic lighting with motion blur hint, anime/cel-shaded, preserve identity, focus on rare emotional liberation and passionate expression",
+      "negative_prompt": "suit, formal clothes, calm composed face, sleepy, shy, casual outfit, standing still, text, watermark, bad anatomy, blurry",
+      "technical_parameters": {"aspect_ratio": "1:1", "reference_strength": 0.88, "denoising_strength": 0.55, "steps": 45, "cfg_scale": 11.0}
+    }
+  ],
+  "workflow_recommendation": {
+    "step1": "First generate Mai_Neutral as the default reference image and save to 02_Characters/images/Mai/Mai_Default.png",
+    "step2": "Upload Mai_Default.png to NanoBananaPro as reference (Face ID / Character Ref enabled)",
+    "step3": "Set reference_strength to ~0.88 to lock identity (short dark brown hair with black roots, sharp determined eyes, serious expression, athletic face structure)",
+    "step4": "Generate each expression with corresponding positive_prompt and negative_prompt; use 1:1 crop focusing on face",
+    "step5": "Adjust denoising_strength per expression: subtle changes (0.30-0.44), moderate (0.48-0.52), dramatic shifts like dance passion (0.55)",
+    "step6": "Save outputs with suggested filenames: Mai_Neutral.png, Mai_Focused.png, Mai_Confident.png, Mai_Gentle_Smile.png, Mai_Frustrated.png, Mai_Vulnerable.png, Mai_Determined.png, Mai_Dance_Passion.png",
+    "note": "Mai maintains professional composure as a leader but shows natural warmth to trusted people. 'Gentle_Smile' is her natural expression with those she trusts. 'Vulnerable' and 'Dance_Passion' show deeper emotional shifts. Unlike Ai (who cannot express emotion), Mai chooses when to show warmth."
+  }
+}
