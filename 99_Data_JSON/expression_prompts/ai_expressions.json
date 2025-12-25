@@ -1,0 +1,119 @@
+{
+  "character": "Ichinose Ai",
+  "reference_image": "02_Characters/images/Ai/Ai1.png",
+  "model_hint": "Use face/style reference with strength ~0.85 for consistency",
+  "expressions": [
+    {
+      "expression_id": "Ai_Neutral",
+      "expression_label": "無表情",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair reaching shoulders in frame, sharp monolid black eyes looking straight ahead, pale skin, completely neutral expression, minimal emotion, analytical cold gaze, monochrome hoodie visible, soft cool library lighting from window, consistent identity with reference image, high-quality anime illustration style, focus on face",
+      "negative_prompt": "smile, grin, tears, blush, anger, surprise, open mouth, different hairstyle, colorful clothes, accessories, full body, distant shot, text, caption, watermark, mutation, bad anatomy, extra fingers, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.35,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Ai_Think",
+      "expression_label": "思考中",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair, sharp monolid black eyes, pale skin, slightly furrowed brow in deep thought, eyes looking slightly downward, analytical thinking expression, hand near chin visible in lower frame, monochrome hoodie, soft library lighting, consistent identity with reference image, high-quality anime illustration style, focus on contemplative face",
+      "negative_prompt": "smile, cheerful, tears, anger, surprise, laughing, open mouth wide, different face, colorful outfit, accessories, full body, text, watermark, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.40,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Ai_Cold",
+      "expression_label": "冷淡",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair, sharp monolid black eyes with cold penetrating intimidating gaze directly at viewer, pale skin, slight frown, emotionless but piercing stare, monochrome hoodie, dim library lighting casting subtle shadows on face, consistent identity with reference image, high-quality anime illustration emphasizing rational coldness, focus on intimidating eyes",
+      "negative_prompt": "smile, friendly, warm expression, tears, blush, surprise, open mouth, bright cheerful lighting, colorful clothes, cute accessories, full body, text, watermark, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.42,
+        "steps": 40,
+        "cfg_scale": 11.0
+      }
+    },
+    {
+      "expression_id": "Ai_Curious",
+      "expression_label": "興味",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair, sharp monolid black eyes with very subtle sparkle of interest, pale skin, head slightly tilted to side, minimal expression but eyes more focused and engaged, hint of curiosity, monochrome hoodie, soft natural library window light, consistent identity with reference image, high-quality anime illustration style, focus on intrigued gaze",
+      "negative_prompt": "big smile, cheerful, excited expression, tears, anger, exaggerated emotion, open mouth, colorful clothes, accessories, full body, text, watermark, different hairstyle, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.38,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Ai_Vulnerable",
+      "expression_label": "脆弱",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair, sharp monolid black eyes slightly downcast and glistening, pale skin, subtle sadness in expression, minimal emotion but eyes show loneliness and vulnerability, very slight moisture in eyes, monochrome hoodie, dim blue evening library lighting, consistent identity with reference image, melancholic high-quality anime illustration, focus on sad lonely eyes",
+      "negative_prompt": "smile, cheerful, crying heavily, exaggerated tears streaming, anger, surprise, colorful clothes, bright lighting, happy atmosphere, full body, text, watermark, different face, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.45,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Ai_Slight_Smile",
+      "expression_label": "微笑",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair, sharp monolid black eyes with gentle warm light, pale skin, very subtle soft smile, barely visible upward curve of lips, rare precious moment of warmth, eyes slightly softer than usual, monochrome hoodie, soft golden natural library window light, consistent identity with reference image, tender high-quality anime illustration emphasizing rarity of expression, focus on gentle smile",
+      "negative_prompt": "wide grin, laughing, exaggerated smile, teeth showing, cheerful, tears, colorful outfit, accessories, bright festive background, full body, text, watermark, different hairstyle, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.48,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Ai_Embarrassed",
+      "expression_label": "困惑",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair partially covering side of face, sharp monolid black eyes looking away to side avoiding eye contact, very slight blush on pale cheeks, trying to maintain neutral expression but subtle embarrassment visible, hand partially raised near face in lower frame, monochrome hoodie, soft library lighting, consistent identity with reference image, high-quality anime illustration with delicate emotional shift, focus on averted embarrassed gaze",
+      "negative_prompt": "big smile, laughing, crying, exaggerated bright red blush, cute cheerful pose, colorful clothes, accessories, full body, text, watermark, different face, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.50,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    },
+    {
+      "expression_id": "Ai_Focused",
+      "expression_label": "集中",
+      "reference_image": "02_Characters/images/Ai/Ai1.png",
+      "positive_prompt": "Close-up portrait, Japanese technical college student Ichinose Ai, same character as reference, bust shot, long straight black hair, sharp monolid black eyes intensely focused looking down at something below frame, pale skin, slight furrow between brows in concentration, completely absorbed in intellectual task, pen or pencil visible near face in lower frame, monochrome hoodie, focused library desk lighting, consistent identity with reference image, high-quality anime illustration emphasizing intellectual concentration, focus on intense studying eyes",
+      "negative_prompt": "smile, distracted, sleepy, tears, anger, surprise, laughing, colorful outfit, messy background, looking at viewer, full body, text, watermark, different hairstyle, mutation, bad anatomy, blurry, lowres",
+      "technical_parameters": {
+        "aspect_ratio": "1:1",
+        "reference_strength": 0.85,
+        "denoising_strength": 0.38,
+        "steps": 40,
+        "cfg_scale": 10.5
+      }
+    }
+  ]
+}
