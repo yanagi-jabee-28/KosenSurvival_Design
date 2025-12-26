@@ -37,5 +37,22 @@ npm install
 npm run dev
 ```
 
-## （後で戻す）画像連携について
-現在は立ち絵表示を一時停止中。再度有効化する際は、`public/characters` 配下に各キャラのフォルダへのリンク（ジャンクション）を作成して `/characters/<Name>/<Name>1.png` を参照してください。
+## 画像連携について
+
+立ち絵は `public/characters` 配下に各キャラのフォルダへのリンク（Windows ジャンクション）を作成して参照します。
+
+### ジャンクション作成手順
+
+PowerShell（管理者権限）で以下を実行：
+
+```powershell
+cd prototypes/text-advance-react/public/characters
+mklink /D Ai ..\..\..\doc\02_Characters\images\Ai
+mklink /D Takeshi ..\..\..\doc\02_Characters\images\Takeshi
+mklink /D Mina ..\..\..\doc\02_Characters\images\Mina
+mklink /D Mai ..\..\..\doc\02_Characters\images\Mai
+mklink /D Yuzu ..\..\..\doc\02_Characters\images\Yuzu
+mklink /D Player ..\..\..\doc\02_Characters\images\Player
+```
+
+作成後、`/characters/<Name>/<Name>1.png` 等で参照可能になります。

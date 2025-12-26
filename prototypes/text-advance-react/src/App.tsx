@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { actions, applyAction, initGameState, loadGameState, restartGame } from './state/game'
 import { balance } from './config/balance'
-import type { ActionId, GameState } from './state/game'
+import type { ActionId, GameState, CharacterName } from './state/game'
 import CharacterStand from './components/CharacterStand'
 
 export default function App() {
@@ -84,8 +84,8 @@ export default function App() {
         </section>
 
         <section className="stage">
-          <CharacterStand name="Takeshi" width={140} />
-          <CharacterStand name="Ai" width={140} />
+          {state.displayCharacter === 'Takeshi' && <CharacterStand name="Takeshi" width={260} />}
+          {state.displayCharacter === 'Ai' && <CharacterStand name="Ai" width={230} />}
         </section>
       </div>
 

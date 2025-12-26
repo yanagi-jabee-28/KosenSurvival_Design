@@ -9,6 +9,8 @@ export type TakeshiState = {
 
 export type GamePhase = 'play' | 'result'
 
+export type CharacterName = 'Ai' | 'Takeshi'
+
 export type GameState = {
   day: number // 1-14
   slot: number // 0-6
@@ -16,6 +18,7 @@ export type GameState = {
   takeshi: TakeshiState
   log: string[]
   phase: GamePhase
+  displayCharacter?: CharacterName
   result?: {
     playerScore: number
     playerPass: boolean
@@ -49,6 +52,7 @@ export function initGameState(): GameState {
     takeshi: { ...balance.takeshiInitial, progress: 0 },
     log: baseLog,
     phase: 'play',
+    displayCharacter: undefined,
   }
 }
 
@@ -75,6 +79,7 @@ export function loadGameState(): GameState {
       },
       log: Array.isArray(parsed.log) ? parsed.log.slice(-50) : [],
       phase: parsed.phase === 'result' ? 'result' : 'play',
+      displayCharacter: parsed.displayCharacter,
       result: parsed.result,
     }
   } catch {
@@ -110,10 +115,26 @@ function clampLog(log: string[]) {
   return log.slice(-MAX)
 }
 
+function getCharacterForAction(actionId: ActionId): CharacterName | undefined {
+  switch (actionId) {
+    case 'selfStudy':
+    case 'buyPastExam':
+    case 'practiceSession':
+      return 'Ai' // studying, reference materials
+    case 'helpTakeshi':
+      return 'Takeshi'
+    case 'sleep':
+    case 'indulge':
+      return undefined
+    default:
+      return undefined
+  }
+}
+
 export function applyAction(state: GameState, actionId: ActionId): GameState {
   if (state.phase !== 'play') return state
 
-  const next = { ...state, log: [...state.log] }
+  const next = { ...state, log: [...state.log], displayCharacter: getCharacterForAction(actionId) }
 
   switch (actionId) {
     case 'selfStudy': {
@@ -213,6 +234,7 @@ function advanceTime(state: GameState) {
   }
   state.day += 1
   state.slot = 0
+  state.displayCharacter = undefined // reset character display at day change
 
   if (state.day > 14 && state.phase === 'play') {
     const playerScore = Math.round(computeScore(state.stats.knowledge, state.stats.proficiency))
