@@ -41,18 +41,18 @@ npm run dev
 
 立ち絵は `public/characters` 配下に各キャラのフォルダへのリンク（Windows ジャンクション）を作成して参照します。
 
-### ジャンクション作成手順
+### ジャンクション作成手順（Windows）
 
-PowerShell（管理者権限）で以下を実行：
+管理者権限不要で動く `/J`（ジャンクション）を推奨します。開発者モードを有効にしている場合は `/D`（シンボリックリンク）でも可です。
 
 ```powershell
 cd prototypes/text-advance-react/public/characters
-mklink /D Ai ..\..\..\doc\02_Characters\images\Ai
-mklink /D Takeshi ..\..\..\doc\02_Characters\images\Takeshi
-mklink /D Mina ..\..\..\doc\02_Characters\images\Mina
-mklink /D Mai ..\..\..\doc\02_Characters\images\Mai
-mklink /D Yuzu ..\..\..\doc\02_Characters\images\Yuzu
-mklink /D Player ..\..\..\doc\02_Characters\images\Player
+mklink /J Ai ..\..\..\doc\02_Characters\images\Ai
+mklink /J Takeshi ..\..\..\doc\02_Characters\images\Takeshi
+mklink /J Mina ..\..\..\doc\02_Characters\images\Mina
+mklink /J Mai ..\..\..\doc\02_Characters\images\Mai
+mklink /J Yuzu ..\..\..\doc\02_Characters\images\Yuzu
+mklink /J Player ..\..\..\doc\02_Characters\images\player
 ```
 
 作成後、`/characters/<Name>/<Name>1.png` 等で参照可能になります。
