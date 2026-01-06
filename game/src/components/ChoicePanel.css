@@ -47,3 +47,15 @@
 .choice-button:active {
   transform: scale(0.98);
 }
+
+/* Inline variant placed inside the message box */
+.choice-panel-inline {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+.choice-panel-inline .choice-panel {
+  width: 100%;
+  max-width: 800px;
+}

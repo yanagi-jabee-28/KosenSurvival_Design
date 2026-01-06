@@ -150,21 +150,14 @@ export default function GameEngine() {
         ))}
       </div>
 
-      {/* メッセージボックス */}
-      {currentMessage && (
+      {/* メッセージボックス (メッセージが無くても選択肢表示時に表示する) */}
+      {(currentMessage || (isMessageComplete && scene.choices)) && (
         <MessageBox
-          message={currentMessage}
+          message={currentMessage ?? scene.messages[scene.messages.length - 1]}
           onAdvance={handleNextMessage}
           onHeightChange={setMessageBoxHeight}
-        />
-      )}
-
-      {/* 選択肢パネル */}
-      {isMessageComplete && scene.choices && (
-        <ChoicePanel
-          choices={scene.choices.choices}
+          choices={isMessageComplete ? scene.choices?.choices : undefined}
           onChoice={handleChoice}
-          offsetBottom={messageBoxHeight + 20}
         />
       )}
     </div>

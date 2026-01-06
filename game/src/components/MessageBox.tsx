@@ -1,18 +1,23 @@
 import { useEffect, useState, useLayoutEffect, useRef } from 'react'
 import type { MouseEvent as ReactMouseEvent, TouchEvent as ReactTouchEvent } from 'react'
-import { Message } from '@/types'
-import './MessageBox.css'
+import { Message, Choice } from '@/types'
+import ChoicePanel from './ChoicePanel'
+import './MessageBox.css' 
 
 interface MessageBoxProps {
   message: Message
   onAdvance: () => void
   onHeightChange?: (height: number) => void
+  choices?: Choice[]
+  onChoice?: (nextSceneId: string) => void
 }
 
 export default function MessageBox({
   message,
   onAdvance,
   onHeightChange,
+  choices,
+  onChoice,
 }: MessageBoxProps) {
   const [displayedText, setDisplayedText] = useState('')
   const [isFullyDisplayed, setIsFullyDisplayed] = useState(false)
@@ -32,7 +37,7 @@ export default function MessageBox({
     ro.observe(el)
 
     return () => ro.disconnect()
-  }, [message, onHeightChange])
+  }, [message, onHeightChange, choices])
 
   useEffect(() => {
     // Reset states when message changes
@@ -97,7 +102,11 @@ export default function MessageBox({
           {displayedText}
           {!isFullyDisplayed && <span className="message-cursor">▌</span>}
         </div>
-        {isFullyDisplayed && <div className="message-indicator">▼</div>}
+        {isFullyDisplayed && choices && choices.length > 0 ? (
+          <ChoicePanel choices={choices} onChoice={(id) => onChoice?.(id)} inline />
+        ) : (
+          isFullyDisplayed && <div className="message-indicator">▼</div>
+        )}
       </div>
     </div>
   )
