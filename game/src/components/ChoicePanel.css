@@ -3,6 +3,17 @@
   flex-direction: column;
   gap: 12px;
   animation: slideUp 0.3s ease-out;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  /* CSS variables (can be overridden from JS) */
+  --choice-font-size: 16px;
+  --choice-padding-y: 14px;
+  --choice-padding-x: 20px;
+  --choice-min-width: 160px;
+  --choice-max-width: 800px;
 }
 
 @keyframes slideUp {
@@ -17,8 +28,8 @@
 }
 
 .choice-button {
-  padding: 14px 20px;
-  font-size: 16px;
+  padding: var(--choice-padding-y) var(--choice-padding-x);
+  font-size: var(--choice-font-size);
   color: #fff;
   background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
   border: 2px solid #666;
@@ -27,6 +38,17 @@
   transition: all 0.2s ease;
   animation: fadeIn 0.4s ease-out forwards;
   opacity: 0;
+
+  /* sizing constraints */
+  min-width: var(--choice-min-width);
+  max-width: var(--choice-max-width);
+  width: 100%;
+
+  /* wrapping and overflow handling */
+  white-space: normal;
+  text-align: left;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -57,5 +79,27 @@
 }
 .choice-panel-inline .choice-panel {
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.choice-panel-inline .choice-button {
+  width: auto;
+  min-width: 120px;
+  max-width: 40%;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .choice-button {
+    font-size: calc(var(--choice-font-size) - 2px);
+    --choice-padding-x: 12px;
+  }
+}
+
