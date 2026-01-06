@@ -1,0 +1,27 @@
+.character-renderer {
+  position: absolute;
+  bottom: 0;
+  height: 600px;
+  max-height: 80vh;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.character-renderer.position-left {
+  left: 10%;
+}
+
+.character-renderer.position-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.character-renderer.position-right {
+  right: 10%;
+}
+
+.character-image {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
