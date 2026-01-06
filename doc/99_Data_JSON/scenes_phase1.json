@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "phase": "Phase 1",
+    "description": "Minimal Visual Novel - Sample Scenario"
+  },
+  "characters": {
+    "ai": {
+      "displayName": "一ノ瀬 アイ",
+      "expressions": {
+        "normal": "/assets/characters/ai/normal.png",
+        "happy": "/assets/characters/ai/happy.png",
+        "sad": "/assets/characters/ai/sad.png",
+        "surprised": "/assets/characters/ai/surprised.png"
+      }
+    }
+  },
+  "scenes": {
+    "scene_001": {
+      "id": "scene_001",
+      "title": "Opening - First Day",
+      "background": "/assets/backgrounds/classroom.png",
+      "characters": [
+        {
+          "name": "ai",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "4月。新年度が始まった。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "教室は新しい顔であふれていた。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "一ノ瀬 アイ",
+          "text": "おはよう。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "隣の席の女の子が声をかけてくる。",
+          "speed": "normal"
+        }
+      ],
+      "choices": {
+        "choiceId": "choice_001",
+        "choices": [
+          {
+            "id": "choice_a",
+            "label": "「おはよう。よろしくね」",
+            "nextSceneId": "scene_002_a"
+          },
+          {
+            "id": "choice_b",
+            "label": "「...」",
+            "nextSceneId": "scene_002_b"
+          }
+        ]
+      },
+      "nextSceneId": null
+    },
+    "scene_002_a": {
+      "id": "scene_002_a",
+      "title": "Response - Friendly",
+      "background": "/assets/backgrounds/classroom.png",
+      "characters": [
+        {
+          "name": "ai",
+          "expression": "happy",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "一ノ瀬 アイ",
+          "text": "いいね。僕はアイ。よろしく。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "彼女は笑顔で手を差し出した。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_003"
+    },
+    "scene_002_b": {
+      "id": "scene_002_b",
+      "title": "Response - Silent",
+      "background": "/assets/backgrounds/classroom.png",
+      "characters": [
+        {
+          "name": "ai",
+          "expression": "sad",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "一ノ瀬 アイ",
+          "text": "...大丈夫？",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "彼女は心配そうに見つめてくる。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_003"
+    },
+    "scene_003": {
+      "id": "scene_003",
+      "title": "First Day - End",
+      "background": "/assets/backgrounds/classroom.png",
+      "characters": [
+        {
+          "name": "ai",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "こうして、高専での日々が始まったのだった。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "5年間の冒険。その入口に立つ。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": null
+    }
+  }
+}

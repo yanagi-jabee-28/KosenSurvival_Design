@@ -44,6 +44,7 @@ KosenSurvival_Design/
 ## 設計思想の参照
 - **Source of Truth**: [AGENTS_legacy.md](AGENTS_legacy.md) を常に参照すること。
 - **変更履歴**: [AGENTS.md](AGENTS.md) に更新日と変更要約を記録。
+- **2026-01-01**: 一般的なノベルゲーム設計とユーザビリティ原則を追加しました。詳しくは [AGENTS.md](AGENTS.md) と Source of Truth ([AGENTS_legacy.md](AGENTS_legacy.md)) を参照してください。
 
 ## 開発ステータス
 - **Phase**: Design (設計完了、実装準備中)
