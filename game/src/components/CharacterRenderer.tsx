@@ -23,19 +23,22 @@ export default function CharacterRenderer({
   }
 
   const positionClass = `position-${characterState.position}`
+  const scaleTransform = `scale(${characterState.scale})`
 
   return (
     <div
       className={`character-renderer ${positionClass}`}
       style={{
         opacity: characterState.opacity,
-        transform: `scale(${characterState.scale})`,
       }}
     >
       <img
         src={imageUrl}
         alt={`${characterSprite.displayName} - ${characterState.expression}`}
         className="character-image"
+        style={{
+          transform: scaleTransform,
+        }}
       />
     </div>
   )

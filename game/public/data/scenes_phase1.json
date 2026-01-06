@@ -8,10 +8,13 @@
     "ai": {
       "displayName": "一ノ瀬 アイ",
       "expressions": {
-        "normal": "https://via.placeholder.com/300x400/333/888?text=Ai+Normal",
-        "happy": "https://via.placeholder.com/300x400/333/888?text=Ai+Happy",
-        "sad": "https://via.placeholder.com/300x400/333/888?text=Ai+Sad",
-        "surprised": "https://via.placeholder.com/300x400/333/888?text=Ai+Surprised"
+        "normal": "/characters/Ai/Ai_Neutral.png",
+        "happy": "/characters/Ai/Ai_Slight_Smile.png",
+        "sad": "/characters/Ai/Ai_Vulnerable.png",
+        "surprised": "/characters/Ai/Ai_Curious.png",
+        "think": "/characters/Ai/Ai_Think.png",
+        "focused": "/characters/Ai/Ai_Focused.png",
+        "embarrassed": "/characters/Ai/Ai_Embarrassed.png"
       }
     }
   },
@@ -19,7 +22,7 @@
     "scene_001": {
       "id": "scene_001",
       "title": "Opening - First Day",
-      "background": "https://via.placeholder.com/1920x1080/111/333?text=Classroom",
+      "background": "",
       "characters": [
         {
           "name": "ai",
@@ -71,7 +74,7 @@
     "scene_002_a": {
       "id": "scene_002_a",
       "title": "Response - Friendly",
-      "background": "https://via.placeholder.com/1920x1080/111/333?text=Classroom",
+      "background": "",
       "characters": [
         {
           "name": "ai",
@@ -99,7 +102,7 @@
     "scene_002_b": {
       "id": "scene_002_b",
       "title": "Response - Silent",
-      "background": "https://via.placeholder.com/1920x1080/111/333?text=Classroom",
+      "background": "",
       "characters": [
         {
           "name": "ai",
@@ -127,7 +130,7 @@
     "scene_003": {
       "id": "scene_003",
       "title": "First Day - End",
-      "background": "https://via.placeholder.com/1920x1080/111/333?text=Classroom",
+      "background": "",
       "characters": [
         {
           "name": "ai",
