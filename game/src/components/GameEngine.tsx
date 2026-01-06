@@ -1,21 +1,33 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { SceneData } from '@/types'
 import { loadSceneData } from '@/utils/sceneLoader'
 import CharacterRenderer from './CharacterRenderer.tsx'
 import MessageBox from './MessageBox.tsx'
 import ChoicePanel from './ChoicePanel.tsx'
-import ControlBar from './ControlBar.tsx'
-import './GameEngine.css'
+import './GameEngine.css' 
 
 export default function GameEngine() {
   const [sceneData, setSceneData] = useState<SceneData | null>(null)
   const [currentSceneId, setCurrentSceneId] = useState('scene_001')
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
-  const [isAutoPlay, setIsAutoPlay] = useState(false)
-  const [isSkipping, setIsSkipping] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
+  const [messageBoxHeight, setMessageBoxHeight] = useState(0)
+
+  // メッセージが存在しないときは高さを 0 に戻す（選択肢表示時など）
+  useEffect(() => {
+    if (!sceneData) {
+      setMessageBoxHeight(0)
+      return
+    }
+    const scene = sceneData.scenes[currentSceneId]
+    if (!scene) {
+      setMessageBoxHeight(0)
+      return
+    }
+    const currentMessage = scene.messages[currentMessageIndex] ?? null
+    if (!currentMessage) setMessageBoxHeight(0)
+  }, [sceneData, currentSceneId, currentMessageIndex])
 
   // シーンデータの読み込み
   useEffect(() => {
@@ -35,38 +47,33 @@ export default function GameEngine() {
     loadData()
   }, [])
 
-  // オート再生の処理
-  useEffect(() => {
-    if (!isAutoPlay || !sceneData) return
 
-    const delay = isSkipping ? 100 : 2000
-    autoPlayRef.current = setTimeout(() => {
-      const scene = sceneData.scenes[currentSceneId]
-      if (scene && currentMessageIndex < scene.messages.length) {
-        setCurrentMessageIndex(prev => prev + 1)
-      } else if (scene?.nextSceneId) {
-        handleSceneTransition(scene.nextSceneId)
-      } else if (scene?.choices) {
-        setIsAutoPlay(false) // 選択肢で自動再生を停止
-      }
-    }, delay)
-
-    return () => {
-      if (autoPlayRef.current) clearTimeout(autoPlayRef.current)
-    }
-  }, [isAutoPlay, isSkipping, currentSceneId, currentMessageIndex, sceneData])
 
   const handleNextMessage = () => {
     if (!sceneData) return
     const scene = sceneData.scenes[currentSceneId]
     if (!scene) return
 
+    // If there are more messages, show the next one
     if (currentMessageIndex < scene.messages.length - 1) {
       setCurrentMessageIndex(prev => prev + 1)
-    } else if (scene.nextSceneId && !scene.choices) {
-      // 次のシーンに自動遷移
-      handleSceneTransition(scene.nextSceneId)
+      return
     }
+
+    // We're at (or after) the last message
+    if (scene.choices) {
+      // Move index past last message to indicate 'messages complete' and show choices
+      setCurrentMessageIndex(prev => prev + 1)
+      return
+    }
+
+    if (scene.nextSceneId) {
+      // No choices and has next scene: transition immediately
+      handleSceneTransition(scene.nextSceneId)
+      return
+    }
+
+    // Otherwise do nothing (end of content)
   }
 
   const handleSceneTransition = (nextSceneId: string) => {
@@ -76,6 +83,16 @@ export default function GameEngine() {
 
   const handleChoice = (nextSceneId: string) => {
     handleSceneTransition(nextSceneId)
+  }
+
+  const handleScreenClick = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement
+    // UI 部分（コントロールバーや選択肢、メッセージボックス等）でのクリックは無視して
+    // 二重進行や誤操作を防ぐ
+    if (target.closest('.control-bar, .choice-panel, .choice-button, .message-box, .message-text, button, a, input, select, textarea')) {
+      return
+    }
+    handleNextMessage()
   }
 
   if (isLoading) {
@@ -112,32 +129,33 @@ export default function GameEngine() {
   }
 
   const isMessageComplete = currentMessageIndex >= scene.messages.length
+  const currentMessage = scene.messages[currentMessageIndex] ?? null
 
   return (
-    <div className="game-engine">
+    <div className="game-engine" onClick={handleScreenClick}>
       {/* 背景 */}
       <div className="scene-background" style={{
         backgroundImage: scene.background ? `url(${scene.background})` : 'none',
       }} />
 
       {/* キャラクター立ち絵 */}
-      <div className="characters-layer">
+      <div className="characters-layer" style={{ paddingBottom: messageBoxHeight }}>
         {scene.characters.map((char, idx) => (
           <CharacterRenderer
             key={idx}
             characterState={char}
             characterSprite={sceneData.characters[char.name]}
+            bottomOffset={messageBoxHeight + 24}
           />
         ))}
       </div>
 
       {/* メッセージボックス */}
-      {scene.messages.length > 0 && (
+      {currentMessage && (
         <MessageBox
-          message={scene.messages[currentMessageIndex]}
-          isComplete={isMessageComplete}
+          message={currentMessage}
           onAdvance={handleNextMessage}
-          isSkipping={isSkipping}
+          onHeightChange={setMessageBoxHeight}
         />
       )}
 
@@ -146,16 +164,9 @@ export default function GameEngine() {
         <ChoicePanel
           choices={scene.choices.choices}
           onChoice={handleChoice}
+          offsetBottom={messageBoxHeight + 20}
         />
       )}
-
-      {/* コントロールバー */}
-      <ControlBar
-        isAutoPlay={isAutoPlay}
-        isSkipping={isSkipping}
-        onToggleAuto={() => setIsAutoPlay(!isAutoPlay)}
-        onToggleSkip={() => setIsSkipping(!isSkipping)}
-      />
     </div>
   )
 }

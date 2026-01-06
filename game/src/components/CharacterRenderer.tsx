@@ -7,11 +7,13 @@ interface CharacterRendererProps {
     displayName: string
     expressions: Record<string, string>
   }
+  bottomOffset?: number
 }
 
 export default function CharacterRenderer({
   characterState,
   characterSprite,
+  bottomOffset = 0,
 }: CharacterRendererProps) {
   if (!characterSprite) {
     return null
@@ -30,6 +32,7 @@ export default function CharacterRenderer({
       className={`character-renderer ${positionClass}`}
       style={{
         opacity: characterState.opacity,
+        bottom: bottomOffset,
       }}
     >
       <img

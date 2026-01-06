@@ -1,28 +1,43 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useLayoutEffect, useRef } from 'react'
+import type { MouseEvent as ReactMouseEvent, TouchEvent as ReactTouchEvent } from 'react'
 import { Message } from '@/types'
 import './MessageBox.css'
 
 interface MessageBoxProps {
   message: Message
-  isComplete: boolean
   onAdvance: () => void
-  isSkipping: boolean
+  onHeightChange?: (height: number) => void
 }
 
 export default function MessageBox({
   message,
-  isComplete,
   onAdvance,
-  isSkipping,
+  onHeightChange,
 }: MessageBoxProps) {
   const [displayedText, setDisplayedText] = useState('')
+  const [isFullyDisplayed, setIsFullyDisplayed] = useState(false)
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  useLayoutEffect(() => {
+    if (!containerRef.current) return
+    const el = containerRef.current
+
+    // Initial measurement
+    onHeightChange?.(Math.ceil(el.getBoundingClientRect().height))
+
+    // Observe size changes
+    const ro = new ResizeObserver(() => {
+      onHeightChange?.(Math.ceil(el.getBoundingClientRect().height))
+    })
+    ro.observe(el)
+
+    return () => ro.disconnect()
+  }, [message, onHeightChange])
 
   useEffect(() => {
-    if (isSkipping) {
-      // スキップ時は全文表示
-      setDisplayedText(message.text)
-      return
-    }
+    // Reset states when message changes
+    setDisplayedText('')
+    setIsFullyDisplayed(false)
 
     // Typewriter effect
     let currentIndex = 0
@@ -33,32 +48,56 @@ export default function MessageBox({
         setDisplayedText(message.text.slice(0, currentIndex))
         currentIndex++
       } else {
+        setIsFullyDisplayed(true)
         clearInterval(interval)
       }
     }, speedMs)
 
     return () => clearInterval(interval)
-  }, [message, isSkipping])
+  }, [message])
 
-  const handleClick = () => {
-    if (!isComplete) {
-      // まだ表示途中なら全文表示
+  const lastInteractionRef = useRef<number>(0)
+
+  const handleAdvanceInteraction = (doStopPropagation = true) => {
+    // duplicate suppression
+    const now = Date.now()
+    if (now - lastInteractionRef.current < 100) return
+    lastInteractionRef.current = now
+
+    if (!isFullyDisplayed) {
+      // Show full text
       setDisplayedText(message.text)
+      setIsFullyDisplayed(true)
     } else {
-      // 表示完了なら次に進む
+      // Advance
       onAdvance()
     }
   }
 
+  const handleClick = (e?: ReactMouseEvent) => {
+    e?.stopPropagation()
+    handleAdvanceInteraction()
+  }
+
+  const handleTouchStart = (e: ReactTouchEvent) => {
+    // Prevent the emulated click and double-trigger
+    e.preventDefault()
+    e.stopPropagation()
+    const now = Date.now()
+    if (now - lastInteractionRef.current < 500) return
+    lastInteractionRef.current = now
+    handleAdvanceInteraction()
+  }
+
   return (
-    <div className="message-box-container">
+    <div className="message-box-container" ref={containerRef} onClick={handleClick} onTouchStart={handleTouchStart}>
       <div className="message-box">
         <div className="message-speaker">{message.characterName}</div>
         <div className="message-text" onClick={handleClick}>
           {displayedText}
-          {!isComplete && <span className="message-cursor">▌</span>}
+          {!isFullyDisplayed && <span className="message-cursor">▌</span>}
         </div>
-        {isComplete && <div className="message-indicator">▼</div>}
+        {isFullyDisplayed && <div className="message-indicator">▼</div>}
       </div>
     </div>
   )

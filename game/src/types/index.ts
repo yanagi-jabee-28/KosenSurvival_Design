@@ -51,8 +51,6 @@ export interface SceneData {
 export interface GameState {
   currentSceneId: string;
   currentMessageIndex: number;
-  isAutoPlay: boolean;
-  isSkipping: boolean;
   messageBacklog: Message[];
   sceneHistory: string[];
 }
