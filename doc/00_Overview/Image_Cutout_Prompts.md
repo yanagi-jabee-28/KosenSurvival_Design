@@ -2,7 +2,7 @@
 
 このドキュメントは、AI生成画像（Stable Diffusion / Midjourney / NijiJourney 等）を「一発で切り抜きやすく」生成するための実践ルール集です。プロンプトを工夫することで、背景除去の自動化が格段に楽になります。
 
-**関連**: プロンプトの形式や運用に関する統合ベストプラクティスは `doc/00_Overview/Prompt_Design_Guide.md` にまとめてあります（ユーザー向けにはCombined Promptを優先する方針）。
+**関連**: プロンプトの形式や運用に関する統合ベストプラクティスは `doc/00_Overview/Prompt_Design_Guide.md` に、キャラクタ描画規約（色味・線・表情・命名規約）は `doc/00_Overview/Art_Style_Guide.md` にまとめてあります（ユーザー向けにはCombined Promptを優先する方針）。
 
 ## ゴール
 - 切り抜き（背景除去）での手作業・マスク修正を最小化する。

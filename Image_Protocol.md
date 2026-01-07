@@ -133,6 +133,23 @@ volumetric lighting, cinematic lighting
 この要件は、Prompt を人が使うワークフロー（AUTOMATIC1111, Midjourney, Nanobanana Pro 等）を想定した実務ルールである。
 
 
+### 3.5 Character Art Style Guide (キャラクタアートスタイル規約)
+
+このドキュメントでは、キャラクタの一貫性を保つためのプロンプト/アセット規約を規定します。基本方針は **Modern Clean Anime（クリーンな線画 + セルシェーディング）**、切り抜き・差分管理を優先し、表情ライブラリと命名規約を定めます。詳細は `doc/00_Overview/Art_Style_Guide.md` を参照してください。
+
+要点サマリ:
+- スタイル: Modern Clean Anime（クリーン線画、2–3段階のセルシェーディング）
+- ファイル: PNG（透過または白背景）、推奨解像度: 2048×2048（顔/バスト） / 2048×3072（半身/全身）
+- 表情: neutral, smile, big_smile, sad, angry, surprised, embarrassed, sleepy, talk 等を最低セットにする
+- 命名例: `mai_bust_2048_smile.png`
+
+コピー可能な Combined Prompt（例）:
+```
+Modern clean anime style, clean lineart, 2D cel shading, soft studio lighting, high detail, original character, consistent identity, bust shot, plain mid-gray background; -exclude: photorealistic, watermark, text, extra limbs, fuzzy edges
+```
+
+（以下は既存のセクションに続きます）
+
 ## 4. Public Prompt Research & Iterative Design (公開プロンプトの検索と反復設計)
 
 *(Use this module to fetch specific aesthetics referenced in user requests, e.g., "Zuboraya sign style" or "Specific Anime Art Style")*

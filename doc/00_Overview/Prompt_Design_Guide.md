@@ -55,6 +55,7 @@ Settings: 2048x2048, Steps 40, CFG 7.5
 ## リンクと参照
 - 詳細: `Image_Protocol.md`（技術的なフィールドやJSONスキーマ）
 - 切り抜きテンプレ: `doc/00_Overview/Image_Cutout_Prompts.md`
+- キャラクタアートスタイル: `doc/00_Overview/Art_Style_Guide.md`（キャラの描画規約・プロンプトテンプレ・表情ライブラリ）
 
 ---
 
