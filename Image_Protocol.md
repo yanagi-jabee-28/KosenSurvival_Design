@@ -71,6 +71,49 @@ Strictly adhere to the following upgraded JSON structure.
 - **Restoration**: Use tokens: `high resolution restoration`, `remove scratches`, `sharpen`, `denoise`, `colorized`, `modern 8k photography`.
 - **Infographic/Gralecco**: Use tokens: `hand-drawn infographic`, `simple illustration`, `warm colors`, `easy to understand`, `visual metaphor`, `business presentation style`.
 
+### 3.3 Cutout-friendly generation (切り抜きに最適化されたプロンプト)
+背景除去（切り抜き）を確実に成功させるための実践的ルールとコピペ用プロンプト集。
+
+- **ゴール**: 最初から「切り抜きやすい」画像を生成することで、後処理（マスク修正・手作業）を最小化する。
+- **最重要トリック: ステッカー化**: `sticker`, `sticker type`, `white outline`, `die-cut`, `vector art` などを入れて、キャラ周囲に明確な白縁／輪郭を生成させると切り抜き耐性が飛躍的に向上する。
+- **背景は白・フラットに**: `white background`, `flat background`, `simple background` を優先。グリーンバックはスピル（色被り）を生む場合があるため慎重に。
+- **ボケ・被写界深度を排除**: ネガティブに `depth of field`, `bokeh`, `blurry`, `fuzzy edges` を入れて、髪の毛や細部が背景に溶け込むのを防ぐ。
+- **線画をはっきりさせる**: `cel shading`, `flat color`, `thick lines`, `bold lines`, `high contrast` を指定して輪郭を明瞭にする。
+- **ネガティブプロンプトの活用**: `shadow`, `drop shadow`, `casting shadow`, `volumetric lighting`, `cinematic lighting`, `complex background` などを除外指定する。
+
+コピペ用（切り抜き特化プロンプト）
+
+**Positive (入力)**:
+```
+(character description),
+solo,
+sticker type, white outline, vector art,
+simple background, white background,
+flat color, cel shading, bold lines, high contrast,
+minimalist
+```
+
+**Negative (除外)**:
+```
+complex background, scenery, realistic, photorealistic,
+shadow, drop shadow, casting shadow,
+depth of field, bokeh, blurry, fuzzy edges,
+volumetric lighting, cinematic lighting
+```
+
+- **Stable Diffusion / ローカル生成の裏技**:
+  - `LayerDiffusion` や `Transparent Background LoRA` を利用すると、アルファ付きPNGを直接生成できる場合があり、切り抜き作業を不要にする。可能なら導入を推奨。
+  - `Background Removal LoRA` も白背景化・単純背景化に有効。
+
+- **効果と運用メモ**:
+  - これらの指針を入れるだけで、Photoshop の自動選択ツールや remove.bg 等の自動除去ツールでの成功率が大幅に改善する。
+  - 実運用では数ショット生成して、最も白縁が安定しているパターンを選ぶとコスト効率が良い。
+
+(短い注釈) ここでのトークンはモデルやコミュニティフィルタによって振る舞いが変わるため、最初は小さなバッチで検証してチューニングすることを推奨する。
+
+*詳しくは `doc/00_Overview/Image_Cutout_Prompts.md` を参照してください。*
+
+
 ## 4. Public Prompt Research & Iterative Design (公開プロンプトの検索と反復設計)
 
 *(Use this module to fetch specific aesthetics referenced in user requests, e.g., "Zuboraya sign style" or "Specific Anime Art Style")*
