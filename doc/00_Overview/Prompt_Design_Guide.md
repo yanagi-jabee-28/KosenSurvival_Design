@@ -16,22 +16,19 @@
 ## 形式例
 ### 1) Combined Prompt（推奨）
 ```
-1girl, anime-style, clean lineart, high detail, studio lighting, plain mid-gray background; -exclude: checkerboard, watermark, text, blur, extra limbs
-```
-- ポイント: 除外語句は `-exclude:` のように一箇所にまとめても良いし、文脈にあわせて括弧内で `without ...` と書いても良い。
+Combined: 1girl, anime-style, clean lineart, high detail, studio lighting, plain mid-gray background; -exclude: checkerboard, watermark, text, blur, extra limbs
 
-### 2) モデル分割（必要な場合は併記）
-```
+# 必要に応じて同じコードブロック内にラベル付きで併記（ユーザーが1回のコピペで済むように）
 Positive: 1girl, anime-style, clean lineart, high detail, studio lighting, plain mid-gray background
 Negative: checkerboard, watermark, text, blur, extra limbs
 Settings: 2048x2048, Steps 40, CFG 7.5
 ```
-- 併記の順序: まず Combined → 次に分割フォーマット（必要な場合のみ）を提示する。
+- ポイント: 併記するときは**必ず同一コードブロックの中に**ラベル付き（Combined / Positive / Negative）で並べること。ユーザーが複数回のコピペを行わず、1回で生成できることを最優先する。
 
 ---
 
 ## 実践チェックリスト（出力時）
-- ✅ 単一コードブロックに **Combined Prompt** を必ず含める
+- ✅ 単一のコードブロックに **Combined Prompt** を必ず含め、モデル分割が併記される場合は同一コードブロック内に**ラベル付きで**（`Positive:` / `Negative:`）並べる。ユーザーが1回のコピペで済むようにする。
 - ✅ モデル要件で分割が必須なら **分割フォーマットを併記**（例: SDXLでNegativeを必須とするUI）
 - ✅ 背景の扱い（切り抜きが目的なら `plain background`, `white background` を明記）
 - ✅ セーフティ配慮: 実在の有名人を暗示する語は避ける（`fictional` / `original character` を明示）

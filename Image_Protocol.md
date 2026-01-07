@@ -83,24 +83,13 @@ Strictly adhere to the following upgraded JSON structure.
 - **線画をはっきりさせる**: `cel shading`, `flat color`, `thick lines`, `bold lines`, `high contrast` を指定して輪郭を明瞭にする。
 - **ネガティブプロンプトの活用**: `shadow`, `drop shadow`, `casting shadow`, `volumetric lighting`, `cinematic lighting`, `complex background` などを除外指定する。
 
-コピペ用（切り抜き特化プロンプト）
+コピペ用（切り抜き特化プロンプト） — **必ず単一コードブロックで提供**（Combined と Positive/Negative を同一ブロック内にラベル付きで示す）:
+```
+Combined: sticker, white outline, simple background, flat color, cel shading, bold lines, high contrast; -exclude: complex background, shadow, bokeh, blurry
 
-**Positive (入力)**:
-```
-(character description),
-solo,
-sticker type, white outline, vector art,
-simple background, white background,
-flat color, cel shading, bold lines, high contrast,
-minimalist
-```
+Positive: (character description), solo, sticker type, white outline, vector art, simple background, white background, flat color, cel shading, bold lines, high contrast, minimalist
 
-**Negative (除外)**:
-```
-complex background, scenery, realistic, photorealistic,
-shadow, drop shadow, casting shadow,
-depth of field, bokeh, blurry, fuzzy edges,
-volumetric lighting, cinematic lighting
+Negative: complex background, scenery, realistic, photorealistic, shadow, drop shadow, casting shadow, depth of field, bokeh, blurry, fuzzy edges, volumetric lighting, cinematic lighting
 ```
 
 - **Stable Diffusion / ローカル生成の裏技**:
@@ -118,16 +107,16 @@ volumetric lighting, cinematic lighting
 ### 3.4 Paste-ready Prompt Output Requirements (コピー＆ペースト可能なプロンプト出力要件)
 画像生成プロンプトの設計を求められた場合、Agent は「そのまま貼り付けて画像を生成できる」**コピペ可能なプロンプト**を出力すること。
 
-- 出力は原則として**単一のコードブロック**（```text または ```）で行う。余分な説明を長々と付けず、貼り付けて即実行できる形式にする。
+- 出力は原則として**単一のコードブロック**（```text または ```）で行う。**必ず**Combined と、必要な場合は Positive / Negative を **同一コードブロック内にラベル付きで併記**すること。これによりユーザーは1回のコピペで生成でき、複数回のコピペは不要となる。余分な説明はコードブロックの外に短く記載し、生成用テキストはコードブロックだけで完結させる。
 - コードブロック内には少なくとも以下を含めること:
-  - **Combined prompt**（まず一行で示す。コピペしてそのまま使える形式。例: `... ; -exclude: ...`）
-  - **Positive / Negative**（モデルやUIが分割を必須とする場合のみ、Combined の下に併記する）
+  - **Combined prompt**（まず一行で示す。例: `... ; -exclude: ...`）
+  - **Positive / Negative**（分割が必要な場合は Combined の下にラベル付きで併記し、同一コードブロック内で表示する）
   - **推奨設定**（解像度、Sampler、Steps、CFG/Guidance 等）
   - **モデル別バリアント**（必要な場合は SD 系 / Midjourney / Nanobanana などの例）
   - 透過 PNG やアルファが必要な場合はその旨（`transparent background` / `alpha`）を明記
   - 1 行の簡単な使用例（オプション）
 
-> 実務ルール: ユーザー目線では必ず最初に Combined Prompt を示す。ツール向けに分割が必要な場合のみ、分割フォーマットを追記する方式を採る。詳細は `doc/00_Overview/Prompt_Design_Guide.md` を参照。
+> 実務ルール: ユーザー目線では必ず最初に Combined Prompt を示す。分割が必要な場合でも、分割は同一コードブロック内にラベル付きで表示する。詳細は `doc/00_Overview/Prompt_Design_Guide.md` を参照。
 - セーフティやポリシーを避けるため、実在の有名人を想起させる語や写真表現（`photorealistic`, `photo`, `headshot`）を避ける指示を明示する（例: `original character`, `fictional character` を追加）。
 
 この要件は、Prompt を人が使うワークフロー（AUTOMATIC1111, Midjourney, Nanobanana Pro 等）を想定した実務ルールである。
