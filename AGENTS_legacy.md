@@ -48,7 +48,7 @@
 - **検証重視**: 多様なプレイヤーでのユーザーテストとログを用いた定量的改善を行う。
 
 ### F. 画像生成プロンプト出力基準
-画像生成用プロンプトを作成・提供する際は、ユーザーが**そのまま貼り付けて画像を生成できる**コピペ可能な形式で出力することを標準とする。具体的には単一のコードブロックで **Positive prompt / Negative prompt / 推奨設定（解像度・Sampler・Steps・CFG 等）** を含め、必要に応じてモデル別のバリアント（例: SD 系、Midjourney、Nanobanana Pro）を添えること。実在人物の写真的生成と混同しないよう `fictional` や `original character` の明示等、セーフティ配慮を行う。
+画像生成用プロンプトを作成・提供する際は、ユーザーが**そのまま貼り付けて画像を生成できる**コピペ可能な形式で出力することを標準とする。技術的にはツールが要求する場合に `Positive / Negative` を分けて出力しても構わないが、**実務上の良き慣行（Best practice）としてはユーザー向け出力はまず「単一のCombined Prompt」を優先して提示する**。Combined Prompt は可読性・可搬性が高く、利用者のコピペミスや解釈のブレを減らすためである。モデル別に分割フォーマットが必要な場合は、Combined を先に示した上で `Positive / Negative / Settings` を併記する方式を推奨する。切り抜き要件やセーフティ配慮（`fictional` / `original character` の明示等）も必ず含めること。詳細は `doc/00_Overview/Prompt_Design_Guide.md` を参照。
 
 ## 3. Directory Structure
 ```

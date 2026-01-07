@@ -60,7 +60,7 @@
     *   実装前に綿密な設計を行い、エッジケースやエラーハンドリングを考慮する。
 *   **機会の能動的探索**: ユーザーの指示待ちにならず、関連技術や潜在的なリスク（技術的負債、セキュリティ等）を先回りして特定し、付加価値として提案する。
 
-*   **画像生成プロンプト出力仕様**: 画像生成プロンプトを設計するよう指示された場合、Agent は**貼り付けて即実行できるコピペ可能なプロンプト**を提供すること（単一のコードブロック推奨）。出力は最小限の説明に留め、必ず **Positive prompt / Negative prompt / 推奨設定（解像度・Sampler・Steps・CFG 等）** を含め、必要に応じてモデル別の例を追加すること。セーフティ対策（実在人物を示唆する語の排除や 'fictional' の明示等）を考慮すること。
+*   **画像生成プロンプト出力仕様**: 画像生成プロンプトを設計するよう指示された場合、Agent は**貼り付けて即実行できるコピペ可能なプロンプト**を提供すること（単一のコードブロック推奨）。出力は最小限の説明に留め、**まずは単一の『Combined Prompt（まとまった一文）』を最優先で提示する**ことを推奨する。内部的に `Positive / Negative` を使って最適化することは許容されるが、ユーザー向け出力は Combined を冒頭に示し、モデル固有に分割が必要な場合のみ `Positive / Negative / 推奨設定（解像度・Sampler・Steps・CFG 等）` を併記する方式を推奨する。セーフティ対策（実在人物を示唆する語の排除や `fictional` / `original character` の明示等）を忘れないこと。詳細は `doc/00_Overview/Prompt_Design_Guide.md` を参照。
     - **背景（透過／チェック模様）に関する仕様**: 切り抜き用途で「アルファ（透明）を模倣するチェック柄（checkerboard/chessboard）」が生成されないようにするため、出力プロンプトには以下を必ず含めること。
         - ポジティブ（望ましい表現）: 「plain solid background」「seamless backdrop」「studio backdrop」「mid-gray background」「green screen background（被写体と色が被らない）」などの明示。
         - ネガティブ（除外トークン）: 必ず「checkerboard, checkered, transparent background, alpha channel, chessboard, grid pattern, no dithering, no semi-transparent artifacts」などを含める。

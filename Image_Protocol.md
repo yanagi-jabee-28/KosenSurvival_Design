@@ -35,13 +35,15 @@ Strictly adhere to the following upgraded JSON structure.
     "target_aesthetic": "Photorealistic" | "Anime/Cel-Shaded" | "3D Render" | "Gralecco (Graphic Recording)" | "Knolling/Flat Lay" // etc.
   },
   "prompt_payload": {
-    "positive_prompt": "English. Subject (with consistency tokens), Action, Environment (geo-aware), Lighting, Style, Quality Modifiers.",
-    "negative_prompt": "English. Elements to exclude (e.g., text, watermark, bad anatomy, blur, mutation).",
+    "combined_prompt": "English. Single-line combined prompt intended for direct use; may include exclusion tokens inline or using a separator (e.g., '; -exclude: ...'). (Preferred for user-facing output).",
+    "positive_prompt": "English. Subject (with consistency tokens), Action, Environment (geo-aware), Lighting, Style, Quality Modifiers. (Optional — for model-specific fields).",
+    "negative_prompt": "English. Elements to exclude (e.g., text, watermark, bad anatomy, blur, mutation). (Optional — for model-specific fields).",
     "text_rendering": { // Only if text generation is requested (e.g., Infographics, Signs)
       "target_text": "The exact string to render",
       "placement": "top-center" | "speech-bubble" | "embedded"
     }
   },
+  // Note: For human-facing outputs, prefer `combined_prompt` first; include `positive_prompt`/`negative_prompt` only when the target model or UI requires them.
   "technical_parameters": {
     "aspect_ratio": "16:9" | "1:1" | "9:16" | "4:3",
     "model_suggestion": "Gemini Imagen 3" | "SDXL" | "Midjourney v6" | "Flux",
@@ -118,12 +120,14 @@ volumetric lighting, cinematic lighting
 
 - 出力は原則として**単一のコードブロック**（```text または ```）で行う。余分な説明を長々と付けず、貼り付けて即実行できる形式にする。
 - コードブロック内には少なくとも以下を含めること:
-  - **Positive prompt**（一行または明確な句）
-  - **Negative prompt**（一行）
+  - **Combined prompt**（まず一行で示す。コピペしてそのまま使える形式。例: `... ; -exclude: ...`）
+  - **Positive / Negative**（モデルやUIが分割を必須とする場合のみ、Combined の下に併記する）
   - **推奨設定**（解像度、Sampler、Steps、CFG/Guidance 等）
   - **モデル別バリアント**（必要な場合は SD 系 / Midjourney / Nanobanana などの例）
   - 透過 PNG やアルファが必要な場合はその旨（`transparent background` / `alpha`）を明記
   - 1 行の簡単な使用例（オプション）
+
+> 実務ルール: ユーザー目線では必ず最初に Combined Prompt を示す。ツール向けに分割が必要な場合のみ、分割フォーマットを追記する方式を採る。詳細は `doc/00_Overview/Prompt_Design_Guide.md` を参照。
 - セーフティやポリシーを避けるため、実在の有名人を想起させる語や写真表現（`photorealistic`, `photo`, `headshot`）を避ける指示を明示する（例: `original character`, `fictional character` を追加）。
 
 この要件は、Prompt を人が使うワークフロー（AUTOMATIC1111, Midjourney, Nanobanana Pro 等）を想定した実務ルールである。
