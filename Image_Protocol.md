@@ -113,6 +113,21 @@ volumetric lighting, cinematic lighting
 
 *詳しくは `doc/00_Overview/Image_Cutout_Prompts.md` を参照してください。*
 
+### 3.4 Paste-ready Prompt Output Requirements (コピー＆ペースト可能なプロンプト出力要件)
+画像生成プロンプトの設計を求められた場合、Agent は「そのまま貼り付けて画像を生成できる」**コピペ可能なプロンプト**を出力すること。
+
+- 出力は原則として**単一のコードブロック**（```text または ```）で行う。余分な説明を長々と付けず、貼り付けて即実行できる形式にする。
+- コードブロック内には少なくとも以下を含めること:
+  - **Positive prompt**（一行または明確な句）
+  - **Negative prompt**（一行）
+  - **推奨設定**（解像度、Sampler、Steps、CFG/Guidance 等）
+  - **モデル別バリアント**（必要な場合は SD 系 / Midjourney / Nanobanana などの例）
+  - 透過 PNG やアルファが必要な場合はその旨（`transparent background` / `alpha`）を明記
+  - 1 行の簡単な使用例（オプション）
+- セーフティやポリシーを避けるため、実在の有名人を想起させる語や写真表現（`photorealistic`, `photo`, `headshot`）を避ける指示を明示する（例: `original character`, `fictional character` を追加）。
+
+この要件は、Prompt を人が使うワークフロー（AUTOMATIC1111, Midjourney, Nanobanana Pro 等）を想定した実務ルールである。
+
 
 ## 4. Public Prompt Research & Iterative Design (公開プロンプトの検索と反復設計)
 

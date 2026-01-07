@@ -47,6 +47,9 @@
 - **QOL機能**: シーンリプレイ、表情ログ、バックログ、ブックマークを用意し、リプレイ体験を改善する。
 - **検証重視**: 多様なプレイヤーでのユーザーテストとログを用いた定量的改善を行う。
 
+### F. 画像生成プロンプト出力基準
+画像生成用プロンプトを作成・提供する際は、ユーザーが**そのまま貼り付けて画像を生成できる**コピペ可能な形式で出力することを標準とする。具体的には単一のコードブロックで **Positive prompt / Negative prompt / 推奨設定（解像度・Sampler・Steps・CFG 等）** を含め、必要に応じてモデル別のバリアント（例: SD 系、Midjourney、Nanobanana Pro）を添えること。実在人物の写真的生成と混同しないよう `fictional` や `original character` の明示等、セーフティ配慮を行う。
+
 ## 3. Directory Structure
 ```
 KosenSurvival_Design/
