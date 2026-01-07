@@ -78,6 +78,22 @@ photorealistic, watermark, text, extra limbs, mutated hands, bokeh, blurry, lowr
 
 ---
 
+## 署名（Signature / Art Identity） 🔖
+
+- **Project Style Token**: **`KosenSurvival_MCA_v1`** — すべてのCombined/Positiveプロンプトに含めること。これは作者（プロジェクト）の“署名”として機能し、生成画像を即時に識別可能にします（LoRA等での運用を推奨）。
+
+- **Signature Visual Rules（識別性を高めるための必須仕様）**:
+  - **Linework**: 中〜細で均一なライン（線幅の一貫性）。
+  - **Eye style**: 2点ハイライト（上に丸いキャッチライト＋下に小さな三日月状のハイライト）、虹彩はやや落ち着いたグラデーション。
+  - **Shading**: 2段階セルシェーディングを基準とし、薄い冷色系のリムライトを軽く入れる。
+  - **Color grade**: 中間色を基調にやや落ち着いた彩度（キャラ別アクセントカラーを明確に管理）。
+  - **Texture**: 必要に応じて低不透明度の紙目テクスチャ（2–4%）を薄く重ね、"作家性"を付与することができる（任意）。
+  - **Outline / Sticker**: 切り抜き用は `white outline`（ダイカット）を標準とし、用途によって `no outline` を使い分ける。
+
+- **運用メモ**: 可能であれば `KosenSurvival_MCA_v1` を LoRA や固定トークンとして訓練・登録し、シードとリファレンスを組み合わせて生成の再現性を高めること。
+
+---
+
 ## 変更履歴とガバナンス 🔁
 - スタイルに変更を加える場合は `doc/00_Overview/Art_Style_Guide.md` を編集し、変更点をコミットメッセージと `AGENTS_legacy.md` に要約して記録する。
 

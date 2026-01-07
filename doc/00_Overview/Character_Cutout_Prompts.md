@@ -3,6 +3,7 @@
 このファイルは「切り抜き（背景除去）に最適化された」主要キャラクター向けの、すぐにコピペ可能な**Combined Prompt**テンプレ集です。各プロンプトは以下の基準に従っています：
 
 - スタイル: Modern Clean Anime（MCA） — `clean lineart`, `2D cel shading`, `soft studio lighting`
+- **プロジェクト署名（Style token）: `KosenSurvival_MCA_v1` を必ず `Combined` または `Positive` に含めること（作者のサインとしての役割）。**
 - 切り抜き最適化: `sticker type`, `white outline`, `flat simple white background` を優先
 - セーフティ: 実在人物の言及は避け、`original character` / `fictional` を明記
 - フォーマット: 最初に `Combined:` を提示し、同一コードブロック内に `Positive:` / `Negative:` / `Settings:` を併記
