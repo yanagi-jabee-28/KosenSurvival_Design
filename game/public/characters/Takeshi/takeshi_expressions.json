@@ -83,13 +83,22 @@
       "notes_jp": "鋭い視線とやや強めの影で不機嫌さを表現。"
     },
     {
+      "id": "flustered",
+      "label_jp": "焦り",
+      "combined_prompt": "Takeshi, anime-style portrait, flustered and anxious as if pressed for time or urgently asking something (wide worried eyes, slightly open mouth as if panting or about to speak, small sweat drop at the temple, eyebrows furrowed, slight forward lean), hands gripping the edge of his hoodie or one hand reaching forward, slight natural blush allowed, dynamic tense posture, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve neon-lime accent and earphones, preserve messy hair and head pose",
+      "positives": ["sweat drop", "furrowed brows", "tense hands (gripping hoodie or reaching)", "wide worried eyes", "dynamic pose", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed", "overly aggressive expression", "excessive gore", "sexualized pose"],
+      "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 10},
+      "notes_jp": "焦って慌てる、急いで何かを伝える場面に使う表情。汗、眉の寄せ、手の緊張感を明確にしてください。過度に怖くならないように注意。"
+    },
+    {
       "id": "embarrassed",
       "label_jp": "照れ",
-      "combined_prompt": "Takeshi, anime-style portrait, embarrassed blush, shy eyes, slight sheepish smile or pursed lips, hand near face optional, soft lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
-      "positives": ["prominent blush", "soft bokeh lighting", "earphones visible"],
-      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed"],
+      "combined_prompt": "Takeshi, anime-style portrait, slightly embarrassed and gently pleading as if asking a favor (gentle pleading eyes looking toward the viewer, slight head tilt, hands together or one hand near face touching cheek lightly), subtle natural blush (avoid strong saturated redness or full-face tint), shy eyes, slight sheepish smile or pursed lips, soft polite body language, soft lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["subtle natural blush", "pleading eyes (asking vibe)", "hand near face or hands together", "slight head tilt", "soft bokeh lighting", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed", "overly red cheeks", "heavy color tint", "excessive blush", "intense stare", "overly sexualized pose"],
       "settings": {"resolution": "2048x2048", "steps": 34, "sampler": "Euler a", "cfg_scale": 9},
-      "notes_jp": "基本的に照れは控えめ。手差分を作ると運用しやすいです。"
+      "notes_jp": "頼みごとをするような、少し恥ずかしげで控えめな表情に。視線はやや上目遣いか正面で、手を合わせるか片手を頬に当てる差分を推奨。頬の赤みは自然で控えめに保ってください。"
     },
     {
       "id": "smirk",
