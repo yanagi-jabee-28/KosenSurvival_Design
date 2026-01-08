@@ -208,10 +208,20 @@
 *   黒須研（都市デザイン系）への配属が有利。
 *   Charisma Lv.20以上 + 学生会長実績で、確実に配属される。
 
-## 11. 声優イメージ（参考）
+## 11. 表情差分（生成プロンプト） 🔧
+*   **概要**: マイの表情差分は8種類（デフォルト / 集中 / 自信 / 微笑 / 苛立ち / 弱さ / 決意 / 情熱）を基本とします。生成用プロンプト（positive/negative/technical）は `doc/02_Characters/images/Mai/mai_expressions.json` に保存しました。作り方はタケシとユズの表情プロンプト形式に準拠しています（1:1 顔中心クロップ、reference_strengthで個性を固定）。
+*   **ワークフロー（要約）**:
+    1. `Mai_Neutral`（デフォルト）をまず生成して `02_Characters/images/Mai/Mai_Default.png` に保存
+    2. 生成画像をリファレンス（Face ID / Character Ref）としてアップロード、`reference_strength ≒ 0.88` を指定
+    3. 各表情を `positive_prompt` / `negative_prompt` を用いて生成（denoising_strength を表情の変化量に応じて調整）
+    4. ファイル名は JSON 内の推奨に従って保存（例:`Mai_Confident.png` 等）
+    5. 注意点: 微妙な表情差は denoising_strength を低め、劇的な変化（ダンス情熱など）は高めに設定する
+*   **参照元**: `doc/02_Characters/images/Takeshi/takeshi_expressions.json`, `doc/02_Characters/images/Yuzu/yuzu_expressions.json`
+
+## 12. 声優イメージ（参考）
 *   **イメージ**: 冷静で知的、しかし内に秘めた情熱がある声。
 *   **参考**: 雨宮天、早見沙織
 
-## 12. テーマソング（参考）
+## 13. テーマソング（参考）
 *   **テーマ**: 「完璧を目指す者の孤独と、支え合うことで得る強さ」
 *   **イメージ楽曲**: "Brave Shine" (Fate/stay night UBW), "unravel" (Tokyo Ghoul) のような、葛藤と成長を描く曲。
