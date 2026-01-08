@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "name": "Takeshi 表情プロンプト",
+    "version": "1.0",
+    "description": "剛田タケシ（オリジナルキャラクター）用の表情差分プロンプト集。Whisk の画像生成（参照画像アップロード→image-to-image モデル化）での利用を想定。",
+    "created_at": "2026-01-08",
+    "author": "GitHub Copilot",
+    "usage_notes": "まずは各エントリの `combined_prompt` を試し、必要に応じて `positives` を組み合わせてください。ネガティブトークンは必ず含めてください。イヤホンやネオンライムのアクセント（シャツプリント／ケーブル）を消さないように注意してください。",
+    "reference_image": "doc/02_Characters/images/Takeshi/takeshi.png",
+    "image_generation_service": "Whisk",
+    "image_model_usage": "Upload the reference image at `doc/02_Characters/images/Takeshi/takeshi.png` to Whisk, create/use an image model for Takeshi, and use image-to-image generation where possible.",
+    "color_preservation": {"instruction": "Preserve reference image color balance; maintain neon-lime accent (shirt print or cable) and do not apply per-expression color tints. Maintain natural skin tone consistent with the reference image."},
+    "pose_preservation": {"instruction": "Preserve reference head pose and camera angle — do NOT change face orientation, rotation, or head tilt. Keep sleeping-curve / bedhead hair (messy short hair) as in the reference."},
+    "accessory_preservation": {"instruction": "Ensure earphones remain visible (do NOT remove earphones or cable). If one earphone is occluded by hair/hand, keep cable visible; include neon-lime cable or accent where appropriate."},
+    "cutout_defaults": {"frame_color":"white","frame_padding_px":8,"no_transparency":true,"note_jp":"切り抜き用の白い枠（透過ではなく白背景）を必ず付与してください。"}
+  },
+  "safety": {
+    "fictional": true,
+    "no_real_person": true
+  },
+  "expressions": [
+    {
+      "id": "neutral",
+      "label_jp": "無表情",
+      "combined_prompt": "Takeshi, anime-style portrait, clean lineart, calm neutral expression, relaxed slightly sleepy eyes, soft lighting, plain solid mid-gray background, original character, high detail, crisp silhouette, studio lighting, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and messy short hair, ensure earphones are visible and neon-lime accent (shirt/cable) remains present",
+      "positives": ["face close-up", "soft shading", "earphones visible", "neon-lime accent present"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "text", "lowres", "blurry", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 30, "sampler": "Euler a", "cfg_scale": 9},
+      "notes_jp": "標準の立ち絵用。少し眠そうな目つきが特徴です。"
+    },
+    {
+      "id": "small_smile",
+      "label_jp": "微笑み",
+      "combined_prompt": "Takeshi, anime-style portrait, small closed-mouth smile, slight cheek raise, eyes mildly open (not fully awake), subtle friendly vibe, studio lighting, plain solid mid-gray background, original character, high detail, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["closed-mouth subtle smile", "minimal cheek raise", "earphones visible"],
+      "negatives": ["open mouth", "teeth visible", "overly cheerful", "earphones removed", "checkerboard"],
+      "settings": {"resolution": "2048x2048", "steps": 30, "sampler": "Euler a", "cfg_scale": 8},
+      "notes_jp": "あくまで控えめな笑顔。眠たげさを残してください。"
+    },
+    {
+      "id": "big_smile",
+      "label_jp": "満面の笑み",
+      "combined_prompt": "Takeshi, anime-style portrait, big open-mouth smile showing teeth, eyes crinkled (smiling eyes), energetic friendly expression (game話題で目が輝くイメージ), studio lighting, plain solid mid-gray background, original character, high detail, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent on shirt/cable and earphones, preserve head pose and messy hair",
+      "positives": ["open mouth showing teeth", "sparkling eyes", "high contrast", "earphones visible"],
+      "negatives": ["muted expression", "closed mouth only", "earphones removed", "checkerboard"],
+      "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "DPM++ 2M Karras", "cfg_scale": 10},
+      "notes_jp": "ゲームの話で急に元気になる瞬間。歯を見せる大きな笑顔に。"
+    },
+    {
+      "id": "laugh",
+      "label_jp": "笑い",
+      "combined_prompt": "Takeshi, anime-style portrait, laughing with mouth open, eyes squinting or closed, joyful dynamic expression, slight head tilt back, subtle motion in hair, studio lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["dynamic laugh pose", "open mouth detail", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 40, "sampler": "DPM++ 2M Karras", "cfg_scale": 10},
+      "notes_jp": "動きのある力強い笑い。髪の毛と表情のブレは自然に見える範囲で許容。"
+    },
+    {
+      "id": "surprised",
+      "label_jp": "驚き",
+      "combined_prompt": "Takeshi, anime-style portrait, surprised expression, wide eyes, slightly open mouth, raised eyebrows, studio lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["wide eyes", "strong eye highlight", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 9},
+      "notes_jp": "びっくりした瞬間の表情。目のハイライトを強めに。"
+    },
+    {
+      "id": "sleepy",
+      "label_jp": "眠そう",
+      "combined_prompt": "Takeshi, anime-style portrait, sleepy half-closed eyes, heavy under-eye bags, relaxed mouth, soft cozy lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve messy bedhead hair and head pose",
+      "positives": ["half-closed eyes", "prominent under-eye bags", "earphones visible"],
+      "negatives": ["wide awake expression", "sharp harsh lighting", "earphones removed", "checkerboard"],
+      "settings": {"resolution": "2048x2048", "steps": 30, "sampler": "Euler a", "cfg_scale": 8},
+      "notes_jp": "タケシらしい寝起き・睡眠不足の雰囲気を大切に。目の開きは浅めで。"
+    },
+    {
+      "id": "angry",
+      "label_jp": "怒り",
+      "combined_prompt": "Takeshi, anime-style portrait, annoyed glare, furrowed brows, pursed lips, slight vein mark optional, dramatic rim lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["strong contrast", "sharp shadows", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 10},
+      "notes_jp": "鋭い視線とやや強めの影で不機嫌さを表現。"
+    },
+    {
+      "id": "embarrassed",
+      "label_jp": "照れ",
+      "combined_prompt": "Takeshi, anime-style portrait, embarrassed blush, shy eyes, slight sheepish smile or pursed lips, hand near face optional, soft lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["prominent blush", "soft bokeh lighting", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 34, "sampler": "Euler a", "cfg_scale": 9},
+      "notes_jp": "基本的に照れは控えめ。手差分を作ると運用しやすいです。"
+    },
+    {
+      "id": "smirk",
+      "label_jp": "ニヤリ",
+      "combined_prompt": "Takeshi, anime-style portrait, sly smirk, one corner of mouth raised, confident playful expression, slightly narrowed eyes, studio lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["sharper shadows", "deep eye contrast", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 34, "sampler": "DPM++ 2M Karras", "cfg_scale": 10},
+      "notes_jp": "軽いチャラさやツッコミ気味の表情。口角の角度で細かく調整してください。"
+    },
+    {
+      "id": "wink",
+      "label_jp": "ウインク",
+      "combined_prompt": "Takeshi, anime-style portrait, playful wink, close the right eye (viewer-right, character's left eye) while keeping the other eye open — ensure only the viewer-right eye is closed and NOT both eyes, small grin, casual confident vibe, studio lighting, plain solid mid-gray background, original character, include thin white border/frame (8-12px), no transparent background, preserve neon-lime accent and earphones, preserve head pose and messy hair",
+      "positives": ["playful pose", "clear eye highlight on open eye", "viewer-right eye closed (character left eye)", "earphones visible"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "both eyes closed", "opposite eye closed", "earphones removed"],
+      "settings": {"resolution": "2048x2048", "steps": 32, "sampler": "Euler a", "cfg_scale": 9},
+      "notes_jp": "ウインクは必ず画面右側の目（キャラクターの左目）だけを閉じてください。"
+    }
+  ]
+}
