@@ -85,11 +85,11 @@
     {
       "id": "flustered",
       "label_jp": "焦り",
-      "combined_prompt": "Takeshi, anime-style portrait, flustered and anxious as if pressed for time or urgently asking something (wide worried eyes, slightly open mouth as if panting or about to speak, small sweat drop at the temple, eyebrows furrowed, slight forward lean), hands gripping the edge of his hoodie or one hand reaching forward, slight natural blush allowed, dynamic tense posture, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve neon-lime accent and earphones, preserve messy hair and head pose",
-      "positives": ["sweat drop", "furrowed brows", "tense hands (gripping hoodie or reaching)", "wide worried eyes", "dynamic pose", "earphones visible"],
-      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed", "overly aggressive expression", "excessive gore", "sexualized pose"],
+      "combined_prompt": "Takeshi, anime-style portrait, flustered and anxious as if pressed for time or urgently asking something (wide worried eyes, slightly open mouth as if about to speak, small sweat drop at the temple, eyebrows furrowed, slight forward lean), hands running through or raking at his hair / scratching his scalp in a panicked way (one or both hands in hair, visible hair motion), tense posture, slight natural blush allowed, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve neon-lime accent and earphones (if occluded, keep cable visible), preserve messy hair and head pose",
+      "positives": ["sweat drop", "furrowed brows", "hands-in-hair (raking/scratching)", "visible hair motion", "wide worried eyes", "dynamic tense pose", "earphones visible or cable visible if occluded"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "earphones removed", "self-harm", "graphic injury", "excessive gore", "overly aggressive expression", "sexualized pose"],
       "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 10},
-      "notes_jp": "焦って慌てる、急いで何かを伝える場面に使う表情。汗、眉の寄せ、手の緊張感を明確にしてください。過度に怖くならないように注意。"
+      "notes_jp": "頭をかきむしるような、焦り・慌ての表情。両手または片手で髪をかき上げる／爪で軽く頭皮を掻く動作を指定してください。出血や痛々しい表現、自己傷害を連想させる表現は避け、コミカルまたは緊迫したが非暴力的な描写に留めてください。"
     },
     {
       "id": "embarrassed",
