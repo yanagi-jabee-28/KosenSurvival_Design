@@ -12,7 +12,7 @@
     "color_preservation": {"instruction":"Preserve reference image color balance; do not apply per-expression color tints (e.g., no blue or warm overlay). Maintain natural skin tone and global color grading consistent with the reference image."},
     "pose_preservation": {"instruction":"Preserve reference head pose and camera angle — do NOT change face orientation, rotation, or head tilt. Use `doc/02_Characters/images/Yuzu/yuzu.png` as the pose reference."},
     "ribbon_preservation": {"instruction":"Ensure Yuzu's ribbon is placed on the viewer-left side of the image (character's right). Do NOT place ribbon on the viewer-right side; if multiple ribbons appear, primary ribbon must remain viewer-left."},
-    "cutout_defaults": {"frame_color":"white","frame_padding_px":8,"no_transparency":true,"note_jp":"切り抜き用の白い枠（透過ではなく白背景）を必ず付与してください。"}
+    "cutout_defaults": {"frame_color":"white","frame_padding_px":20,"safe_margin_px":24,"frame_style":"silhouette_stroke","registration_mark":"outside-bottom-right-8px-square","no_transparency":true,"note_jp":"切り抜き用の太めの白いストローク（被写体の輪郭に沿うアウトライン、推奨 18–24px、ここでは 20px）を必ず付与してください。※四隅の矩形枠ではなく、被写体に沿った均一なストロークにしてください。被写体+ストロークが画像端から24px以上の余裕を持つことを確認し、基準マークはストロークの外側（右下）に小さな黒 8×8 px を配置してください。透過ではなく白背景で出力してください。"}
   },
   "safety": {
     "fictional": true,
@@ -20,36 +20,52 @@
   },
   "expressions": [
     {
+      "id": "reference_fullbody",
+      "label_jp": "リファレンス（全身）",
+      "generation_mode": "text2img",
+      "combined_prompt": "Yuzu, full-body anime character, standing pose with relaxed natural stance and slight forward lean, warm small open-mouth smile (slight upper teeth), very large sparkling eyes with layered catchlights, pastel wardrobe (cute school-casual skirt + top). **Enforce colors:** clothes base clearly #fff4f2, trims #e9ddff; **make ribbon visually prominent and saturated #ff9fb6 (bright glossy ribbon)**. Accent #ff9fb6 must be used only for ribbon and cheek highlights. Clean lineart, high detail, crisp silhouette, full-body visible (head-to-toe), soft warm studio lighting that enhances ribbon and face highlights, plain soft mid-gray background, include a thick white silhouette stroke (outline) 18–24px that follows the subject's silhouette (not a rectangular cornered border); ensure the subject+stroke has at least a 24px margin to the image edge; place a small black registration mark (8x8px square) outside the stroke at the bottom-right corner; no transparent background, preserve natural skin tone and realistic proportions, ensure ribbon on viewer-left (character's right) and do NOT place ribbon on viewer-right side",
+      "positives": ["full-body (head-to-toe)", "accurate proportions", "clothes base #fff4f2 clearly visible", "trims #e9ddff visible", "saturated glossy ribbon #ff9fb6", "sparkling eyes multi-highlights", "soft cheek blush (accent #ff9fb6)", "ribbon on viewer-left (character right)"],
+      "negatives": ["lowres", "bad anatomy", "extra limbs", "deformed", "watermark", "text", "transparent background", "checkerboard", "muted palette", "desaturated", "washed-out", "low-contrast", "oversaturated colors", "harsh shadows", "ribbon on viewer-right"],
+      "settings": {"resolution": "2048x3072", "steps": 40, "sampler": "DPM++ 2M Karras", "cfg_scale": 12},
+      "notes_jp": "ユズの全身リファレンス生成用（保守強化版）。**目的:** 衣装ベースとリボン（#ff9fb6）を確実に視覚化すること。Accent #ff9fb6 はリボン・頬・小物ハイライトに限定。まずはこの text2img で生成し、色確認用の小さなカラーパス（flat color test）を必要に応じて実行してください。色がOKなら、img2img（denoising_strength 0.30–0.45）でバリエーションを作成して再現性を高めることを推奨します。シード固定で再現性を確保してください。"
+    },
+    {
       "id": "neutral",
       "label_jp": "無表情",
-      "combined_prompt": "Yuzu, anime-style portrait, clean lineart, calm neutral expression, relaxed eyes, soft lighting, plain solid mid-gray background, original character, high detail, crisp silhouette, studio lighting, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure Yuzu's ribbon is located on the viewer-left side (character's right); do NOT place ribbon on the viewer-right side",
-      "positives": ["face close-up", "soft shading", "natural skin texture", "ribbon on viewer-left (character right)"],
-      "negatives": ["checkerboard", "checkered", "transparent background", "alpha channel", "chessboard", "grid pattern", "watermark", "text", "lowres", "blurry", "ribbon on viewer-right"],
+      "generation_mode": "img2img",
+      "img2img_settings": {"init_image": "doc/02_Characters/images/Yuzu/reference_fullbody_gen.png", "denoising_strength": 0.35, "resize_mode": "fit"},
+      "combined_prompt": "Use reference image (init) for pose/color. Yuzu, anime-style portrait, clean lineart, calm neutral expression, relaxed eyes, soft lighting; preserve clothing colors (Primary #fff4f2 base, Secondary #e9ddff trims) and ribbon highlight #ff9fb6 limited to ribbon/cheeks; plain mid-gray background, thick white silhouette stroke (18-24px) following the subject silhouette (not a rectangular border); ensure the subject+stroke has at least a 24px margin to the image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right, high detail, crisp silhouette, preserve natural skin tone and head pose (do NOT change face orientation or head tilt), ribbon on viewer-left (character's right)",
+      "positives": ["face close-up", "soft shading", "natural skin texture", "preserve reference color", "ribbon on viewer-left (character right)"],
+      "negatives": ["checkerboard", "checkered", "transparent background", "alpha channel", "chessboard", "grid pattern", "watermark", "text", "lowres", "blurry", "ribbon on viewer-right", "color shift", "accent misplacement"],
       "settings": {"resolution": "2048x2048", "steps": 30, "sampler": "Euler a", "cfg_scale": 9},
-      "notes_jp": "標準の立ち絵用。顔アップでの使用を想定。"
+      "notes_jp": "img2img 用テンプレート。init_image に全身リファレンスを指定し、denoising_strength ≒ 0.30–0.45 を推奨。アクセント #ff9fb6 はリボン・頬に限定。"
     },
     {
       "id": "small_smile",
       "label_jp": "微笑み",
-      "combined_prompt": "Yuzu, anime-style portrait, small gentle closed-mouth smile (lips lightly curved, no teeth visible), gentle open eyes (no squint), minimal cheek raise, subtle soft blush, studio lighting, plain solid mid-gray background, original character, high detail, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure Yuzu's ribbon remains on the viewer-left side (character's right) and NOT on viewer-right side",
-      "positives": ["gentle rim lighting", "closed-mouth subtle smile", "minimal cheek raise", "preserve reference image color balance", "maintain natural skin tone", "ribbon on viewer-left (character right)"],
-      "negatives": ["open mouth", "teeth visible", "large smile", "eyes crinkled", "checkerboard", "transparent background", "watermark", "text", "lowres", "ribbon on viewer-right"],
+      "generation_mode": "img2img",
+      "img2img_settings": {"init_image": "doc/02_Characters/images/Yuzu/reference_fullbody_gen.png", "denoising_strength": 0.35, "resize_mode": "fit"},
+      "combined_prompt": "Use reference image (init) for pose/color. Yuzu, small gentle closed-mouth smile, gentle open eyes, minimal cheek raise, subtle soft blush (accent #ff9fb6 limited), preserve clothing colors and ribbon placement, soft studio lighting, plain mid-gray background, include a thick white silhouette stroke (18-24px) following the subject silhouette (not a rectangular border); ensure the subject+stroke has at least a 24px margin to the image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right, high detail, preserve pose and skin tone",
+      "positives": ["gentle rim lighting", "closed-mouth subtle smile", "minimal cheek raise", "preserve reference color", "ribbon on viewer-left"],
+      "negatives": ["open mouth", "teeth visible", "large smile", "eyes crinkled", "checkerboard", "transparent background", "watermark", "text", "lowres", "ribbon on viewer-right", "color shift", "accent misplacement"],
       "settings": {"resolution": "2048x2048", "steps": 30, "sampler": "Euler a", "cfg_scale": 8},
-      "notes_jp": "口は閉じたままの控えめな微笑み。大きな笑顔や歯の見える表情にならないようにしてください。"
+      "notes_jp": "img2img 用微笑み。init image に全身リファレンスを指定し色のブレを抑えてください。"
     },
     {
       "id": "big_smile",
       "label_jp": "満面の笑み",
-      "combined_prompt": "Yuzu, anime-style portrait, big bright open-mouth smile showing teeth, eyes crinkled (smiling eyes), cheeks raised and slight laugh lines, energetic joyful expression, sparkling eye highlights, dynamic friendly pose, studio lighting, plain solid mid-gray background, original character, high detail, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure Yuzu's ribbon is clearly visible on the viewer-left side (character's right) and NOT on viewer-right side",
-      "positives": ["open mouth showing teeth", "sparkles in eyes", "eyes crinkled","cheeks raised","high contrast", "ribbon on viewer-left (character right)"],
-      "negatives": ["closed mouth", "subtle smile only", "muted expression", "checkerboard", "transparent background", "watermark", "text", "lowres", "ribbon on viewer-right"],
+      "generation_mode": "img2img",
+      "img2img_settings": {"init_image": "doc/02_Characters/images/Yuzu/reference_fullbody_gen.png", "denoising_strength": 0.40, "resize_mode": "fit"},
+      "combined_prompt": "Use reference image (init) for pose/color. Yuzu, big bright open-mouth smile showing teeth (keep teeth natural, not excessive), eyes crinkled, cheeks raised, energetic joyful expression, sparkling eye highlights, maintain clear ribbon #ff9fb6 and clothes colors, studio lighting, include a thick white silhouette stroke (18-24px) following the subject silhouette (not a rectangular border); ensure the subject+stroke has at least a 24px margin to the image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right, high detail, preserve skin tone",
+      "positives": ["open mouth showing teeth", "sparkles in eyes", "eyes crinkled","cheeks raised","bright highlights", "ribbon on viewer-left (character right)"],
+      "negatives": ["closed mouth", "subtle smile only", "muted expression", "checkerboard", "transparent background", "watermark", "text", "lowres", "ribbon on viewer-right", "excessive teeth", "color shift"],
       "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "DPM++ 2M Karras", "cfg_scale": 10},
-      "notes_jp": "はっきりとした開口の大きな笑顔。目のしわ・頬の上がりを明確に表現してください。"
+      "notes_jp": "img2img 用の大きな笑顔。dentition の過剰表現を避けるため negative に 'excessive teeth' を含めています。"
     },
     {
       "id": "laugh",
       "label_jp": "笑い",
-      "combined_prompt": "Yuzu, anime-style portrait, laughing with eyes closed or squinting, mouth open laughing, joyful, dynamic expression, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure primary ribbon stays on the viewer-left side (character's right) and do NOT place ribbon on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, laughing with eyes closed or squinting, mouth open laughing, joyful, dynamic expression, studio lighting, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure primary ribbon stays on the viewer-left side (character's right) and do NOT place ribbon on viewer-right side",
       "positives": ["motion lines subtle", "open mouth detail", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "text", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 40, "sampler": "DPM++ 2M Karras", "cfg_scale": 10},
@@ -58,7 +74,7 @@
     {
       "id": "surprised",
       "label_jp": "驚き",
-      "combined_prompt": "Yuzu, anime-style portrait, surprised expression, wide eyes, slightly open mouth, raised eyebrows, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon remains on the viewer-left side (character's right) and not on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, surprised expression, wide eyes, slightly open mouth, raised eyebrows, studio lighting, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon remains on the viewer-left side (character's right) and not on viewer-right side",
       "positives": ["eye highlight strong", "subtle motion blur on hair optional", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 9},
@@ -67,7 +83,7 @@
     {
       "id": "sad",
       "label_jp": "悲しみ",
-      "combined_prompt": "Yuzu, anime-style portrait, sad expression, downcast eyes, trembling lower lip, subtle tear gloss, soft cool lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), keep ribbon on the viewer-left side (character's right) and do NOT place ribbon on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, sad expression, downcast eyes, trembling lower lip, subtle tear gloss, soft cool lighting, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), keep ribbon on the viewer-left side (character's right) and do NOT place ribbon on viewer-right side",
       "positives": ["subtle tear reflection", "preserve reference image color balance", "maintain natural skin tone", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 9},
@@ -76,7 +92,7 @@
     {
       "id": "cry",
       "label_jp": "泣き顔",
-      "combined_prompt": "Yuzu, anime-style portrait, crying, tears streaming or welling, reddened eyes, pained expression, soft lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon appears on viewer-left side (character's right) and NOT on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, crying, tears streaming or welling, reddened eyes, pained expression, soft lighting, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon appears on viewer-left side (character's right) and NOT on viewer-right side",
       "positives": ["wet skin gloss", "clear tear reflections", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 40, "sampler": "DPM++ 2M Karras", "cfg_scale": 11},
@@ -85,7 +101,7 @@
     {
       "id": "angry",
       "label_jp": "怒り",
-      "combined_prompt": "Yuzu, anime-style portrait, angry glare, furrowed brows, pursed lips, slight vein mark optional, dramatic rim lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), display ribbon on the viewer-left side (character's right) and do NOT place ribbon on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, angry glare, furrowed brows, pursed lips, slight vein mark optional, dramatic rim lighting, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), display ribbon on the viewer-left side (character's right) and do NOT place ribbon on viewer-right side",
       "positives": ["strong contrast", "sharp shadows", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 36, "sampler": "Euler a", "cfg_scale": 10},
@@ -94,25 +110,29 @@
     {
       "id": "embarrassed",
       "label_jp": "照れ",
-      "combined_prompt": "Yuzu, anime-style portrait, embarrassed blush, shy eyes, slight smile or pursed lips, hand near face optional, soft lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), keep ribbon on viewer-left side (character's right) and not on viewer-right side",
-      "positives": ["prominent blush", "soft bokeh lighting", "ribbon on viewer-left (character right)"],
-      "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
+      "generation_mode": "img2img",
+      "img2img_settings": {"init_image": "doc/02_Characters/images/Yuzu/reference_fullbody_gen.png", "denoising_strength": 0.35, "resize_mode": "fit"},
+      "combined_prompt": "Use reference image (init) for pose/color. Yuzu, embarrassed blush with prominent soft cheek blush using Accent #ff9fb6, shy eyes, slight smile or pursed lips, hand near face optional, preserve clothing colors and ribbon placement, soft lighting, include a thick white silhouette stroke (18-24px) following the subject silhouette (not a rectangular border); ensure subject+stroke has at least 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right, high detail",
+      "positives": ["prominent blush (accent #ff9fb6)", "soft bokeh lighting", "hand near face optional", "ribbon on viewer-left"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right", "color shift", "accent misplacement"],
       "settings": {"resolution": "2048x2048", "steps": 34, "sampler": "Euler a", "cfg_scale": 9},
-      "notes_jp": "照れた表情。手の差分があると使いやすいです。"
+      "notes_jp": "img2img 用照れ差分。頬の赤みは Accent #ff9fb6 のみ使用。色のブレに注意。"
     },
     {
       "id": "wink",
       "label_jp": "ウインク",
-      "combined_prompt": "Yuzu, anime-style portrait, playful wink, close the left eye (viewer-left, character's right eye) while keeping the other eye open (viewer-right, character's left eye) — ensure only the viewer-left eye is closed and NOT both eyes, small smile, cute expression, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon appears on the viewer-left side (character's right) and not on viewer-right side",
+      "generation_mode": "img2img",
+      "img2img_settings": {"init_image": "doc/02_Characters/images/Yuzu/reference_fullbody_gen.png", "denoising_strength": 0.30, "resize_mode": "fit"},
+      "combined_prompt": "Use reference image (init) for pose/color. Yuzu, playful wink: close viewer-left eye (character's right) only, keep other eye open, small smile, maintain ribbon #ff9fb6 and clothes colors, soft studio lighting, include a thick white silhouette stroke (18-24px) following the subject silhouette (not a rectangular border); ensure subject+stroke has at least 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right, high detail, preserve skin tone and head pose",
       "positives": ["playful pose", "clear eye highlight", "viewer-left eye closed (character right eye)", "other eye open", "ribbon on viewer-left (character right)"],
-      "negatives": ["checkerboard", "transparent background", "watermark", "both eyes closed", "viewer-right eye closed", "opposite eye closed", "ribbon on viewer-right"],
+      "negatives": ["checkerboard", "transparent background", "watermark", "both eyes closed", "viewer-right eye closed", "opposite eye closed", "ribbon on viewer-right", "color shift", "accent misplacement"],
       "settings": {"resolution": "2048x2048", "steps": 32, "sampler": "Euler a", "cfg_scale": 9},
-      "notes_jp": "ウインクは必ず画面左側の目（キャラクターの右目）だけを閉じ、反対側の目は開けてください。Whiskでの生成確認を推奨。"
+      "notes_jp": "img2img 用ウインク。init image を指定し、目の左右を間違えないように注意。"
     },
     {
       "id": "smirk",
       "label_jp": "ニヤリ",
-      "combined_prompt": "Yuzu, anime-style portrait, subtle smirk, one corner of mouth raised, sly eyes, confident expression, studio lighting, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon stays on the viewer-left side (character's right) and not on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, subtle smirk, one corner of mouth raised, sly eyes, confident expression, studio lighting, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), ensure ribbon stays on the viewer-left side (character's right) and not on viewer-right side",
       "positives": ["sharper shadows", "deep eye contrast", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 34, "sampler": "DPM++ 2M Karras", "cfg_scale": 10},
@@ -121,7 +141,7 @@
     {
       "id": "sleepy",
       "label_jp": "眠そう",
-      "combined_prompt": "Yuzu, anime-style portrait, sleepy half-closed eyes, relaxed mouth, soft lighting, cozy atmosphere, plain solid mid-gray background, original character, include a thin plain white border/frame (8-12px) around the subject for easy cutout, no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), keep ribbon on the viewer-left side (character's right) and NOT on viewer-right side",
+      "combined_prompt": "Yuzu, anime-style portrait, sleepy half-closed eyes, relaxed mouth, soft lighting, cozy atmosphere, plain solid mid-gray background, original character, include a thick white silhouette stroke (18-24px) that follows the subject silhouette for easy cutout (do NOT use a rectangular border); ensure subject+stroke has at least a 24px margin to image edge; place a small black registration mark (8x8px square) outside the stroke at bottom-right; no transparent background, preserve reference image color balance and maintain natural skin tone, preserve reference head pose and camera angle (do NOT change face orientation or head tilt), keep ribbon on the viewer-left side (character's right) and NOT on viewer-right side",
       "positives": ["soft focus", "preserve reference image color balance", "maintain natural skin tone", "ribbon on viewer-left (character right)"],
       "negatives": ["checkerboard", "transparent background", "watermark", "ribbon on viewer-right"],
       "settings": {"resolution": "2048x2048", "steps": 30, "sampler": "Euler a", "cfg_scale": 8},
