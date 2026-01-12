@@ -12,13 +12,23 @@
     "color_preservation": {"instruction": "Preserve reference image color balance; maintain neon-lime accent (shirt print or cable) and do not apply per-expression color tints. Maintain natural skin tone consistent with the reference image."},
     "pose_preservation": {"instruction": "Preserve reference head pose and camera angle — do NOT change face orientation, rotation, or head tilt. Keep sleeping-curve / bedhead hair (messy short hair) as in the reference."},
     "accessory_preservation": {"instruction": "Ensure earphones remain visible (do NOT remove earphones or cable). If one earphone is occluded by hair/hand, keep cable visible; include neon-lime cable or accent where appropriate."},
-    "cutout_defaults": {"frame_color":"white","frame_padding_px":8,"no_transparency":true,"note_jp":"切り抜き用の白い枠（透過ではなく白背景）を必ず付与してください。"}
+    "cutout_defaults": {"frame_color":"white","frame_padding_px":20,"frame_style":"silhouette_stroke","safe_margin_px":24,"registration_mark":"outside-bottom-right-8px-square","no_transparency":true,"note_jp":"切り抜き用の太めの白いストローク（被写体の輪郭に沿うアウトライン、推奨 18–24px）を必ず付与してください。被写体+ストロークが画像端から24px以上余裕を持つこと、基準マークはストロークの外側（右下）に小さな黒 8×8 px を配置してください。透過ではなく白背景で出力してください。"}
   },
   "safety": {
     "fictional": true,
     "no_real_person": true
   },
   "expressions": [
+    {
+      "id": "reference_fullbody",
+      "label_jp": "リファレンス（全身）",
+      "generation_mode": "text2img",
+      "combined_prompt": "Takeshi, full-body anime character, standing pose with relaxed approachable stance and slight forward lean (not a runway model), everyday casual streetwear (jacket, layered top, tapered pants; NOT a school uniform), emphasize an approachable friendly vibe — avoid overly cool or stylized 'model' aesthetics; realistic natural proportions with a slightly shorter/sturdier build (avoid elongated limbs or very high head-to-body ratio), allow subtle under-eye shadows / natural eye bags and a slightly flustered or sleepy-friendly face, show neon-lime accent clearly (earphone cable or shirt print) and ensure earphones are visible, messy short bedhead hair preserved, clean lineart, high detail, crisp silhouette, full-body visible (head-to-toe), warm-cool studio lighting that emphasizes clothing texture and approachable facial shadows, plain soft mid-gray background, include a thick white silhouette stroke (outline) 18–24px that follows the subject's silhouette (not a rectangular cornered border); ensure the subject+stroke has at least a 24px margin to the image edge; place a small black registration mark (8x8px square) outside the stroke at the bottom-right corner; no transparent background, preserve natural skin tone, preserve earphones and neon-lime accent (do NOT remove earphones or hide cable)",
+      "positives": ["full-body (head-to-toe)", "accurate proportions", "approachable friendly vibe", "natural slightly shorter/sturdy build (non-model proportions)", "cool but not overly stylized outfit", "neon-lime accent visible (earphone cable or shirt print)", "earphones visible", "subtle under-eye shadows / eye bags acceptable", "clean lineart and high detail"],
+      "negatives": ["lowres", "bad anatomy", "extra limbs", "deformed", "watermark", "text", "transparent background", "checkerboard", "muted palette", "desaturated", "washed-out", "low-contrast", "oversaturated colors", "harsh shadows", "earphones removed", "uniform", "sailor uniform", "seifuku", "too cool / model-like look", "excessively tall", "elongated limbs", "very high head-to-body ratio", "heroic proportions", "overly stylized body"] ,
+      "settings": {"resolution": "2048x3072", "steps": 40, "sampler": "DPM++ 2M Karras", "cfg_scale": 12},
+    "notes_jp": "タケシの全身リファレンス生成用。**目的:** かっこよすぎない、親しみやすい『大親友になり得る』雰囲気の全身立ち絵を作ること。服は私服（ストリート/カジュアル）を維持しつつ、プロポーションは自然でやや短め・がっしり寄り（モデル体型は避ける）にしてください。表情や顔立ちは焦り・隈（目の下のクマ）や眠そうな要素が似合うように調整して下さい。ネオンライムのアクセント（イヤホンケーブルやシャツのプリント）を必ず含め、イヤホンは必ず保持してください。まずはこの text2img で複数枚生成し、好みの頭身や雰囲気が得られたら img2img（denoising_strength 0.30–0.45）で表情差分（焦り/照れ/眠そう等）を作成してください。シード固定で再現性を確保してください."
+    },
     {
       "id": "neutral",
       "label_jp": "無表情",
@@ -120,3 +130,5 @@
     }
   ]
 }
+
+
