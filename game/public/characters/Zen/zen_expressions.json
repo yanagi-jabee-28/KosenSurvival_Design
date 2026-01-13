@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "name": "Zen 全身リファレンス & 表情差分プロンプト",
+    "version": "1.0",
+    "description": "室井 禅（Muroi Zen）用の全身リファレンスと表情差分プロンプト集。Whisk の画像生成（参照画像アップロード→image-to-image モデル化）での利用を想定。",
+    "created_at": "2026-01-13",
+    "author": "GitHub Copilot",
+    "usage_notes": "まずは reference_fullbody の `combined_prompt` を用いて text2img で複数案を生成し、好みの頭身とライティングを決めた後に img2img（denoising_strength 0.30–0.45）で表情差分を作成してください。ネガティブトークンは必ず含めてください。",
+    "reference_image": "doc/02_Characters/images/Zen/zen_ref_fullbody.png",
+    "image_generation_service": "Whisk",
+    "image_model_usage": "Upload the reference image at `doc/02_Characters/images/Zen/zen_ref_fullbody.png` to Whisk, create/use an image model for Zen, and use image-to-image generation where possible.",
+    "color_preservation": {
+      "instruction": "Primary: #101820 (墨黒藍), Secondary: #3b4a3f (苔深いダークグリーン), Accent: #b8aa6a (燻んだ金茶)。アクセントは懐中時計や数珠など小さな金属光に限定し、衣服に明るい色を追加しないでください。"
+    },
+    "pose_preservation": {
+      "instruction": "参考画像のポーズと頭の向きを維持してください。禅は力が抜けた姿勢（肩が落ち、やや前傾）を基本とします。フードは常に下げた状態（被せない）で、前髪が目にかかる描写を許容します。"
+    },
+    "cutout_defaults": {
+      "frame_color": "white",
+      "frame_padding_px": 20,
+      "safe_margin_px": 24,
+      "frame_style": "silhouette_stroke",
+      "registration_mark": "outside-bottom-right-8px-square",
+      "no_transparency": true,
+      "note_jp": "切り抜き用の白いストローク（被写体の輪郭に沿うアウトライン 18–24px）を必ず付与してください。被写体+ストロークが画像端から24px以上余裕を持つこと、基準マークはストロークの外側（右下）に小さな黒 8×8 px を配置してください。透過ではなく暗めの単色背景で出力してください。"
+    }
+  },
+  "safety": {
+    "fictional": true,
+    "no_real_person": true
+  },
+  "expressions": [
+    {
+      "id": "reference_fullbody",
+      "label_jp": "リファレンス（全身）",
+      "generation_mode": "text2img",
+      "combined_prompt": "Zen (Muroi Zen), single character only (solo), full-body anime character, centered, portrait/vertical composition (tall), relaxed standing or leaning pose (shoulders dropped, slightly slouched), slim lanky build (approx 175cm), long messy black hair loosely tied low with some bangs over eyes, hooded coat (hood DOWN) + faded oversized sweatshirt, barefoot or slippers visible, accessory: old pocket watch or leather-wrapped beads (small dull gold reflection #b8aa6a), pale almost-translucent white skin with subtle visible veins, long eyelashes, sleepy half-lidded gaze that occasionally reveals sharp observation, slight cheek hollows, calm half-smile or neutral, emphasize \"ghostly in a dark room\" mood, subdued studio lighting (soft warm key + subtle dim rim), color palette: Primary #101820, Secondary #3b4a3f, Accent small metallic #b8aa6a only on watch/beads, clean lineart, ultra-detailed, crisp silhouette, full-body visible (head-to-toe), plain dark soft background (near-black or charcoal), include a thick white silhouette stroke 18–24px that follows the subject's silhouette (do NOT add a rectangular outer border or corner frame); ensure the subject+stroke has at least a 24px margin to the image edge; place a small black registration mark (8x8px square) outside the stroke at the bottom-right corner; no transparent background; preserve pale skin detail and realistic proportions; Do NOT generate multiple people, duplicates, clones, or extra characters; Use portrait orientation (vertical) — resolution 2048x3072 (tall) and compose subject centrally; ensure clear head-to-toe visibility.",
+      "positives": [
+        "single subject (solo)",
+        "full-body (head-to-toe)",
+        "slim lanky build (175cm)",
+        "long messy black hair loosely tied low",
+        "hood DOWN (visible)",
+        "barefoot or slippers",
+        "old pocket watch / leather beads (dull gold accent)",
+        "pale translucent skin",
+        "sleepy half-lidded gaze",
+        "clean lineart",
+        "ultra-detailed",
+        "white silhouette stroke 20px",
+        "registration mark 8x8 black"
+      ],
+      "negatives": [
+        "multiple characters",
+        "group",
+        "duplicates",
+        "clones",
+        "bright accessories",
+        "neon accents",
+        "pastel ribbons",
+        "cyan line",
+        "hood UP/covering head",
+        "warm overly-saturated clothing",
+        "lowres",
+        "blurry",
+        "bad anatomy",
+        "extra limbs",
+        "deformed",
+        "watermark",
+        "text",
+        "transparent background",
+        "checkerboard"
+      ],
+      "settings": {
+        "resolution": "2048x3072",
+        "steps": 48,
+        "sampler": "DPM++ 2M Karras",
+        "cfg_scale": 13
+      },
+      "notes_jp": "禅の‘停滞と幽玄’イメージを最優先に。肌は病的に白いがディテール（静脈・頬の凹み）は保持すること。アクセントの金属光は懐中時計や数珠の反射に限定し、衣服には明るい色や他キャラ固有のアクセント（シアン／ネオンライム／パステル等）を加えない。まずは text2img で複数案を作成し、理想の頭身とライティングが決まったら img2img で表情差分を作成してください。"
+    },
+    {
+      "id": "neutral",
+      "label_jp": "無表情（デフォルト）",
+      "generation_mode": "img2img",
+      "img2img_settings": {
+        "init_image": "doc/02_Characters/images/Zen/reference_fullbody_gen.png",
+        "denoising_strength": 0.35,
+        "resize_mode": "fit"
+      },
+      "combined_prompt": "Use reference image (init) for pose/color. Zen, anime-style portrait, neutral calm expression (slightly closed eyes), keep hood DOWN, preserve pale skin and subtle veins, keep pocket watch or beads visible but small, plain dark background, thick white silhouette stroke (18-24px) following subject silhouette (not a rectangular border); ensure subject+stroke has at least a 24px margin; place small black registration mark (8x8px) outside stroke at bottom-right; high detail, preserve head pose and proportions.",
+      "positives": [
+        "hood DOWN",
+        "pale skin preserved",
+        "subtle veins",
+        "neutral sleepy gaze"
+      ],
+      "negatives": [
+        "hood UP",
+        "bright accessories",
+        "smiling widely",
+        "transparent background"
+      ],
+      "settings": {
+        "resolution": "2048x2048",
+        "steps": 30,
+        "sampler": "Euler a",
+        "cfg_scale": 9
+      },
+      "notes_jp": "img2img 用テンプレート。init_image に全身リファレンスを指定し、denoising_strength ≒ 0.30–0.45 を推奨。"
+    },
+    {
+      "id": "soft_smile",
+      "label_jp": "柔らかな微笑",
+      "generation_mode": "img2img",
+      "img2img_settings": {
+        "init_image": "doc/02_Characters/images/Zen/reference_fullbody_gen.png",
+        "denoising_strength": 0.3,
+        "resize_mode": "fit"
+      },
+      "combined_prompt": "Use reference image (init) for pose/color. Zen, slight warm soft boyish smile, mouth corners barely up, eyes half-lidded with small gentle light in pupils, preserve pale skin and hush lighting, keep watch/beads as small metallic accent, plain dark background, include thick white silhouette stroke; high detail.",
+      "positives": [
+        "soft smile",
+        "half-lidded gentle eyes",
+        "watch/beads visible"
+      ],
+      "negatives": ["wide grin", "cheerful bright colors", "hood UP"],
+      "settings": {
+        "resolution": "2048x2048",
+        "steps": 34,
+        "sampler": "DPM++ 2M Karras",
+        "cfg_scale": 10
+      },
+      "notes_jp": "笑顔は控えめに。少年のような柔らかさを出すが派手にはしないこと。"
+    },
+    {
+      "id": "contemplative",
+      "label_jp": "思索（懐中時計を弄る）",
+      "generation_mode": "img2img",
+      "img2img_settings": {
+        "init_image": "doc/02_Characters/images/Zen/reference_fullbody_gen.png",
+        "denoising_strength": 0.4,
+        "resize_mode": "fit"
+      },
+      "combined_prompt": "Use reference image (init) for pose/color. Zen, contemplative expression while twirling pocket watch between fingers, eyes slightly distant, subtle eyebrow movement, preserve pale skin and hollowed cheeks, soft dim lighting emphasizing watch reflection, plain dark background, include white silhouette stroke; high detail.",
+      "positives": ["watch twirling", "distant gaze", "soft lighting"],
+      "negatives": [
+        "smiling brightly",
+        "open mouth wide",
+        "bright accessories"
+      ],
+      "settings": {
+        "resolution": "2048x2048",
+        "steps": 36,
+        "sampler": "DPM++ 2M Karras",
+        "cfg_scale": 11
+      },
+      "notes_jp": "懐中時計を弄る仕草を強調してください。過度な動的表現は避け、静の中の動きを狙うこと。"
+    },
+    {
+      "id": "sleepy",
+      "label_jp": "眠たげ",
+      "generation_mode": "img2img",
+      "img2img_settings": {
+        "init_image": "doc/02_Characters/images/Zen/reference_fullbody_gen.png",
+        "denoising_strength": 0.38,
+        "resize_mode": "fit"
+      },
+      "combined_prompt": "Use reference image (init) for pose/color. Zen, very sleepy expression (half-closed eyes, slight mouth parting, relaxed posture), keep feet bare/slippers visible, preserve pale skin, soft warm key light and heavy shadow, plain dark background, include white silhouette stroke; high detail.",
+      "positives": [
+        "half-closed eyes",
+        "relaxed posture",
+        "bare feet/slippers visible"
+      ],
+      "negatives": ["wide eyes", "energetic pose", "bright clothing"],
+      "settings": {
+        "resolution": "2048x2048",
+        "steps": 34,
+        "sampler": "DPM++ 2M Karras",
+        "cfg_scale": 10
+      },
+      "notes_jp": "寝ぼけた優しい表情を狙う。目元の閉じ具合でバリエーションを作ると良い。"
+    },
+    {
+      "id": "smirk",
+      "label_jp": "含み笑い",
+      "generation_mode": "img2img",
+      "img2img_settings": {
+        "init_image": "doc/02_Characters/images/Zen/reference_fullbody_gen.png",
+        "denoising_strength": 0.3,
+        "resize_mode": "fit"
+      },
+      "combined_prompt": "Use reference image (init) for pose/color. Zen, faint smirk with slightly raised mouth corner, eyes relaxed but attentive, subtle mischievousness, preserve pale skin and hollowed cheeks, keep watch/beads visible, plain dark background, include white silhouette stroke; high detail.",
+      "positives": [
+        "faint smirk",
+        "attentive half-lidded eyes",
+        "subtle mischief"
+      ],
+      "negatives": ["broad grin", "bright accessories", "hood UP"],
+      "settings": {
+        "resolution": "2048x2048",
+        "steps": 34,
+        "sampler": "DPM++ 2M Karras",
+        "cfg_scale": 10
+      },
+      "notes_jp": "禅らしい含みのある微笑を目指す。表情の幅は狭めにし、キャラ性を損なわないこと。"
+    }
+  ]
+}
