@@ -20,9 +20,8 @@
       "frame_padding_px": 20,
       "safe_margin_px": 24,
       "frame_style": "silhouette_stroke",
-      "registration_mark": "outside-bottom-right-8px-square",
       "no_transparency": true,
-      "note_jp": "切り抜き用の白いストローク（被写体の輪郭に沿うアウトライン 18–24px）を必ず付与してください。被写体+ストロークが画像端から24px以上余裕を持つこと、基準マークはストロークの外側（右下）に小さな黒 8×8 px を配置してください。透過ではなく暗めの単色背景で出力してください。"
+      "note_jp": "切り抜き用の白いストローク（被写体の輪郭に沿うアウトライン 18–24px）を必ず付与してください。被写体+ストロークが画像端から24px以上余裕を持つことを確認してください。透過ではなく暗めの単色背景で出力してください。"
     }
   },
   "safety": {
@@ -47,8 +46,7 @@
         "sleepy half-lidded gaze",
         "clean lineart",
         "ultra-detailed",
-        "white silhouette stroke 20px",
-        "registration mark 8x8 black"
+        "white silhouette stroke 20px"
       ],
       "negatives": [
         "multiple characters",
