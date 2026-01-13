@@ -116,6 +116,27 @@ Notes: プレイヤーはニュートラル基準。性別差分が必要な場�
 
 ---
 
+## 参照画像ベース・変換用プロンプト（Nanobanana Pro / img2img 用）
+既存の人物写真や他スタイルイラストをKosenSurvivalスタイルに変換する際に使用するプロンプトです。  
+**前提条件**: 元画像は成人で、画像使用に明示的な同意が得られていること。実在人物の場合は必ず確認してください。
+
+```
+Combined: KosenSurvival_MCA_v1, use reference image (same person as reference), preserve clothing and accessories exactly as in reference, preserve pose and composition from reference (match input crop/aspect), fictional original character, modern clean anime style, clean lineart, 2D cel shading, soft studio lighting, high detail, sticker type, white outline, plain solid mid-gray background (no pattern), high contrast edges, clean silhouette, minimal shadow, no transparency, no alpha channel; -exclude: photorealistic, photo, headshot, watermark, text, extra limbs, mutated hands, depth of field, bokeh, blurry, fuzzy edges, checkerboard, checkered, chessboard, grid pattern, transparent background, alpha channel, heavy makeup, costume change, hairstyle change, identity-altering edits
+Positive: "modern clean anime, clean lineart, cel shading, soft studio lighting, consistent face, preserve outfit and pose from reference, sticker type, plain mid-gray background"
+Negative: "photorealistic, watermark, text, extra limbs, mutated hands, bokeh, blurry, lowres, checkerboard, transparent background, costume change"
+Recommended settings: Resolution 2048×2048 (bust) / 2048×3072 (half/full), Steps 30–50, CFG/Guidance 6.5–8 (or project-standard), Sampler: Euler a / DPM++, Output: PNG (plain background). Nanobanana params: reference_strength ≒ 0.85, denoising_strength ≒ 0.35
+```
+
+**使い方**:
+1. Nanobanana Pro に元画像をアップロード
+2. 上記プロンプトを貼り付け（特に指示がない限り構図・服装は元画像と同一に保持）
+3. `reference_strength` と `denoising_strength` で変換強度を調整
+4. 生成後、必要に応じて remove.bg などで背景を完全透過化
+
+**注意**: 実在人物の変換は本人の同意と成人であることを必ず確認してください。
+
+---
+
 ## 追加の運用ノート
 - 各キャラで `character_token_v1`（例: `ichinose_ai_v1`, `akasaka_mina_v1`）を用意しておくと、一貫した顔立ち・衣装が安定します。
 - 最初の検証では、各キャラにつき 10–20 画像を生成し、ベストをリファレンスとして保存してから量産すること。
@@ -125,4 +146,5 @@ Notes: プレイヤーはニュートラル基準。性別差分が必要な場�
 
 参考: `Prompt_Design_Guide.md`, `Image_Cutout_Prompts.md`, `Art_Style_Guide.md` を遵守しています。
 
-*作成: 2026-01-08 — KosenSurvival デザイン指針: 切り抜き用プロンプト集*
+*作成: 2026-01-08 — KosenSurvival デザイン指針: 切り抜き用プロンプト集*  
+*更新: 2026-01-13 — 参照画像ベース変換用プロンプト追加（Nanobanana Pro 対応）*
