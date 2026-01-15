@@ -16,6 +16,8 @@
 > - キャラクター追加: [02_Characters/Mai.md](02_Characters/Mai.md) (神楽 マイ), [02_Characters/Yuzu.md](02_Characters/Yuzu.md) (若葉 ユズ)
 > - リアリティ担保のため、実在高専の要素を統合しつつ架空校として設定
 
+> **Update 2026-01-15**: キャラクター台詞作成の絶対ルールを追加。新規台詞を書く際は必ず [doc/02_Characters/Speech_Patterns.md](doc/02_Characters/Speech_Patterns.md) と該当キャラクターの個別ドキュメントを参照すること。口調・一人称・語尾の統一性を厳守し、キャラ崩壊を防ぐ。詳細は `AGENTS_legacy.md` のセクションH「Speech Consistency Protocol」を参照。
+
 > **Update 2026-01-01**: 一般的なノベルゲーム設計およびユーザビリティ原則（テキスト表示・UI・アクセシビリティ・セーブ/ロード/QOL機能等）を追加しました。詳細は下部の「6. Game Design Principles: Visual Novels & Usability」を参照してください。
 
 > **Update 2026-01-06**: 設計思想は保持したまま、実装テスト用の Phase 1（最小限ビジュアルノベル）ドキュメント体系を整備しました。複雑なゲームロジックは将来フェーズで段階的に統合。
