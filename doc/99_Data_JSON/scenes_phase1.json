@@ -1,34 +1,55 @@
 {
   "metadata": {
-    "version": "1.0",
+    "version": "1.1",
     "phase": "Phase 1",
-    "description": "Minimal Visual Novel - Sample Scenario"
+    "description": "Minimal Visual Novel - Expanded Opening and Route Intros"
   },
   "characters": {
     "ai": {
       "displayName": "一ノ瀬 アイ",
       "expressions": {
-        "normal": "/assets/characters/ai/normal.png",
-        "happy": "/assets/characters/ai/happy.png",
-        "sad": "/assets/characters/ai/sad.png",
-        "surprised": "/assets/characters/ai/surprised.png"
+        "normal": "/assets/characters/Ai/normal.png",
+        "happy": "/assets/characters/Ai/happy.png",
+        "sad": "/assets/characters/Ai/sad.png",
+        "surprised": "/assets/characters/Ai/surprised.png"
+      }
+    },
+    "mina": {
+      "displayName": "赤坂 ミナ",
+      "expressions": {
+        "normal": "/assets/characters/Mina/normal.png",
+        "working": "/assets/characters/Mina/working.png",
+        "happy": "/assets/characters/Mina/happy.png"
+      }
+    },
+    "ren": {
+      "displayName": "諏訪野 レン",
+      "expressions": {
+        "normal": "/assets/characters/Ren/normal.png",
+        "smile": "/assets/characters/Ren/smile.png"
+      }
+    },
+    "mai": {
+      "displayName": "神楽 マイ",
+      "expressions": {
+        "normal": "/assets/characters/Mai/normal.png",
+        "serious": "/assets/characters/Mai/serious.png"
+      }
+    },
+    "zen": {
+      "displayName": "室井 禅",
+      "expressions": {
+        "normal": "/assets/characters/Zen/normal.png",
+        "mischief": "/assets/characters/Zen/mischief.png"
       }
     }
   },
   "scenes": {
-    "scene_001": {
-      "id": "scene_001",
-      "title": "Opening - First Day",
+    "scene_open": {
+      "id": "scene_open",
+      "title": "Opening - New Semester",
       "background": "/assets/backgrounds/classroom.png",
-      "characters": [
-        {
-          "name": "ai",
-          "expression": "normal",
-          "position": "center",
-          "scale": 1.0,
-          "opacity": 1.0
-        }
-      ],
+      "characters": [],
       "messages": [
         {
           "characterName": "narrator",
@@ -37,44 +58,103 @@
         },
         {
           "characterName": "narrator",
-          "text": "教室は新しい顔であふれていた。",
-          "speed": "normal"
-        },
-        {
-          "characterName": "一ノ瀬 アイ",
-          "text": "おはよう。",
+          "text": "今日は期待と不安が入り混じる朝だ。校舎のあちこちで、新しい顔が目に入る。",
           "speed": "normal"
         },
         {
           "characterName": "narrator",
-          "text": "隣の席の女の子が声をかけてくる。",
+          "text": "作業室では工具を抱えた少女が、図書館では紙の山に埋もれた少女が、ネットワーク演習室では怪しいログを追う先輩がいる。学生会室では会議が始まり、寮の片隅には異様な佇まいの先輩もいる。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "どこに向かう？",
           "speed": "normal"
         }
       ],
       "choices": {
-        "choiceId": "choice_001",
+        "choiceId": "choice_open_01",
         "choices": [
           {
             "id": "choice_a",
-            "label": "「おはよう。よろしくね」",
-            "nextSceneId": "scene_002_a"
+            "label": "作業室でロボットを弄る少女（赤坂 ミナ）に声をかける",
+            "nextSceneId": "scene_A1"
           },
           {
             "id": "choice_b",
-            "label": "「...」",
-            "nextSceneId": "scene_002_b"
+            "label": "図書館で論文に没頭する少女（一ノ瀬 アイ）に話しかける",
+            "nextSceneId": "scene_B1"
+          },
+          {
+            "id": "choice_c",
+            "label": "ネット演習室で怪しいログを見ている先輩（諏訪野 レン）を覗く",
+            "nextSceneId": "scene_C1"
+          },
+          {
+            "id": "choice_d",
+            "label": "学生会室で会議する神楽 マイに関わる",
+            "nextSceneId": "scene_D1"
+          },
+          {
+            "id": "choice_e",
+            "label": "寮の影にいる不思議な先輩（室井 禅）を訪ねる",
+            "nextSceneId": "scene_E1"
           }
         ]
       },
       "nextSceneId": null
     },
-    "scene_002_a": {
-      "id": "scene_002_a",
-      "title": "Response - Friendly",
-      "background": "/assets/backgrounds/classroom.png",
+
+    "scene_A1": {
+      "id": "scene_A1",
+      "title": "A: Workshop - Meeting Mina",
+      "background": "/assets/backgrounds/workshop.png",
       "characters": [
         {
-          "name": "ai",
+          "name": "mina",
+          "expression": "working",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "放課後の作業室は金属と油の匂いがする。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "赤坂 ミナ",
+          "text": "お、手伝ってくれる？ 今ロボットのサーボに調整がいるんだ。",
+          "speed": "normal"
+        }
+      ],
+      "choices": {
+        "choiceId": "choice_A1",
+        "choices": [
+          {
+            "id": "choice_A_help",
+            "label": "手伝う",
+            "nextSceneId": "scene_A2_help"
+          },
+          {
+            "id": "choice_A_watch",
+            "label": "見学する",
+            "nextSceneId": "scene_A2_watch"
+          }
+        ]
+      },
+      "nextSceneId": null
+    },
+
+    "scene_A2_help": {
+      "id": "scene_A2_help",
+      "title": "A: Workshop - Help",
+      "background": "/assets/backgrounds/workshop.png",
+      "characters": [
+        {
+          "name": "mina",
           "expression": "happy",
           "position": "center",
           "scale": 1.0,
@@ -83,27 +163,28 @@
       ],
       "messages": [
         {
-          "characterName": "一ノ瀬 アイ",
-          "text": "いいね。僕はアイ。よろしく。",
+          "characterName": "赤坂 ミナ",
+          "text": "ありがとう！ 君、手先が器用だね。",
           "speed": "normal"
         },
         {
           "characterName": "narrator",
-          "text": "彼女は笑顔で手を差し出した。",
+          "text": "短い時間だが、心地よい連携が生まれた。",
           "speed": "normal"
         }
       ],
       "choices": null,
-      "nextSceneId": "scene_003"
+      "nextSceneId": "scene_common_end"
     },
-    "scene_002_b": {
-      "id": "scene_002_b",
-      "title": "Response - Silent",
-      "background": "/assets/backgrounds/classroom.png",
+
+    "scene_A2_watch": {
+      "id": "scene_A2_watch",
+      "title": "A: Workshop - Watch",
+      "background": "/assets/backgrounds/workshop.png",
       "characters": [
         {
-          "name": "ai",
-          "expression": "sad",
+          "name": "mina",
+          "expression": "normal",
           "position": "center",
           "scale": 1.0,
           "opacity": 1.0
@@ -111,23 +192,24 @@
       ],
       "messages": [
         {
-          "characterName": "一ノ瀬 アイ",
-          "text": "...大丈夫？",
+          "characterName": "赤坂 ミナ",
+          "text": "ふふ、見ているだけでも勉強になるよ。次は君も手を動かしてみてよ。",
           "speed": "normal"
         },
         {
           "characterName": "narrator",
-          "text": "彼女は心配そうに見つめてくる。",
+          "text": "彼女の真剣さに、自然と気持ちが引き寄せられる。",
           "speed": "normal"
         }
       ],
       "choices": null,
-      "nextSceneId": "scene_003"
+      "nextSceneId": "scene_common_end"
     },
-    "scene_003": {
-      "id": "scene_003",
-      "title": "First Day - End",
-      "background": "/assets/backgrounds/classroom.png",
+
+    "scene_B1": {
+      "id": "scene_B1",
+      "title": "B: Library - Meeting Ai",
+      "background": "/assets/backgrounds/library.png",
       "characters": [
         {
           "name": "ai",
@@ -140,12 +222,375 @@
       "messages": [
         {
           "characterName": "narrator",
-          "text": "こうして、高専での日々が始まったのだった。",
+          "text": "図書館の静けさの中で、一ノ瀬 アイは論文と向き合っている。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "一ノ瀬 アイ",
+          "text": "……ん？ 何か用？",
+          "speed": "normal"
+        }
+      ],
+      "choices": {
+        "choiceId": "choice_B1",
+        "choices": [
+          {
+            "id": "choice_B_talk",
+            "label": "声をかける",
+            "nextSceneId": "scene_B2_talk"
+          },
+          {
+            "id": "choice_B_leave",
+            "label": "そっと離れる",
+            "nextSceneId": "scene_B2_leave"
+          }
+        ]
+      },
+      "nextSceneId": null
+    },
+
+    "scene_B2_talk": {
+      "id": "scene_B2_talk",
+      "title": "B: Library - Talk",
+      "background": "/assets/backgrounds/library.png",
+      "characters": [
+        {
+          "name": "ai",
+          "expression": "surprised",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "一ノ瀬 アイ",
+          "text": "そうか。君も情報系に興味があるのか。話が早いね。",
           "speed": "normal"
         },
         {
           "characterName": "narrator",
-          "text": "5年間の冒険。その入口に立つ。",
+          "text": "短い会話の中で、知的な共感が生まれた。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_B2_leave": {
+      "id": "scene_B2_leave",
+      "title": "B: Library - Leave",
+      "background": "/assets/backgrounds/library.png",
+      "characters": [
+        {
+          "name": "ai",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "静かな時間がそこに残り、君は次の場所へ向かった。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_C1": {
+      "id": "scene_C1",
+      "title": "C: Network Lab - Meeting Ren",
+      "background": "/assets/backgrounds/lab.png",
+      "characters": [
+        {
+          "name": "ren",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "ネットワーク演習室には、奇妙なログを睨む先輩がいる。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "諏訪野 レン",
+          "text": "お前、これ面白いぞ。少し手伝うか？",
+          "speed": "normal"
+        }
+      ],
+      "choices": {
+        "choiceId": "choice_C1",
+        "choices": [
+          {
+            "id": "choice_C_investigate",
+            "label": "詳しく調べる",
+            "nextSceneId": "scene_C2_investigate"
+          },
+          {
+            "id": "choice_C_report",
+            "label": "先生に報告する",
+            "nextSceneId": "scene_C2_report"
+          }
+        ]
+      },
+      "nextSceneId": null
+    },
+
+    "scene_C2_investigate": {
+      "id": "scene_C2_investigate",
+      "title": "C: Network Lab - Investigate",
+      "background": "/assets/backgrounds/lab.png",
+      "characters": [
+        {
+          "name": "ren",
+          "expression": "smile",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "諏訪野 レン",
+          "text": "見事だ。興味があるなら、色々教えてやるよ。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "小さな謎解きが、冒険の扉を開くかもしれない。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_C2_report": {
+      "id": "scene_C2_report",
+      "title": "C: Network Lab - Report",
+      "background": "/assets/backgrounds/lab.png",
+      "characters": [
+        {
+          "name": "ren",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "君は大人しく先生に報告した。先輩は少し呆れた顔をしたが、すぐに仕事に戻った。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_D1": {
+      "id": "scene_D1",
+      "title": "D: Student Council - Meeting Mai",
+      "background": "/assets/backgrounds/student_council.png",
+      "characters": [
+        {
+          "name": "mai",
+          "expression": "serious",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "学生会室は張り詰めた空気。神楽 マイは次のイベントについて議論していた。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "神楽 マイ",
+          "text": "手伝えるなら頼む。意見があるなら今だ。",
+          "speed": "normal"
+        }
+      ],
+      "choices": {
+        "choiceId": "choice_D1",
+        "choices": [
+          {
+            "id": "choice_D_help",
+            "label": "手伝う",
+            "nextSceneId": "scene_D2_help"
+          },
+          {
+            "id": "choice_D_object",
+            "label": "反対する",
+            "nextSceneId": "scene_D2_object"
+          }
+        ]
+      },
+      "nextSceneId": null
+    },
+
+    "scene_D2_help": {
+      "id": "scene_D2_help",
+      "title": "D: Student Council - Help",
+      "background": "/assets/backgrounds/student_council.png",
+      "characters": [
+        {
+          "name": "mai",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "神楽 マイ",
+          "text": "頼もしい。君なら頼める。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "彼女の横顔には、静かな決意が宿っていた。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_D2_object": {
+      "id": "scene_D2_object",
+      "title": "D: Student Council - Object",
+      "background": "/assets/backgrounds/student_council.png",
+      "characters": [
+        {
+          "name": "mai",
+          "expression": "serious",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "君の反対意見は議論を呼んだが、建設的な方向へと進んだ。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_E1": {
+      "id": "scene_E1",
+      "title": "E: Dormitory - Meeting Zen",
+      "background": "/assets/backgrounds/dormitory.png",
+      "characters": [
+        {
+          "name": "zen",
+          "expression": "mischief",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "寮の片隅、扉の隙間から覗くと奇妙な先輩が静かに座っていた。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "室井 禅",
+          "text": "面白い顔をしているな。時間はあるか？",
+          "speed": "normal"
+        }
+      ],
+      "choices": {
+        "choiceId": "choice_E1",
+        "choices": [
+          {
+            "id": "choice_E_listen",
+            "label": "話を聞く",
+            "nextSceneId": "scene_E2_listen"
+          },
+          {
+            "id": "choice_E_run",
+            "label": "そのまま去る",
+            "nextSceneId": "scene_E2_run"
+          }
+        ]
+      },
+      "nextSceneId": null
+    },
+
+    "scene_E2_listen": {
+      "id": "scene_E2_listen",
+      "title": "E: Dormitory - Listen",
+      "background": "/assets/backgrounds/dormitory.png",
+      "characters": [
+        {
+          "name": "zen",
+          "expression": "normal",
+          "position": "center",
+          "scale": 1.0,
+          "opacity": 1.0
+        }
+      ],
+      "messages": [
+        {
+          "characterName": "室井 禅",
+          "text": "ここは長く居ると面白いことになる。だが覚悟はできているか？",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "その言葉は、自由と危険の匂いを帯びていた。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_E2_run": {
+      "id": "scene_E2_run",
+      "title": "E: Dormitory - Run",
+      "background": "/assets/backgrounds/dormitory.png",
+      "characters": [],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "君はその場を離れ、別の出会いを探しに向かった。",
+          "speed": "normal"
+        }
+      ],
+      "choices": null,
+      "nextSceneId": "scene_common_end"
+    },
+
+    "scene_common_end": {
+      "id": "scene_common_end",
+      "title": "First Encounters - End",
+      "background": "/assets/backgrounds/classroom.png",
+      "characters": [],
+      "messages": [
+        {
+          "characterName": "narrator",
+          "text": "こうして、初日の出会いは終わった。これから始まる5年間の物語の、ほんの一コマに過ぎない。",
           "speed": "normal"
         }
       ],
