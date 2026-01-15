@@ -10,6 +10,7 @@ interface MessageBoxProps {
   onHeightChange?: (height: number) => void
   choices?: Choice[]
   onChoice?: (nextSceneId: string) => void
+  showSpeaker?: boolean
 }
 
 export default function MessageBox({
@@ -18,6 +19,7 @@ export default function MessageBox({
   onHeightChange,
   choices,
   onChoice,
+  showSpeaker = true,
 }: MessageBoxProps) {
   const [displayedText, setDisplayedText] = useState('')
   const [isFullyDisplayed, setIsFullyDisplayed] = useState(false)
@@ -97,7 +99,7 @@ export default function MessageBox({
   return (
     <div className="message-box-container" ref={containerRef} onClick={handleClick} onTouchStart={handleTouchStart}>
       <div className="message-box">
-        <div className="message-speaker">{message.characterName}</div>
+        {showSpeaker && <div className="message-speaker">{message.characterName}</div>}
         <div className="message-text" onClick={handleClick}>
           {displayedText}
           {!isFullyDisplayed && <span className="message-cursor">▌</span>}

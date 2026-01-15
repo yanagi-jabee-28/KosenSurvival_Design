@@ -13,6 +13,8 @@ export default function GameEngine() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [messageBoxHeight, setMessageBoxHeight] = useState(0)
+  // 導入済みキャラクタ (id の配列)
+  const [introducedCharacters, setIntroducedCharacters] = useState<string[]>([])
 
   // メッセージが存在しないときは高さを 0 に戻す（選択肢表示時など）
   useEffect(() => {
@@ -37,6 +39,9 @@ export default function GameEngine() {
         const data = await loadSceneData()
         console.log('Scene data loaded:', data)
         setSceneData(data)
+        // 初期シーンを設定: 現在の currentSceneId が存在しなければ
+        // 読み込んだデータの最初のシーン ID にフォールバックする
+        setCurrentSceneId(prevId => (data.scenes[prevId] ? prevId : Object.keys(data.scenes)[0]))
         setIsLoading(false)
       } catch (err) {
         console.error('Failed to load scene data:', err)
@@ -49,10 +54,36 @@ export default function GameEngine() {
 
 
 
+  const findCharacterIdByDisplayName = (displayName: string) => {
+    if (!sceneData) return null
+    const entries = Object.entries(sceneData.characters)
+    for (const [id, meta] of entries) {
+      if (meta.displayName === displayName) return id
+    }
+    return null
+  }
+
+  const markIntroducedIfNeeded = (displayName: string) => {
+    const id = findCharacterIdByDisplayName(displayName)
+    if (!id) return
+    setIntroducedCharacters(prev => (prev.includes(id) ? prev : [...prev, id]))
+  }
+
   const handleNextMessage = () => {
     if (!sceneData) return
     const scene = sceneData.scenes[currentSceneId]
     if (!scene) return
+
+    const currentMessage = scene.messages[currentMessageIndex] ?? null
+    // 導入フラグがある自己紹介メッセージのときだけ導入済みにする
+    if (
+      currentMessage &&
+      currentMessage.characterName &&
+      currentMessage.characterName !== 'narrator' &&
+      (currentMessage as any).isIntroduction
+    ) {
+      markIntroducedIfNeeded(currentMessage.characterName)
+    }
 
     // If there are more messages, show the next one
     if (currentMessageIndex < scene.messages.length - 1) {
@@ -131,6 +162,18 @@ export default function GameEngine() {
   const isMessageComplete = currentMessageIndex >= scene.messages.length
   const currentMessage = scene.messages[currentMessageIndex] ?? null
 
+  // スピーカを表示するかの判定
+  const shouldShowSpeaker = (msg: typeof currentMessage) => {
+    if (!msg) return false
+    if (!msg.characterName) return false
+    if (msg.characterName === 'narrator') return false
+    // isIntroduction フラグがあるメッセージは常にスピーカ表示
+    if ((msg as any).isIntroduction) return true
+    // キャラクタ ID が導入済みなら表示
+    const id = findCharacterIdByDisplayName(msg.characterName)
+    return id ? introducedCharacters.includes(id) : true
+  }
+
   return (
     <div className="game-engine" onClick={handleScreenClick}>
       {/* 背景 */}
@@ -158,6 +201,7 @@ export default function GameEngine() {
           onHeightChange={setMessageBoxHeight}
           choices={isMessageComplete ? scene.choices?.choices : undefined}
           onChoice={handleChoice}
+          showSpeaker={shouldShowSpeaker(currentMessage)}
         />
       )}
     </div>

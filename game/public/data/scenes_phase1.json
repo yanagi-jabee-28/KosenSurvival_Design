@@ -126,6 +126,12 @@
         },
         {
           "characterName": "赤坂 ミナ",
+          "text": "赤坂 ミナだよ。よろしく。",
+          "speed": "normal",
+          "isIntroduction": true
+        },
+        {
+          "characterName": "赤坂 ミナ",
           "text": "来た？ 今サーボの調整をしてるんだ。手伝ってくれる？",
           "speed": "normal"
         }
@@ -227,6 +233,12 @@
         },
         {
           "characterName": "一ノ瀬 アイ",
+          "text": "一ノ瀬 アイです。よろしく。",
+          "speed": "normal",
+          "isIntroduction": true
+        },
+        {
+          "characterName": "一ノ瀬 アイ",
           "text": "……ん？ 何か用かい？ 今ちょっと計算しているところなんだ。",
           "speed": "normal"
         }
@@ -320,6 +332,12 @@
           "characterName": "narrator",
           "text": "演習室のモニタが薄く光る。先輩がログをじっと見ている。",
           "speed": "normal"
+        },
+        {
+          "characterName": "諏訪野 レン",
+          "text": "諏訪野 レンだ。よろしく。",
+          "speed": "normal",
+          "isIntroduction": true
         },
         {
           "characterName": "諏訪野 レン",
@@ -419,6 +437,12 @@
         },
         {
           "characterName": "神楽 マイ",
+          "text": "神楽 マイです。よろしくお願いします。",
+          "speed": "normal",
+          "isIntroduction": true
+        },
+        {
+          "characterName": "神楽 マイ",
           "text": "手伝えるなら具体的に動いてほしい。意見があるなら聞かせて。",
           "speed": "normal"
         }
@@ -512,6 +536,12 @@
           "characterName": "narrator",
           "text": "寮の奥に、少し風変わりな先輩が座っていた。雰囲気が独特だ。",
           "speed": "normal"
+        },
+        {
+          "characterName": "室井 禅",
+          "text": "室井 禅だ。まあ、よろしく。",
+          "speed": "normal",
+          "isIntroduction": true
         },
         {
           "characterName": "室井 禅",

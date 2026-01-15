@@ -10,6 +10,8 @@ export interface Message {
   characterName: string;
   text: string;
   speed: 'slow' | 'normal' | 'fast';
+  // このメッセージがキャラクタの自己紹介（初回発言）であるか
+  isIntroduction?: boolean;
 }
 
 export interface Choice {
