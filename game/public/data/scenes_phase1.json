@@ -125,14 +125,29 @@
           "speed": "normal"
         },
         {
+          "characterName": "narrator",
+          "text": "一人の少女が黙々と工具を動かしている。君に気づいて顔を上げた。",
+          "speed": "normal"
+        },
+        {
           "characterName": "赤坂 ミナ",
-          "text": "赤坂 ミナだよ。よろしく。",
+          "text": "おう、来たのか？ 今サーボの調整中なんだ。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "手馴れた様子で作業を続けながら、彼女は名乗った。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "赤坂 ミナ",
+          "text": "俺は赤坂 ミナ。ロボコン部だ。よろしくな。",
           "speed": "normal",
           "isIntroduction": true
         },
         {
           "characterName": "赤坂 ミナ",
-          "text": "おう、来たのか？ 今サーボの調整中なんだ。手伝ってくれる？",
+          "text": "手伝ってくれる？",
           "speed": "normal"
         }
       ],
@@ -228,19 +243,29 @@
       "messages": [
         {
           "characterName": "narrator",
-          "text": "図書館の窓際で、一ノ瀬 アイが資料に集中している。周りは静かで、ページをめくる音だけが聞こえる。",
+          "text": "図書館の窓際で、一人の少女が資料に集中している。周りは静かで、ページをめくる音だけが聞こえる。",
           "speed": "normal"
         },
         {
-          "characterName": "一ノ瀬 アイ",
-          "text": "一ノ瀬 アイです。よろしく。",
-          "speed": "normal",
-          "isIntroduction": true
+          "characterName": "narrator",
+          "text": "君が近づくと、彼女は顔を上げた。黒い瞳が冷静に君を見つめる。",
+          "speed": "normal"
         },
         {
           "characterName": "一ノ瀬 アイ",
           "text": "……何か用ですか？ 今、計算中なのですが。",
           "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "簡潔に、彼女は名乗った。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "一ノ瀬 アイ",
+          "text": "一ノ瀬 アイです。",
+          "speed": "normal",
+          "isIntroduction": true
         }
       ],
       "choices": {
@@ -330,18 +355,33 @@
       "messages": [
         {
           "characterName": "narrator",
-          "text": "演習室のモニタが薄く光る。先輩がログをじっと見ている。",
+          "text": "演習室のモニタが薄く光る。黒縁メガネの先輩がログをじっと見ている。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "君の気配に気づいたのか、メガネを上げながらこちらを見た。",
           "speed": "normal"
         },
         {
           "characterName": "諏訪野 レン",
-          "text": "諏訪野 レンだ。よろしく。",
+          "text": "……面白そうなログだな。覗くか？",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "低い声で、彼は名を告げた。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "諏訪野 レン",
+          "text": "諏訪野 レンだ。3年、情報系。",
           "speed": "normal",
           "isIntroduction": true
         },
         {
           "characterName": "諏訪野 レン",
-          "text": "……面白そうなログだな。覗くか？ 興味があるなら教えてやる。",
+          "text": "興味があるなら教えてやる。",
           "speed": "normal"
         }
       ],
@@ -408,7 +448,7 @@
       "messages": [
         {
           "characterName": "narrator",
-          "text": "君は先生に報告した。先輩は軽く笑って作業に戻った。",
+          "text": "ルール違反は避けた方が無難だった。新しい手がかりを探しに行こう。",
           "speed": "normal"
         }
       ],
@@ -432,12 +472,17 @@
       "messages": [
         {
           "characterName": "narrator",
-          "text": "学生会室ではポスターや資料が並び、会議の声が響いている。神楽 マイは冷静に資料を見ていた。",
+          "text": "学生会室ではポスターや資料が並び、会議の声が響いている。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "一人の少女が冷静に資料を見ていた。君に気づいて、きちんとした口調で話しかけてきた。",
           "speed": "normal"
         },
         {
           "characterName": "神楽 マイ",
-          "text": "神楽 マイです。よろしくお願いします。",
+          "text": "初めまして。神楽 マイです。学生会副会長をしています。",
           "speed": "normal",
           "isIntroduction": true
         },
@@ -534,18 +579,38 @@
       "messages": [
         {
           "characterName": "narrator",
-          "text": "寮の奥に、少し風変わりな先輩が座っていた。雰囲気が独特だ。",
+          "text": "寮の奥に、少し風変わりな先輩が座っていた。長い髪と虚ろな目。時間が止まったような雰囲気だ。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "君を見て、彼は薄く笑った。",
           "speed": "normal"
         },
         {
           "characterName": "室井 禅",
-          "text": "室井 禅だ。まあ、よろしく。",
+          "text": "いい顔してるな。座ってくか？",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "飄々とした口調で、彼は名を告げた。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "narrator",
+          "text": "飄々とした口調で、彼は名を告げた。",
+          "speed": "normal"
+        },
+        {
+          "characterName": "室井 禅",
+          "text": "室井 禅だ。何年生かは……まあ、いいや。よろしく。",
           "speed": "normal",
           "isIntroduction": true
         },
         {
           "characterName": "室井 禅",
-          "text": "いい顔してるな。座ってくか？ ちょっと面白い話をしてやるよ。",
+          "text": "ちょっと面白い話をしてやるよ。",
           "speed": "normal"
         }
       ],
